@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 
@@ -25,6 +23,11 @@ public partial class InteractiveContainer : UserControl
     {
         AvaloniaXamlLoader.Load(this);
     }
+    
+    /// <summary>
+    /// Fired when the container is closed.
+    /// </summary>
+    public static event EventHandler? Closed;
     
     public static readonly StyledProperty<bool> ShowAtBottomProperty = AvaloniaProperty.Register<InteractiveContainer, bool>(nameof(InteractiveContainer), defaultValue: false);
 
@@ -135,6 +138,7 @@ public partial class InteractiveContainer : UserControl
 
     public static void CloseDialog()
     {
+        Closed?.Invoke(null, null);
         GetInteractiveContainerInstance().IsDialogOpen = false;
     }
 
@@ -160,7 +164,27 @@ public partial class InteractiveContainer : UserControl
            
     }
 
+    public static Task ShowDialogAsync(Control content, bool showAtBottom = false)
+    {
+        var container = GetInteractiveContainerInstance();
 
+        container.IsDialogOpen = true;
+        container.DialogContent = content;
+        container.ShowAtBottom = showAtBottom;
+
+        var result = new TaskCompletionSource<bool>();
+
+        Observable.FromEventPattern(
+                x => Closed += x,
+                x => Closed -= x)
+            .Take(1)
+            .Subscribe(_ =>
+            {
+                result.SetResult(true);
+            });
+
+        return result.Task;
+    }
     
     public static void ShowDialog(Control content, bool showAtBottom = false)
     {
