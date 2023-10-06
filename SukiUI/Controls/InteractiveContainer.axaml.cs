@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -164,7 +165,7 @@ public partial class InteractiveContainer : UserControl
            
     }
 
-    public static Task ShowDialogAsync(Control content, bool showAtBottom = false)
+    public static async Task<Unit> ShowDialogAsync(Control content, bool showAtBottom = false)
     {
         var container = GetInteractiveContainerInstance();
 
@@ -172,7 +173,7 @@ public partial class InteractiveContainer : UserControl
         container.DialogContent = content;
         container.ShowAtBottom = showAtBottom;
 
-        var result = new TaskCompletionSource<bool>();
+        var result = new TaskCompletionSource<Unit>();
 
         Observable.FromEventPattern(
                 x => Closed += x,
@@ -180,10 +181,10 @@ public partial class InteractiveContainer : UserControl
             .Take(1)
             .Subscribe(_ =>
             {
-                result.SetResult(true);
+                result.SetResult(Unit.Default);
             });
 
-        return result.Task;
+        return await result.Task;
     }
     
     public static void ShowDialog(Control content, bool showAtBottom = false)
