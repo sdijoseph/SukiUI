@@ -13,10 +13,7 @@
     <UserControl.Styles>
         <Style Selector="material|MaterialIcon">
             <Setter Property="Foreground" Value="#444444" />
-
         </Style>
-
-
     </UserControl.Styles>
 
 
