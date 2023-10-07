@@ -6,6 +6,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Templates;
 using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
@@ -27,7 +28,7 @@ public class SideMenuTemplated : TemplatedControl
         nameof(IsMenuVisible), o => o.IsMenuVisible, (o, v) => o.IsMenuVisible = v, defaultBindingMode: BindingMode.TwoWay);
 
     public bool IsMenuVisible
-    {
+    { 
         get => _isMenuVisible;
         set
         {
@@ -74,7 +75,7 @@ public class SideMenuTemplated : TemplatedControl
         set => SetValue(CurrentPageProperty, value);
     }
 
-    private IEnumerable<SideMenuItemTemplated> _footerMenuItems;
+    private IEnumerable<SideMenuItemTemplated> _footerMenuItems = new List<SideMenuItemTemplated>();
 
     public static readonly DirectProperty<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>> FooterMenuItemsProperty = AvaloniaProperty.RegisterDirect<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>>(
         nameof(FooterMenuItems), o => o.FooterMenuItems, (o, v) => o.FooterMenuItems = v);
@@ -83,6 +84,17 @@ public class SideMenuTemplated : TemplatedControl
     {
         get => _footerMenuItems;
         set => SetAndRaise(FooterMenuItemsProperty, ref _footerMenuItems, value);
+    }
+
+    private IEnumerable<SideMenuItemTemplated> _menuItems = new List<SideMenuItemTemplated>();
+
+    public static readonly DirectProperty<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>> MenuItemsProperty = AvaloniaProperty.RegisterDirect<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>>(
+        nameof(MenuItems), o => o.MenuItems, (o, v) => o.MenuItems = v);
+
+    public IEnumerable<SideMenuItemTemplated> MenuItems
+    {
+        get => _menuItems;
+        set => SetAndRaise(MenuItemsProperty, ref _menuItems, value);
     }
     
     public delegate void MenuItemChangedEventHandler(object sender, string header);
