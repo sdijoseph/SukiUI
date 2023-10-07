@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
         <IsPackable>true</IsPackable>
         <Authors></Authors>
         <Copyright></Copyright>
@@ -17,7 +17,8 @@
         <Version>5.0.7</Version>
         <FileVersion>2.0.0</FileVersion>
         <AssemblyVersion>2.0.0</AssemblyVersion>
-        <LangVersion>10</LangVersion>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
         <UserSecretsId>712f85e4-12d3-41b0-a417-5714a113666f</UserSecretsId>
         <Description>https://github.com/kikipoulet/SukiUI</Description>
     </PropertyGroup>

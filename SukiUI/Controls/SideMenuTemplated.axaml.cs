@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mime;
 using Avalonia;
 using Avalonia.Controls;
@@ -63,6 +65,29 @@ public class SideMenuTemplated : TemplatedControl
         set => SetValue(HeaderContentProperty, value);
     }
 
+    public static readonly StyledProperty<object?> CurrentPageProperty = AvaloniaProperty.Register<SideMenuTemplated, object?>(
+        nameof(CurrentPage));
+
+    public object? CurrentPage
+    {
+        get => GetValue(CurrentPageProperty);
+        set => SetValue(CurrentPageProperty, value);
+    }
+
+    private IEnumerable<SideMenuItemTemplated> _footerMenuItems;
+
+    public static readonly DirectProperty<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>> FooterMenuItemsProperty = AvaloniaProperty.RegisterDirect<SideMenuTemplated, IEnumerable<SideMenuItemTemplated>>(
+        nameof(FooterMenuItems), o => o.FooterMenuItems, (o, v) => o.FooterMenuItems = v);
+
+    public IEnumerable<SideMenuItemTemplated> FooterMenuItems
+    {
+        get => _footerMenuItems;
+        set => SetAndRaise(FooterMenuItemsProperty, ref _footerMenuItems, value);
+    }
+    
+    public delegate void MenuItemChangedEventHandler(object sender, string header);
+    public event MenuItemChangedEventHandler? MenuItemChanged;
+
     private void OnPaneClosing(object sender, CancelRoutedEventArgs ev)
     {
         IsMenuVisible = false;
@@ -86,5 +111,14 @@ public class SideMenuTemplated : TemplatedControl
         if (_splitView is not null)
             _splitView.PaneClosing -= OnPaneClosing;
         base.OnDetachedFromLogicalTree(e);
+    }
+    
+    private void MenuItemSelectedChanged(object sender, RoutedEventArgs e)
+    {
+        RadioButton rButton = (RadioButton)sender;
+        if (rButton.IsChecked != true)
+            return;
+        string header = ((TextBlock)((DockPanel)((Grid)rButton.Content).Children.First()).Children.Last()).Text;
+        MenuItemChanged?.Invoke(this, header);
     }
 }
