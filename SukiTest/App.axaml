@@ -8,7 +8,6 @@
         <StyleInclude Source="avares://SukiUI/Theme/Index.xaml" />
         <StyleInclude Source="avares://SukiUI/Controls/SideMenuTemplated.axaml" />
         <StyleInclude Source="avares://SukiUI/Controls/SideMenuItemTemplated.axaml" />
-        <StyleInclude Source="avares://SukiUI/Controls/SideMenuItemList.axaml" />
         <avalonia:MaterialIconStyles />
     </Application.Styles>
 

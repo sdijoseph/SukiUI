@@ -9,6 +9,7 @@ using Material.Icons;
 
 namespace SukiUI.Controls;
 
+[TemplatePart("PART_RadioButton", typeof(RadioButton))]
 public class SideMenuItemTemplated : ListBoxItem
 {
     public static readonly StyledProperty<string?> HeaderProperty = AvaloniaProperty.Register<SideMenuItemTemplated, string?>(
@@ -37,12 +38,4 @@ public class SideMenuItemTemplated : ListBoxItem
         get => GetValue(ContentToDisplayProperty);
         set => SetValue(ContentToDisplayProperty, value);
     }
-
-    // public static readonly StyledProperty<bool> IsSelectedProperty = SelectingItemsControl.IsSelectedProperty.AddOwner<SideMenuItemTemplated>();
-    //
-    // public bool IsSelected
-    // {
-    //     get => GetValue(IsSelectedProperty);
-    //     set => SetValue(IsSelectedProperty, value);
-    // }
 }

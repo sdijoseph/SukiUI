@@ -24,7 +24,7 @@
             Title="Suki UI Testing - New Project">
 
             <Grid ColumnDefinitions="50*, 50*" >
-                <suki:SideMenuTemplated Grid.Column="0">
+                <suki:SideMenuTemplated CanHeaderContentOverlapToggleSidebarButton="True" Grid.Column="0">
                     <suki:SideMenuTemplated.HeaderContent>
                         <StackPanel Margin="0,4,0,0">
                             <Button

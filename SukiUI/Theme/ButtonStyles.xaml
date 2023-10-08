@@ -109,7 +109,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
     </Style>
 
-    <Style Selector="Button.Accent">
+    <Style Selector=":is(Button).Accent">
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Padding" Value="11,8" />
@@ -118,7 +118,7 @@
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
-    <Style Selector="Button.Accent &gt; TextBlock">
+    <Style Selector=":is(Button).Accent &gt; TextBlock">
         <Setter Property="Foreground">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
@@ -131,12 +131,12 @@
 
     </Style>
 
-    <Style Selector="Button.Accent:pointerover">
+    <Style Selector=":is(Button).Accent:pointerover">
         <Setter Property="Background" Value="Transparent" />
 
     </Style>
 
-    <Style Selector="Button.Accent:pointerover /template/ ContentPresenter">
+    <Style Selector=":is(Button).Accent:pointerover /template/ ContentPresenter">
 
         <Setter Property="RenderTransform">
             <Setter.Value>
@@ -146,7 +146,7 @@
     </Style>
 
 
-    <Style Selector="Button.Accent:pressed /template/ ContentPresenter">
+    <Style Selector=":is(Button).Accent:pressed /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
@@ -310,7 +310,7 @@
         <Setter Property="Padding" Value="25,10,25,8" />
     </Style>
 
-    <Style Selector="Button.Accent /template/ ContentPresenter">
+    <Style Selector=":is(Button).Accent /template/ ContentPresenter">
 
         <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
 
