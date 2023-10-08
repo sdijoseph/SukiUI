@@ -38,36 +38,24 @@ public partial class TouchKeyboard : UserControl
 
     public ScaleTransform PopupScale
     {
-        get { return GetValue(PopupScaleProperty); }
-        set
-        {
-            
-            SetValue(PopupScaleProperty, value );
-        }
+        get => GetValue(PopupScaleProperty);
+        set => SetValue(PopupScaleProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupHeightProperty = AvaloniaProperty.Register<TouchKeyboard, int>(nameof(TouchKeyboard), defaultValue: 300);
 
     public int PopupHeight
     {
-        get { return GetValue(PopupHeightProperty); }
-        set
-        {
-            
-            SetValue(PopupHeightProperty, value );
-        }
+        get => GetValue(PopupHeightProperty);
+        set => SetValue(PopupHeightProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupWidthProperty = AvaloniaProperty.Register<TouchKeyboard, int>(nameof(TouchKeyboard), defaultValue: 900);
 
     public int PopupWidth
     {
-        get { return GetValue(PopupWidthProperty); }
-        set
-        {
-            
-            SetValue(PopupWidthProperty, value );
-        }
+        get => GetValue(PopupWidthProperty);
+        set => SetValue(PopupWidthProperty, value );
     }
 
     private string _text;
@@ -78,7 +66,7 @@ public partial class TouchKeyboard : UserControl
 
     public string Text
     {
-        get { return _text; }
+        get => _text;
         set
         {
             SetAndRaise(TextProperty, ref _text, value);

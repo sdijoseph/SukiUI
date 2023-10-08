@@ -22,10 +22,7 @@ namespace SukiUI.Controls
         public int Value
         {
             get => _value;
-            set
-            {
-                SetAndRaise(ValueProperty, ref _value, (int)(value * 3.6));
-            }
+            set => SetAndRaise(ValueProperty, ref _value, (int)(value * 3.6));
         }
 
         /// <summary>
@@ -46,8 +43,8 @@ namespace SukiUI.Controls
 
         public int Height
         {
-            get { return GetValue(HeightProperty); }
-            set { SetValue(HeightProperty, value); }
+            get => GetValue(HeightProperty);
+            set => SetValue(HeightProperty, value);
         }
 
         public static readonly StyledProperty<int> WidthProperty =
@@ -55,8 +52,8 @@ namespace SukiUI.Controls
 
         public int Width
         {
-            get { return GetValue(WidthProperty); }
-            set { SetValue(WidthProperty, value); }
+            get => GetValue(WidthProperty);
+            set => SetValue(WidthProperty, value);
         }
 
         public static readonly StyledProperty<int> StrokeWidthProperty =
@@ -64,8 +61,8 @@ namespace SukiUI.Controls
 
         public int StrokeWidth
         {
-            get { return GetValue(StrokeWidthProperty); }
-            set { SetValue(StrokeWidthProperty, value); }
+            get => GetValue(StrokeWidthProperty);
+            set => SetValue(StrokeWidthProperty, value);
         }
 
         

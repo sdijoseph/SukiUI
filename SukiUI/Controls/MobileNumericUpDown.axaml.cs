@@ -29,11 +29,8 @@ public partial class MobileNumericUpDown : UserControl
 
     public int Value
     {
-        get { return _value; }
-        set
-        {
-            SetAndRaise(ValueProperty, ref _value, value);
-        }
+        get => _value;
+        set => SetAndRaise(ValueProperty, ref _value, value);
     }
 
     private void ButtonPlus(object sender, RoutedEventArgs e)

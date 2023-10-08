@@ -36,7 +36,7 @@ namespace SukiUI.Controls
 
         public int Index
         {
-            get { return _index; }
+            get => _index;
             set
             {
                 SetAndRaise(IndexProperty, ref _index, value);
@@ -54,7 +54,7 @@ namespace SukiUI.Controls
 
         public ObservableCollection<string> Steps
         {
-            get { return _steps; }
+            get => _steps;
             set
             {
                 SetAndRaise(StepsProperty, ref _steps, value);

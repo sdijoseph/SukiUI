@@ -46,8 +46,8 @@ public partial class MobileNumberPicker : UserControl
     /// </summary>
     public int Minimum
     {
-        get { return GetValue(MinimumProperty); }
-        set { SetValue(MinimumProperty, value ); }
+        get => GetValue(MinimumProperty);
+        set => SetValue(MinimumProperty, value );
     }
     
     /// <summary>
@@ -61,8 +61,8 @@ public partial class MobileNumberPicker : UserControl
     /// </summary>
     public int Maximum
     {
-        get { return GetValue(MaximumProperty); }
-        set { SetValue(MaximumProperty, value ); }
+        get => GetValue(MaximumProperty);
+        set => SetValue(MaximumProperty, value );
     }
     
     /// <summary>

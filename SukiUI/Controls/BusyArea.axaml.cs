@@ -20,12 +20,8 @@ public partial class BusyArea : UserControl
 
     public bool IsBusy
     {
-        get { return GetValue(IsBusyProperty); }
-        set
-        {
-            
-            SetValue(IsBusyProperty, value );
-        }
+        get => GetValue(IsBusyProperty);
+        set => SetValue(IsBusyProperty, value );
     }
     
   

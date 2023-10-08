@@ -14,7 +14,8 @@ namespace AndroidTest.Views
         private static readonly Lazy<SettingsPage> lazy =
             new Lazy<SettingsPage>(() => new SettingsPage());
 
-        public static SettingsPage Instance { get { return lazy.Value; } }
+        public static SettingsPage Instance => lazy.Value;
+
         public SettingsPage()
         {
             InitializeComponent();

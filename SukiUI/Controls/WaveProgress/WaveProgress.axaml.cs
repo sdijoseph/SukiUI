@@ -42,11 +42,7 @@ public partial class WaveProgress : UserControl
 
     public bool IsTextVisible
     {
-        get { return GetValue(IsTextVisibleProperty); }
-        set
-        {
-            
-            SetValue(IsTextVisibleProperty, value );
-        }
+        get => GetValue(IsTextVisibleProperty);
+        set => SetValue(IsTextVisibleProperty, value );
     }
 }

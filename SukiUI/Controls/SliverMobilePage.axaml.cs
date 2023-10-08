@@ -26,8 +26,8 @@ namespace SukiUI.Controls
 
         public string Header
         {
-            get { return GetValue(HeaderProperty); }
-            set { SetValue(HeaderProperty, value ); }
+            get => GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value );
         }
     }
     

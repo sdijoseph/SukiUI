@@ -41,7 +41,7 @@ public partial class TouchNumericPad : UserControl
 
     public double Value
     {
-        get { return _value; }
+        get => _value;
         set
         {
             SetAndRaise(ValueProperty, ref _value, value);
@@ -55,36 +55,24 @@ public partial class TouchNumericPad : UserControl
 
     public ScaleTransform PopupScale
     {
-        get { return GetValue(PopupScaleProperty); }
-        set
-        {
-            
-            SetValue(PopupScaleProperty, value );
-        }
+        get => GetValue(PopupScaleProperty);
+        set => SetValue(PopupScaleProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupHeightProperty = AvaloniaProperty.Register<TouchNumericPad, int>(nameof(TouchNumericPad), defaultValue: 405);
 
     public int PopupHeight
     {
-        get { return GetValue(PopupHeightProperty); }
-        set
-        {
-            
-            SetValue(PopupHeightProperty, value );
-        }
+        get => GetValue(PopupHeightProperty);
+        set => SetValue(PopupHeightProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupWidthProperty = AvaloniaProperty.Register<TouchNumericPad, int>(nameof(TouchNumericPad), defaultValue: 300);
 
     public int PopupWidth
     {
-        get { return GetValue(PopupWidthProperty); }
-        set
-        {
-            
-            SetValue(PopupWidthProperty, value );
-        }
+        get => GetValue(PopupWidthProperty);
+        set => SetValue(PopupWidthProperty, value );
     }
     
 }

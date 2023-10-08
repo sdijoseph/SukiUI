@@ -29,7 +29,7 @@ namespace SukiUI.Controls
 
         public object Item
         {
-            get { return GetValue(ItemProperty); }
+            get => GetValue(ItemProperty);
             set { SetValue(ItemProperty, value); SetItem(value); }
         }
 

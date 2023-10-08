@@ -34,86 +34,59 @@ public partial class InteractiveContainer : UserControl
 
     public bool ShowAtBottom
     {
-        get { return GetValue(ShowAtBottomProperty); }
-        set
-        {
-            
-            SetValue(ShowAtBottomProperty, value );
-        }
+        get => GetValue(ShowAtBottomProperty);
+        set => SetValue(ShowAtBottomProperty, value );
     }
     
     public static readonly StyledProperty<bool> IsDialogOpenProperty = AvaloniaProperty.Register<InteractiveContainer, bool>(nameof(InteractiveContainer), defaultValue: false);
 
     public bool IsDialogOpen
     {
-        get { return GetValue(IsDialogOpenProperty); }
-        set
-        {
-            
-            SetValue(IsDialogOpenProperty, value );
-        }
+        get => GetValue(IsDialogOpenProperty);
+        set => SetValue(IsDialogOpenProperty, value );
     }
     
     public static readonly StyledProperty<bool> IsToastOpenProperty = AvaloniaProperty.Register<InteractiveContainer, bool>(nameof(InteractiveContainer), defaultValue: false);
 
     public bool IsToastOpen
     {
-        get { return GetValue(IsToastOpenProperty); }
-        set
-        {
-            
-            SetValue(IsToastOpenProperty, value );
-        }
+        get => GetValue(IsToastOpenProperty);
+        set => SetValue(IsToastOpenProperty, value );
     }
     
     public static readonly StyledProperty<Control> DialogContentProperty = AvaloniaProperty.Register<InteractiveContainer, Control>(nameof(InteractiveContainer), defaultValue: new Grid());
 
     public Control DialogContent
     {
-        get { return GetValue(DialogContentProperty); }
-        set
-        {
-            
-            SetValue(DialogContentProperty, value );
-        }
+        get => GetValue(DialogContentProperty);
+        set => SetValue(DialogContentProperty, value );
     }
     
     public static readonly StyledProperty<Control> ToastContentProperty = AvaloniaProperty.Register<InteractiveContainer, Control>(nameof(InteractiveContainer), defaultValue: new Grid());
 
     public Control ToastContent
     {
-        get { return GetValue(ToastContentProperty); }
-        set
-        {
-            
-            SetValue(ToastContentProperty, value );
-        }
+        get => GetValue(ToastContentProperty);
+        set => SetValue(ToastContentProperty, value );
     }
 
 
 
     private static InteractiveContainer GetInteractiveContainerInstance()
     {
-        InteractiveContainer container = null;
-        try
+        var container = Application.Current?.ApplicationLifetime switch
         {
-            container = ((ISingleViewApplicationLifetime)Application.Current.ApplicationLifetime).MainView.GetVisualDescendants().OfType<InteractiveContainer>().First();
-                
-        }
-        catch (Exception exc)
-        {
-            
-            try
-            {
-                container = ((IClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime).MainWindow.GetVisualDescendants().OfType<InteractiveContainer>().First();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(
-                    "You are trying to use a InteractiveContainer functionality without declaring one !");
-            }
-                
-        }
+            ISingleViewApplicationLifetime { MainView: not null } singleViewApplicationLifetime =>
+                singleViewApplicationLifetime.MainView.GetVisualDescendants().OfType<InteractiveContainer>().First(),
+            IClassicDesktopStyleApplicationLifetime { MainWindow: not null } desktopStyleApplicationLifetime =>
+                desktopStyleApplicationLifetime.MainWindow.GetVisualDescendants()
+                    .OfType<InteractiveContainer>()
+                    .First(),
+            _ => null
+        };
+
+        if (container is null)
+            throw new InvalidOperationException("You are trying to use a InteractiveContainer functionality without declaring one !");
 
         return container;
     }

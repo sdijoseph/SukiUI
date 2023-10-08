@@ -49,7 +49,7 @@ public partial class SettingsLayout : UserControl
 
     public ObservableCollection<SettingsLayoutItem> Items
     {
-        get { return _items; }
+        get => _items;
         set
         {
             SetAndRaise(StepsProperty, ref _items, value);

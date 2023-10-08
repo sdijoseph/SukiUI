@@ -45,8 +45,8 @@ public partial class MobilePicker : UserControl
 
     public ObservableCollection<string> Items
     {
-        get { return GetValue(ItemsProperty); }
-        set { SetValue(ItemsProperty, value ); }
+        get => GetValue(ItemsProperty);
+        set => SetValue(ItemsProperty, value );
     }
 
     private void OpenPopup(object sender, RoutedEventArgs e)
@@ -72,36 +72,24 @@ public partial class MobilePicker : UserControl
 
     public ScaleTransform PopupScale
     {
-        get { return GetValue(PopupScaleProperty); }
-        set
-        {
-            
-            SetValue(PopupScaleProperty, value );
-        }
+        get => GetValue(PopupScaleProperty);
+        set => SetValue(PopupScaleProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupHeightProperty = AvaloniaProperty.Register<MobilePicker, int>(nameof(MobilePicker), defaultValue: 200);
 
     public int PopupHeight
     {
-        get { return GetValue(PopupHeightProperty); }
-        set
-        {
-            
-            SetValue(PopupHeightProperty, value );
-        }
+        get => GetValue(PopupHeightProperty);
+        set => SetValue(PopupHeightProperty, value );
     }
     
     public static readonly StyledProperty<int> PopupWidthProperty = AvaloniaProperty.Register<MobilePicker, int>(nameof(MobilePicker), defaultValue: 300);
 
     public int PopupWidth
     {
-        get { return GetValue(PopupWidthProperty); }
-        set
-        {
-            
-            SetValue(PopupWidthProperty, value );
-        }
+        get => GetValue(PopupWidthProperty);
+        set => SetValue(PopupWidthProperty, value );
     }
 
 }

@@ -39,16 +39,16 @@ namespace SukiUI.Controls
 
         public HorizontalAlignment TitleHorizontalAlignment
         {
-            get { return GetValue(TitleHorizontalAlignmentProperty); }
-            set { SetValue(TitleHorizontalAlignmentProperty, value); }
+            get => GetValue(TitleHorizontalAlignmentProperty);
+            set => SetValue(TitleHorizontalAlignmentProperty, value);
         }
 
         public static readonly StyledProperty<double> TitleFontSizeProperty = AvaloniaProperty.Register<DesktopPage, double>(nameof(TitleFontSize), defaultValue: 14);
 
         public double TitleFontSize
         {
-            get { return GetValue(TitleFontSizeProperty); }
-            set { SetValue(TitleFontSizeProperty, value); }
+            get => GetValue(TitleFontSizeProperty);
+            set => SetValue(TitleFontSizeProperty, value);
         }
 
 
@@ -56,24 +56,24 @@ namespace SukiUI.Controls
 
         public FontWeight TitleFontWeight
         {
-            get { return GetValue(TitleFontWeightProperty); }
-            set { SetValue(TitleFontWeightProperty, value); }
+            get => GetValue(TitleFontWeightProperty);
+            set => SetValue(TitleFontWeightProperty, value);
         }
 
         public static readonly StyledProperty<IBrush> LogoColorProperty = AvaloniaProperty.Register<DesktopPage, IBrush>(nameof(LogoColor), defaultValue: Brushes.DarkSlateBlue);
 
         public IBrush LogoColor
         {
-            get { return GetValue(LogoColorProperty); }
-            set { SetValue(LogoColorProperty, value); }
+            get => GetValue(LogoColorProperty);
+            set => SetValue(LogoColorProperty, value);
         }
 
         public static readonly StyledProperty<MaterialIconKind> LogoKindProperty = AvaloniaProperty.Register<DesktopPage, MaterialIconKind>(nameof(LogoKind), defaultValue: MaterialIconKind.DotNet);
 
         public MaterialIconKind LogoKind
         {
-            get { return GetValue(LogoKindProperty); }
-            set { SetValue(LogoKindProperty, value); }
+            get => GetValue(LogoKindProperty);
+            set => SetValue(LogoKindProperty, value);
         }
 
         public static readonly StyledProperty<List<MenuItem>> MenuItemsProperty = 
@@ -81,32 +81,32 @@ namespace SukiUI.Controls
 
         public List<MenuItem> MenuItems
         {
-            get { return GetValue(MenuItemsProperty); }
-            set { SetValue(MenuItemsProperty, value); }
+            get => GetValue(MenuItemsProperty);
+            set => SetValue(MenuItemsProperty, value);
         }
         
         public static readonly StyledProperty<string> TitleProperty = AvaloniaProperty.Register<DesktopPage, string>(nameof(Title), defaultValue: "Avalonia UI");
 
         public string Title
         {
-            get { return GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
         
         public static readonly StyledProperty<bool> ShowBottomBorderProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(ShowBottomBorder), defaultValue: true);
 
         public bool ShowBottomBorder
         {
-            get { return GetValue(ShowBottomBorderProperty); }
-            set { SetValue(ShowBottomBorderProperty, value); }
+            get => GetValue(ShowBottomBorderProperty);
+            set => SetValue(ShowBottomBorderProperty, value);
         }
         
         public static readonly StyledProperty<bool> MenuVisibilityProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(MenuVisibility), defaultValue: false);
 
         public bool MenuVisibility
         {
-            get { return GetValue(MenuVisibilityProperty); }
-            set { SetValue(MenuVisibilityProperty, value); }
+            get => GetValue(MenuVisibilityProperty);
+            set => SetValue(MenuVisibilityProperty, value);
         }
         
 
@@ -114,16 +114,16 @@ namespace SukiUI.Controls
 
         public bool IsMinimizeButtonEnabled
         {
-            get { return GetValue(IsMinimizeButtonEnabledProperty); }
-            set { SetValue(IsMinimizeButtonEnabledProperty, value); }
+            get => GetValue(IsMinimizeButtonEnabledProperty);
+            set => SetValue(IsMinimizeButtonEnabledProperty, value);
         }
 
         public static readonly StyledProperty<bool> IsMaximizeButtonEnabledProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMaximizeButtonEnabled), defaultValue: true);
 
         public bool IsMaximizeButtonEnabled
         {
-            get { return GetValue(IsMaximizeButtonEnabledProperty); }
-            set { SetValue(IsMaximizeButtonEnabledProperty, value); }
+            get => GetValue(IsMaximizeButtonEnabledProperty);
+            set => SetValue(IsMaximizeButtonEnabledProperty, value);
         }
 
         /// <summary>

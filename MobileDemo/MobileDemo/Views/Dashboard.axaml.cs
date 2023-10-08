@@ -19,7 +19,8 @@ namespace AndroidTest.Views
         private static readonly Lazy<Dashboard> lazy =
             new Lazy<Dashboard>(() => new Dashboard());
         
-        public static Dashboard Instance { get { return lazy.Value; } }
+        public static Dashboard Instance => lazy.Value;
+
         public Dashboard()
         {
             InitializeComponent();
