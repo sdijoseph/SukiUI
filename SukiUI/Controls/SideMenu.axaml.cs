@@ -1,65 +1,146 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Material.Icons;
 using System;
 using System.Collections.Generic;
-using Avalonia.VisualTree;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Mime;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
+using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Templates;
+using Avalonia.Data;
+using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Media;
+using Avalonia.LogicalTree;
 
-namespace SukiUI.Controls
+namespace SukiUI.Controls;
+
+[TemplatePart("PART_FooterMenuItemsBox", typeof(ListBox))]
+[TemplatePart("PART_MenuItemsBox", typeof(ListBox))]
+public class SideMenu : TemplatedControl
 {
+    private ListBox? _footerMenuItemBox;
+    private ListBox? _menuItemBox;
 
-    public partial class SideMenu : UserControl
+    private bool _isMenuVisible;
+
+    public static readonly DirectProperty<SideMenu, bool> IsMenuVisibleProperty = AvaloniaProperty.RegisterDirect<SideMenu, bool>(
+        nameof(IsMenuVisible), o => o.IsMenuVisible, (o, v) => o.IsMenuVisible = v, defaultBindingMode: BindingMode.TwoWay);
+
+    public bool IsMenuVisible
+    { 
+        get => _isMenuVisible;
+        set
+        {
+            var oldSpacerEnabled = IsSpacerEnabled;
+            SetAndRaise(IsMenuVisibleProperty, ref _isMenuVisible, value);
+            RaisePropertyChanged(IsSpacerEnabledProperty, oldSpacerEnabled, IsSpacerEnabled);
+        }
+    }
+    
+    public static readonly DirectProperty<SideMenu, bool> IsSpacerEnabledProperty = AvaloniaProperty.RegisterDirect<SideMenu, bool>(
+        nameof(IsSpacerEnabled), o => o.IsSpacerEnabled);
+
+    public bool IsSpacerEnabled => CanHeaderContentOverlapToggleSidebarButton && !IsMenuVisible;
+
+    public static readonly StyledProperty<bool> CanHeaderContentOverlapToggleSidebarButtonProperty = AvaloniaProperty.Register<SideMenu, bool>(
+        nameof(CanHeaderContentOverlapToggleSidebarButton));
+
+    public bool CanHeaderContentOverlapToggleSidebarButton
     {
-        public delegate void MenuItemChangedEventHandler(object sender, string header);
-        public event MenuItemChangedEventHandler MenuItemChanged;
-        
-        public static readonly StyledProperty<bool> WinUIStyleProperty = AvaloniaProperty.Register<SideMenu, bool>(nameof(WinUIStyle), defaultValue: false);
+        get => GetValue(CanHeaderContentOverlapToggleSidebarButtonProperty);
+        set => SetValue(CanHeaderContentOverlapToggleSidebarButtonProperty, value);
+    }
+    
+    public static readonly DirectProperty<SideMenu, int> HeaderMinHeightProperty = AvaloniaProperty.RegisterDirect<SideMenu, int>(
+        nameof(HeaderMinHeight), o => o.HeaderMinHeight);
 
-        public bool WinUIStyle
-        {
-            get { return GetValue(WinUIStyleProperty); }
-            set
-            {
-                SetValue(WinUIStyleProperty, value);
-                if (!value)
-                    return;
-                
-                var border = this.FindControl<Border>("ContentBorder");
-                border.BorderThickness = new Thickness(1,1,0,0);
-                border.CornerRadius = new CornerRadius(13, 0, 0,0);
-                
+    public int HeaderMinHeight => CanHeaderContentOverlapToggleSidebarButton ? 40 : 0;
 
-            }
-        }
-        public SideMenu()
-        {
-            InitializeComponent();
-        }
+    public static readonly StyledProperty<object?> HeaderContentProperty = AvaloniaProperty.Register<SideMenu, object?>(
+        nameof(HeaderContent));
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+    public object? HeaderContent
+    {
+        get => GetValue(HeaderContentProperty);
+        set => SetValue(HeaderContentProperty, value);
+    }
 
-        private void PaneIsClosing(object sender, CancelRoutedEventArgs ev)
-        {
-            ((SideMenuModel)this.DataContext).MenuVisibility = false;
-        }
+    public static readonly StyledProperty<object?> CurrentPageProperty = AvaloniaProperty.Register<SideMenu, object?>(
+        nameof(CurrentPage));
 
-        private void MenuItemSelectedChanged(object sender, RoutedEventArgs e)
-        {
-            RadioButton rButton = (RadioButton)sender;
-            if (rButton.IsChecked != true)
-                return;
-            try
-            {
-                string header = ((TextBlock)((DockPanel)((Grid)rButton.Content).Children.First()).Children.Last()).Text;
-                MenuItemChanged?.Invoke(this, header);
-            }catch(Exception exc){}
-        }
+    public object? CurrentPage
+    {
+        get => GetValue(CurrentPageProperty);
+        set => SetValue(CurrentPageProperty, value);
+    }
+
+    private IEnumerable<SideMenuItem> _footerMenuItems = new List<SideMenuItem>();
+
+    public static readonly DirectProperty<SideMenu, IEnumerable<SideMenuItem>> FooterMenuItemsProperty = AvaloniaProperty.RegisterDirect<SideMenu, IEnumerable<SideMenuItem>>(
+        nameof(FooterMenuItems), o => o.FooterMenuItems, (o, v) => o.FooterMenuItems = v);
+
+    public IEnumerable<SideMenuItem> FooterMenuItems
+    {
+        get => _footerMenuItems;
+        set => SetAndRaise(FooterMenuItemsProperty, ref _footerMenuItems, value);
+    }
+
+    private IEnumerable<SideMenuItem> _menuItems = new List<SideMenuItem>();
+
+    public static readonly DirectProperty<SideMenu, IEnumerable<SideMenuItem>> MenuItemsProperty = AvaloniaProperty.RegisterDirect<SideMenu, IEnumerable<SideMenuItem>>(
+        nameof(MenuItems), o => o.MenuItems, (o, v) => o.MenuItems = v);
+
+    public IEnumerable<SideMenuItem> MenuItems
+    {
+        get => _menuItems;
+        set => SetAndRaise(MenuItemsProperty, ref _menuItems, value);
+    }
+    
+    public delegate void MenuItemChangedEventHandler(object sender, string header);
+    public event MenuItemChangedEventHandler? MenuItemChanged;
+
+    /// <inheritdoc />
+    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+    {
+        _footerMenuItemBox = e.NameScope.Find<ListBox>("PART_FooterMenuItemsBox") ?? throw new InvalidOperationException("Cannot find PART_FooterMenuItemsBox");
+        _menuItemBox = e.NameScope.Find<ListBox>("PART_MenuItemsBox") ?? throw new InvalidOperationException("Cannot find PART_MenuItemsBox");
+        _footerMenuItemBox.SelectionChanged += SideMenuItemSelectionChanged;
+        _menuItemBox.SelectionChanged += SideMenuItemSelectionChanged;
+    }
+
+    [MemberNotNull(nameof(_footerMenuItemBox))]
+    [MemberNotNull(nameof(_menuItemBox))]
+    private void EnsureTemplateParts()
+    {
+        if (_footerMenuItemBox is null)
+            throw new ArgumentNullException(nameof(_footerMenuItemBox));
+        if (_menuItemBox is null)
+            throw new ArgumentNullException(nameof(_menuItemBox));
+    }
+
+    private void SideMenuItemSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (e.AddedItems.Count == 0 || e.AddedItems[0] is not SideMenuItem sideMenuItem)
+            return;
+
+        CurrentPage = sideMenuItem.ContentToDisplay;
+    }
+
+    protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
+    {
+        EnsureTemplateParts();
+        _footerMenuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
+        _menuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
+        base.OnDetachedFromLogicalTree(e);
+    }
+
+    private void MenuItemSelectedChanged(object sender, RoutedEventArgs e)
+    {
+        RadioButton rButton = (RadioButton)sender;
+        if (rButton.IsChecked != true)
+            return;
+        string header = ((TextBlock)((DockPanel)((Grid)rButton.Content).Children.First()).Children.Last()).Text;
+        MenuItemChanged?.Invoke(this, header);
     }
 }

@@ -1,221 +1,123 @@
-<UserControl
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    mc:Ignorable="d"
-    x:Class="SukiUI.Controls.SideMenu"
-    xmlns="https://github.com/avaloniaui"
-    xmlns:controls="clr-namespace:Avalonia;assembly=Avalonia.Controls"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:material="using:Material.Icons.Avalonia"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:suki="clr-namespace:SukiUI.Controls"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <UserControl.Styles>
-        <Style Selector="material|MaterialIcon">
-            <Setter Property="Foreground" Value="#444444" />
-        </Style>
-    </UserControl.Styles>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SukiUI.Controls"
+        xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+    <Design.PreviewWith>
+        <controls:SideMenu />
+    </Design.PreviewWith>
+    
+    <Style Selector="material|MaterialIcon">
+        <Setter Property="Foreground" Value="#444444" />
+    </Style>
+    
+    <Style Selector="controls|SideMenu">
+        <!-- Set Defaults -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <SplitView
+                    x:Name="PART_SplitView"
+                    DisplayMode="CompactInline"
+                    IsPaneOpen="{TemplateBinding IsMenuVisible}"
+                    OpenPaneLength="220">
+
+                    <SplitView.Pane>
+                        <Border>
+                            <Panel Background="Transparent">
+                                <!--  This sidebar toggle button is used when header content can overlap it  -->
+                                <ToggleButton
+                                    Classes="Accent"
+                                    IsChecked="{TemplateBinding IsMenuVisible, Mode=TwoWay}"
+                                    HorizontalAlignment="Right"
+                                    IsVisible="{TemplateBinding CanHeaderContentOverlapToggleSidebarButton}"
+                                    VerticalAlignment="Top">
+                                    <Panel>
+                                        <material:MaterialIcon
+                                            Foreground="{DynamicResource SukiText}"
+                                            IsVisible="{TemplateBinding IsMenuVisible, Converter={x:Static BoolConverters.Not}}"
+                                            Kind="ChevronRight" />
+                                        <material:MaterialIcon
+                                            Foreground="{DynamicResource SukiText}"
+                                            IsVisible="{TemplateBinding IsMenuVisible}"
+                                            Kind="ChevronLeft" />
+                                    </Panel>
+                                </ToggleButton>
+
+                                <DockPanel>
+                                    <!--  This sidebar toggle button can't be overlapped by header content  -->
+                                    <ToggleButton
+                                        Classes="Accent"
+                                        IsChecked="{TemplateBinding IsMenuVisible, Mode=TwoWay}"
+                                        DockPanel.Dock="Top"
+                                        HorizontalAlignment="Right"
+                                        IsVisible="{TemplateBinding CanHeaderContentOverlapToggleSidebarButton, Converter={x:Static BoolConverters.Not}}"
+                                        VerticalAlignment="Top">
+                                        <Panel>
+                                            <material:MaterialIcon
+                                                Foreground="{DynamicResource SukiText}"
+                                                IsVisible="{TemplateBinding IsMenuVisible, Converter={x:Static BoolConverters.Not}}"
+                                                Kind="ChevronRight" />
+                                            <material:MaterialIcon
+                                                Foreground="{DynamicResource SukiText}"
+                                                IsVisible="{TemplateBinding IsMenuVisible}"
+                                                Kind="ChevronLeft" />
+                                        </Panel>
+                                    </ToggleButton>
 
 
+                                    <Panel
+                                        DockPanel.Dock="Top"
+                                        IsVisible="{TemplateBinding IsMenuVisible}"
+                                        MinHeight="{TemplateBinding HeaderMinHeight}">
+                                        <ContentControl Content="{TemplateBinding HeaderContent}" />
+                                    </Panel>
 
-    <SplitView
-        DisplayMode="CompactInline"
-        IsPaneOpen="{Binding MenuVisibility}"
-        OpenPaneLength="220"
-        PaneClosing="PaneIsClosing">
-
-        <SplitView.Pane>
-            <Border>
-                <Grid Background="Transparent">
-                    <!--  This sidebar toggle button is used when header content can overlap it  -->
-                    <Button
-                        Classes="Accent"
-                        Command="{Binding ChangeMenuVisibility}"
-                        HorizontalAlignment="Right"
-                        IsVisible="{Binding HeaderContentOverlapsToggleSidebarButton}"
-                        VerticalAlignment="Top">
-                        <Grid>
-                            <material:MaterialIcon
-                                Foreground="{DynamicResource SukiText}"
-                                IsVisible="{Binding !MenuVisibility}"
-                                Kind="ChevronRight" />
-                            <material:MaterialIcon
-                                Foreground="{DynamicResource SukiText}"
-                                IsVisible="{Binding MenuVisibility}"
-                                Kind="ChevronLeft" />
-                        </Grid>
-                    </Button>
-
-                    <DockPanel>
-                        <!--  This sidebar toggle button can't be overlapped by header content  -->
-                        <Button
-                            Classes="Accent"
-                            Command="{Binding ChangeMenuVisibility}"
-                            DockPanel.Dock="Top"
-                            HorizontalAlignment="Right"
-                            IsVisible="{Binding !HeaderContentOverlapsToggleSidebarButton}"
-                            VerticalAlignment="Top">
-                            <Grid>
-                                <material:MaterialIcon
-                                    Foreground="{DynamicResource SukiText}"
-                                    IsVisible="{Binding !MenuVisibility}"
-                                    Kind="ChevronRight" />
-                                <material:MaterialIcon
-                                    Foreground="{DynamicResource SukiText}"
-                                    IsVisible="{Binding MenuVisibility}"
-                                    Kind="ChevronLeft" />
-                            </Grid>
-                        </Button>
+                                    <!--  Used to move menu icons down when sidebar is closed  -->
+                                    <Panel
+                                        DockPanel.Dock="Top"
+                                        Height="40"
+                                        IsVisible="{TemplateBinding IsSpacerEnabled}" />
 
 
-                        <Grid
-                            DockPanel.Dock="Top"
-                            IsVisible="{Binding MenuVisibility}"
-                            MinHeight="{Binding HeaderMinHeight}">
-                            <ContentControl Content="{Binding HeaderContent}" />
-                        </Grid>
+                                    <ListBox
+                                        x:Name="PART_FooterMenuItemsBox"
+                                        DockPanel.Dock="Bottom"
+                                        ItemsSource="{TemplateBinding FooterMenuItems}"
+                                        Margin="0,0,0,12">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <controls:SideMenuItem />
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
 
-                        <!--  Used to move menu icons down when sidebar is closed  -->
-                        <Grid
-                            DockPanel.Dock="Top"
-                            Height="40"
-                            IsVisible="{Binding SpacerEnabled}" />
+                                    <ScrollViewer>
+                                        <ListBox
+                                            x:Name="PART_MenuItemsBox"
+                                            ItemsSource="{TemplateBinding MenuItems}" 
+                                            Margin="0,15,0,0">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <controls:SideMenuItem />
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </ScrollViewer>
+                                </DockPanel>
+                            </Panel>
+                        </Border>
+                    </SplitView.Pane>
 
+                    <Border
+                        Background="{DynamicResource SukiBackground}"
+                        BorderBrush="{DynamicResource SukiBorderBrush}"
+                        BorderThickness="1,0,0,0"
+                        Margin="0,0,0,0" 
+                        Name="ContentBorder">
+                        <ContentControl Content="{TemplateBinding CurrentPage}" />
 
-                        <ItemsControl
-                            DockPanel.Dock="Bottom"
-                            ItemsSource="{Binding FooterMenuItems}"
-                            Margin="0,0,0,12">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <RadioButton
-                                        Classes="MenuItem"
-                                        Command="{Binding DataContext.ChangePage, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                                        CommandParameter="{Binding Content}"
-                                        GroupName="MenuItemsGroup"
-                                        HorizontalAlignment="Center"
-                                        IsCheckedChanged="MenuItemSelectedChanged"
-                                        Margin="0,0,0,0"
-                                        Width="180">
-                                        <Grid Margin="-30,1,0,0">
-
-                                            <DockPanel IsVisible="{Binding DataContext.MenuVisibility, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" Margin="55,5,5,5">
-                                                <material:MaterialIcon
-                                                    Foreground="{DynamicResource SukiText}"
-                                                    Height="22"
-                                                    Kind="{Binding Icon}"
-                                                    Name="LongIco"
-                                                    Width="22" />
-                                                
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Margin="15,8,8,8"
-                                                    Text="{Binding Header}" />
-                                            </DockPanel>
-                                            <Border HorizontalAlignment="Center" IsVisible="{Binding !DataContext.MenuVisibility, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
-                                                <Grid>
-                                                    <material:MaterialIcon
-                                                        Foreground="{DynamicResource SukiText}"
-                                                        Height="22"
-                                                        HorizontalAlignment="Center"
-                                                        Kind="{Binding Icon}"
-                                                        Margin="2,0,10,0"
-                                                        Name="ShortIcon"
-                                                        VerticalAlignment="Center"
-                                                        Width="22" />
-                                                    <material:MaterialIcon
-                                                        Foreground="{DynamicResource SukiText}"
-                                                        Height="22"
-                                                        HorizontalAlignment="Right"
-                                                        Kind="{Binding Icon}"
-                                                        Margin="2,0,-30,0"
-                                                        VerticalAlignment="Center"
-                                                        Width="22" />
-
-                                                </Grid>
-                                            </Border>
-                                        </Grid>
-                                    </RadioButton>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-
-                        <ScrollViewer>
-
-                            <ItemsControl ItemsSource="{Binding MenuItems}" Margin="0,15,0,0">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <RadioButton
-                                            Classes="MenuItem"
-                                            Command="{Binding DataContext.ChangePage, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                                            CommandParameter="{Binding Content}"
-                                            GroupName="MenuItemsGroup"
-                                            Height="50"
-                                            HorizontalAlignment="Center"
-                                            IsCheckedChanged="MenuItemSelectedChanged"
-                                            Margin="0,0,0,0"
-                                            Width="180">
-
-
-
-                                            <Grid Margin="-30,1,0,0">
-                                                <DockPanel IsVisible="{Binding DataContext.MenuVisibility, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" Margin="55,5,5,5">
-                                                    <material:MaterialIcon
-                                                        Foreground="{DynamicResource SukiText}"
-                                                        Height="22"
-                                                        Kind="{Binding Icon}"
-                                                        Name="LongIco"
-                                                        Width="22" />
-                                                    
-                                                    <TextBlock
-                                                        FontSize="14"
-                                                        Margin="15,8,8,8"
-                                                        Text="{Binding Header}" />
-                                                </DockPanel>
-                                                <Border HorizontalAlignment="Center" IsVisible="{Binding !DataContext.MenuVisibility, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
-                                                    <Grid>
-                                                        <material:MaterialIcon
-                                                            Foreground="{DynamicResource SukiText}"
-                                                            Height="22"
-                                                            HorizontalAlignment="Center"
-                                                            Kind="{Binding Icon}"
-                                                            Margin="2,0,10,0"
-                                                            Name="ShortIcon"
-                                                            VerticalAlignment="Center"
-                                                            Width="22" />
-                                                        <material:MaterialIcon
-                                                            Foreground="{DynamicResource SukiText}"
-                                                            Height="22"
-                                                            HorizontalAlignment="Right"
-                                                            Kind="{Binding Icon}"
-                                                            Margin="2,0,-30,0"
-                                                            VerticalAlignment="Center"
-                                                            Width="22" />
-
-                                                    </Grid>
-                                                </Border>
-                                            </Grid>
-                                        </RadioButton>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-
-
-                        </ScrollViewer>
-                    </DockPanel>
-                </Grid>
-            </Border>
-        </SplitView.Pane>
-
-        <Border
-            Background="{DynamicResource SukiBackground}"
-            BorderBrush="{DynamicResource SukiBorderBrush}"
-            BorderThickness="1,0,0,0"
-            Margin="0,0,0,0" 
-            Name="ContentBorder">
-            <ContentControl Content="{Binding CurrentPage}" />
-
-        </Border>
-    </SplitView>
-
-</UserControl>
+                    </Border>
+                </SplitView>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

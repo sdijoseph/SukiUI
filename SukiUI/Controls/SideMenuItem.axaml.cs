@@ -10,9 +10,9 @@ using Material.Icons;
 namespace SukiUI.Controls;
 
 [TemplatePart("PART_RadioButton", typeof(RadioButton))]
-public class SideMenuItemTemplated : ListBoxItem
+public class SideMenuItem : ListBoxItem
 {
-    public static readonly StyledProperty<string?> HeaderProperty = AvaloniaProperty.Register<SideMenuItemTemplated, string?>(
+    public static readonly StyledProperty<string?> HeaderProperty = AvaloniaProperty.Register<SideMenuItem, string?>(
         nameof(Header));
 
     public string? Header
@@ -21,7 +21,7 @@ public class SideMenuItemTemplated : ListBoxItem
         set => SetValue(HeaderProperty, value);
     }
 
-    public static readonly StyledProperty<MaterialIconKind> IconProperty = AvaloniaProperty.Register<SideMenuItemTemplated, MaterialIconKind>(
+    public static readonly StyledProperty<MaterialIconKind> IconProperty = AvaloniaProperty.Register<SideMenuItem, MaterialIconKind>(
         nameof(Icon));
 
     public MaterialIconKind Icon
@@ -30,7 +30,7 @@ public class SideMenuItemTemplated : ListBoxItem
         set => SetValue(IconProperty, value);
     }
 
-    public static readonly StyledProperty<object?> ContentToDisplayProperty = AvaloniaProperty.Register<SideMenuItemTemplated, object?>(
+    public static readonly StyledProperty<object?> ContentToDisplayProperty = AvaloniaProperty.Register<SideMenuItem, object?>(
         nameof(ContentToDisplay));
 
     public object? ContentToDisplay

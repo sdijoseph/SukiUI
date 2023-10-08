@@ -3,10 +3,10 @@
         xmlns:controls="using:SukiUI.Controls"
         xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
     <Design.PreviewWith>
-        <controls:SideMenuItemTemplated />
+        <controls:SideMenuItem />
     </Design.PreviewWith>
 
-    <Style Selector="controls|SideMenuItemTemplated">
+    <Style Selector="controls|SideMenuItem">
         <!-- Set Defaults -->
         <Setter Property="Template">
             <ControlTemplate>
@@ -19,7 +19,7 @@
                     Width="180">
                     <Grid Margin="-30,1,0,0">
 
-                        <DockPanel IsVisible="{Binding IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenuTemplated}}}" Margin="55,5,5,5">
+                        <DockPanel IsVisible="{Binding IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenu}}}" Margin="55,5,5,5">
                             <material:MaterialIcon
                                 Foreground="{DynamicResource SukiText}"
                                 Height="22"
@@ -32,7 +32,7 @@
                                 Margin="15,8,8,8"
                                 Text="{TemplateBinding Header}" />
                         </DockPanel>
-                        <Border HorizontalAlignment="Center" IsVisible="{Binding !IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenuTemplated}}}">
+                        <Border HorizontalAlignment="Center" IsVisible="{Binding !IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenu}}}">
                             <Grid>
                                 <material:MaterialIcon
                                     Foreground="{DynamicResource SukiText}"
