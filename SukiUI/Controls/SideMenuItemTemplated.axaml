@@ -11,7 +11,9 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <RadioButton
+                    x:Name="PART_RadioButton"
                     Classes="MenuItem"
+                    IsChecked="{TemplateBinding IsSelected, Mode=TwoWay}"
                     GroupName="MenuItemsGroup"
                     HorizontalAlignment="Center"
                     Margin="0,0,0,0"
@@ -31,7 +33,7 @@
                                 Margin="15,8,8,8"
                                 Text="{TemplateBinding Header}" />
                         </DockPanel>
-                        <Border HorizontalAlignment="Center" IsVisible="{Binding IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenuTemplated}}}">
+                        <Border HorizontalAlignment="Center" IsVisible="{Binding !IsMenuVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:SideMenuTemplated}}}">
                             <Grid>
                                 <material:MaterialIcon
                                     Foreground="{DynamicResource SukiText}"

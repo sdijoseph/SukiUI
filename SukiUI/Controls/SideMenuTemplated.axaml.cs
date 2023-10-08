@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Mime;
 using Avalonia;
@@ -8,19 +9,20 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Templates;
 using Avalonia.Data;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
 
 namespace SukiUI.Controls;
 
 [TemplatePart("PART_SplitView", typeof(SplitView))]
+[TemplatePart("PART_FooterMenuItemsBox", typeof(ListBox))]
+[TemplatePart("PART_MenuItemsBox", typeof(ListBox))]
 public class SideMenuTemplated : TemplatedControl
 {
     private SplitView? _splitView;
-    public SideMenuTemplated()
-    {
-        
-    }
+    private ListBox? _footerMenuItemBox;
+    private ListBox? _menuItemBox;
 
     private bool _isMenuVisible;
 
@@ -100,7 +102,7 @@ public class SideMenuTemplated : TemplatedControl
     public delegate void MenuItemChangedEventHandler(object sender, string header);
     public event MenuItemChangedEventHandler? MenuItemChanged;
 
-    private void OnPaneClosing(object sender, CancelRoutedEventArgs ev)
+    private void OnPaneClosing(object? sender, CancelRoutedEventArgs ev)
     {
         IsMenuVisible = false;
     }
@@ -109,22 +111,43 @@ public class SideMenuTemplated : TemplatedControl
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         _splitView = e.NameScope.Find<SplitView>("PART_SplitView") ?? throw new InvalidOperationException("Cannot find PART_SplitView");
+        _footerMenuItemBox = e.NameScope.Find<ListBox>("PART_FooterMenuItemsBox") ?? throw new InvalidOperationException("Cannot find PART_FooterMenuItemsBox");
+        _menuItemBox = e.NameScope.Find<ListBox>("PART_MenuItemsBox") ?? throw new InvalidOperationException("Cannot find PART_MenuItemsBox");
+        _splitView.PaneClosing += OnPaneClosing;
+        _footerMenuItemBox.SelectionChanged += SideMenuItemSelectionChanged;
+        _menuItemBox.SelectionChanged += SideMenuItemSelectionChanged;
     }
 
-    protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
+    [MemberNotNull(nameof(_splitView))]
+    [MemberNotNull(nameof(_footerMenuItemBox))]
+    [MemberNotNull(nameof(_menuItemBox))]
+    private void EnsureTemplateParts()
     {
-        if (_splitView is not null)
-            _splitView.PaneClosing += OnPaneClosing;
-        base.OnAttachedToLogicalTree(e);
+        if (_splitView is null)
+            throw new ArgumentNullException(nameof(_splitView));
+        if (_footerMenuItemBox is null)
+            throw new ArgumentNullException(nameof(_footerMenuItemBox));
+        if (_menuItemBox is null)
+            throw new ArgumentNullException(nameof(_menuItemBox));
+    }
+
+    private void SideMenuItemSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (e.AddedItems.Count == 0 || e.AddedItems[0] is not SideMenuItemTemplated sideMenuItem)
+            return;
+
+        CurrentPage = sideMenuItem.ContentToDisplay;
     }
 
     protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
     {
-        if (_splitView is not null)
-            _splitView.PaneClosing -= OnPaneClosing;
+        EnsureTemplateParts();
+        _splitView.PaneClosing -= OnPaneClosing;
+        _footerMenuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
+        _menuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
         base.OnDetachedFromLogicalTree(e);
     }
-    
+
     private void MenuItemSelectedChanged(object sender, RoutedEventArgs e)
     {
         RadioButton rButton = (RadioButton)sender;

@@ -1,11 +1,15 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
+using Avalonia.LogicalTree;
 using Material.Icons;
 
 namespace SukiUI.Controls;
 
-public class SideMenuItemTemplated : TemplatedControl
+public class SideMenuItemTemplated : ListBoxItem
 {
     public static readonly StyledProperty<string?> HeaderProperty = AvaloniaProperty.Register<SideMenuItemTemplated, string?>(
         nameof(Header));
@@ -25,12 +29,20 @@ public class SideMenuItemTemplated : TemplatedControl
         set => SetValue(IconProperty, value);
     }
 
-    public static readonly StyledProperty<object?> ContentProperty = AvaloniaProperty.Register<SideMenuItemTemplated, object?>(
-        nameof(Content));
+    public static readonly StyledProperty<object?> ContentToDisplayProperty = AvaloniaProperty.Register<SideMenuItemTemplated, object?>(
+        nameof(ContentToDisplay));
 
-    public object? Content
+    public object? ContentToDisplay
     {
-        get => GetValue(ContentProperty);
-        set => SetValue(ContentProperty, value);
+        get => GetValue(ContentToDisplayProperty);
+        set => SetValue(ContentToDisplayProperty, value);
     }
+
+    // public static readonly StyledProperty<bool> IsSelectedProperty = SelectingItemsControl.IsSelectedProperty.AddOwner<SideMenuItemTemplated>();
+    //
+    // public bool IsSelected
+    // {
+    //     get => GetValue(IsSelectedProperty);
+    //     set => SetValue(IsSelectedProperty, value);
+    // }
 }
