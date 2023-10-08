@@ -13,7 +13,7 @@
                 <RadioButton
                     x:Name="PART_RadioButton"
                     Classes="MenuItem"
-                    IsChecked="{TemplateBinding IsSelected, Mode=TwoWay}"
+                    IsChecked="{TemplateBinding IsSelected, Mode=OneWayToSource}"
                     GroupName="MenuItemsGroup"
                     HorizontalAlignment="Center"
                     Width="180">

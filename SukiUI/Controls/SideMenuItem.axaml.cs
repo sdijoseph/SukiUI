@@ -30,12 +30,12 @@ public class SideMenuItem : ListBoxItem
         set => SetValue(IconProperty, value);
     }
 
-    public static readonly StyledProperty<object?> ContentToDisplayProperty = AvaloniaProperty.Register<SideMenuItem, object?>(
-        nameof(ContentToDisplay));
+    public static readonly StyledProperty<object?> PageContentProperty = AvaloniaProperty.Register<SideMenuItem, object?>(
+        nameof(PageContent));
 
-    public object? ContentToDisplay
+    public object? PageContent
     {
-        get => GetValue(ContentToDisplayProperty);
-        set => SetValue(ContentToDisplayProperty, value);
+        get => GetValue(PageContentProperty);
+        set => SetValue(PageContentProperty, value);
     }
 }

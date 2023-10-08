@@ -124,7 +124,7 @@ public class SideMenu : TemplatedControl
         if (e.AddedItems.Count == 0 || e.AddedItems[0] is not SideMenuItem sideMenuItem)
             return;
 
-        CurrentPage = sideMenuItem.ContentToDisplay;
+        CurrentPage = sideMenuItem.PageContent;
     }
 
     protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)

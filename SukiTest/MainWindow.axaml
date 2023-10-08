@@ -65,7 +65,7 @@
             
                 <suki:SideMenu.MenuItems>
                     <suki:SideMenuItem Header="DashBoard" Icon="CircleOutline">
-                        <suki:SideMenuItem.ContentToDisplay>
+                        <suki:SideMenuItem.PageContent>
                             <ScrollViewer VerticalScrollBarVisibility="Hidden">
             
                                 <WrapPanel Orientation="Horizontal">
@@ -592,34 +592,34 @@
             
                                 </WrapPanel>
                             </ScrollViewer>
-                        </suki:SideMenuItem.ContentToDisplay>
+                        </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Statistics" Icon="ChartLine">
-                        <suki:SideMenuItem.ContentToDisplay>
+                        <suki:SideMenuItem.PageContent>
                             <circleProgressBarsTestMvvm:CircleProgresstestView />
-                        </suki:SideMenuItem.ContentToDisplay>
+                        </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Library" Icon="BookmarkMultipleOutline">
-                        <suki:SideMenuItem.ContentToDisplay>
+                        <suki:SideMenuItem.PageContent>
                             <TextBlock
                                 HorizontalAlignment="Center"
                                 Text="Library Page"
                                 VerticalAlignment="Center" />
-                        </suki:SideMenuItem.ContentToDisplay>
+                        </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Users" Icon="UserSearchOutline">
-                        <suki:SideMenuItem.ContentToDisplay>
+                        <suki:SideMenuItem.PageContent>
                             <TextBlock
                                 HorizontalAlignment="Center"
                                 Text="Users Page"
                                 VerticalAlignment="Center" />
-                        </suki:SideMenuItem.ContentToDisplay>
+                        </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
             
                 </suki:SideMenu.MenuItems>
                 <suki:SideMenu.FooterMenuItems>
                     <suki:SideMenuItem Header="Settings" Icon="SettingsOutline">
-                        <suki:SideMenuItem.ContentToDisplay>
+                        <suki:SideMenuItem.PageContent>
             
                             <DockPanel Margin="40,20">
                                 <StackPanel DockPanel.Dock="Top">
@@ -832,7 +832,7 @@
                                 </suki:SettingsLayout>
             
                             </DockPanel>
-                        </suki:SideMenuItem.ContentToDisplay>
+                        </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                 </suki:SideMenu.FooterMenuItems>
                 <suki:SideMenu.CurrentPage>

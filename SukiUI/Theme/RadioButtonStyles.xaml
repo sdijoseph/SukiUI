@@ -422,7 +422,12 @@
     <Style Selector="RadioButton:indeterminate /template/ Ellipse#indeterminateMark">
         <Setter Property="IsVisible" Value="True" />
     </Style>
+    
     <Style Selector="RadioButton:disabled /template/ Ellipse#border">
+        <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+    </Style>
+    
+    <Style Selector="RadioButton.MenuItem:disabled">
         <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
     </Style>
 </Styles>
