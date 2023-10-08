@@ -70,7 +70,15 @@
         </Setter>
     </Style>
 
-    <Style Selector="Button &gt; TextBlock">
+    <Style Selector="Button > TextBlock">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Duration="0:0:0.3" Property="Foreground" />
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button /template/ ContentPresenter">
         <Setter Property="Transitions">
             <Transitions>
                 <BrushTransition Duration="0:0:0.3" Property="Foreground" />
@@ -78,13 +86,20 @@
         </Setter>
     </Style>
 
-    <Style Selector="Button:pointerover &gt; TextBlock">
+    <Style Selector="Button:pointerover > TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+    </Style>
+    
+    <Style Selector="Button:pointerover /template/ ContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
     </Style>
 
-    <Style Selector="Button:pressed &gt; TextBlock">
+    <Style Selector="Button:pressed > TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-
+    </Style>
+    
+    <Style Selector="Button:pressed /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
     </Style>
 
     <Style Selector="Button /template/ ContentPresenter">
@@ -118,7 +133,7 @@
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
-    <Style Selector=":is(Button).Accent &gt; TextBlock">
+    <Style Selector=":is(Button).Accent > TextBlock">
         <Setter Property="Foreground">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
@@ -128,7 +143,18 @@
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
+    </Style>
+    
+    <Style Selector=":is(Button).Accent /template/ ContentPresenter">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
 
+                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
+                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style Selector=":is(Button).Accent:pointerover">
@@ -156,11 +182,13 @@
 
     </Style>-->
 
-    <Style Selector="Button &gt; TextBlock">
+    <Style Selector="Button > TextBlock">
         <Setter Property="FontWeight" Value="DemiBold" />
-
     </Style>
-
+    
+    <Style Selector="Button /template/ ContentPresenter">
+        <Setter Property="FontWeight" Value="DemiBold" />
+    </Style>
 
     <Style Selector="Button:pressed /template/ ContentPresenter">
 
@@ -194,9 +222,12 @@
         </Setter>
     </Style>
 
-    <Style Selector="Button.Primary &gt; TextBlock">
+    <Style Selector="Button.Primary > TextBlock">
         <Setter Property="Foreground" Value="White" />
-
+    </Style>
+    
+    <Style Selector="Button.Primary /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="White" />
     </Style>
 
     <Style Selector="Button.Primary:pointerover">
@@ -229,7 +260,17 @@
         </Setter>
     </Style>
 
-    <Style Selector="Button.Outlined &gt; TextBlock">
+    <Style Selector="Button.Outlined > TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Duration="0:0:0.3" Property="Foreground" />
+
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.Outlined /template/ ContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
         <Setter Property="Transitions">
             <Transitions>
@@ -239,12 +280,13 @@
         </Setter>
     </Style>
 
-    <Style Selector="Button.Outlined:pointerover &gt; TextBlock">
+    <Style Selector="Button.Outlined:pointerover > TextBlock">
         <Setter Property="Foreground" Value="White" />
-
     </Style>
 
-
+    <Style Selector="Button.Outlined:pointerover /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
 
     <Style Selector="Button.Outlined:pointerover">
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -281,7 +323,10 @@
         <Setter Property="Background" Value="#cdf2ca" />
         <Setter Property="BorderBrush" Value="#b2e1ae" />
     </Style>
-    <Style Selector="Button.Success &gt; TextBlock">
+    <Style Selector="Button.Success > TextBlock">
+        <Setter Property="Foreground" Value="#13831c" />
+    </Style>
+    <Style Selector="Button.Success /template/ ContentPresenter">
         <Setter Property="Foreground" Value="#13831c" />
     </Style>
     <Style Selector="Button.Success:pointerover /template/ ContentPresenter">
@@ -295,7 +340,10 @@
         <Setter Property="Background" Value="#f2caca" />
         <Setter Property="BorderBrush" Value="#e4b5b5" />
     </Style>
-    <Style Selector="Button.Danger &gt; TextBlock">
+    <Style Selector="Button.Danger > TextBlock">
+        <Setter Property="Foreground" Value="#831313" />
+    </Style>
+    <Style Selector="Button.Danger /template/ ContentPresenter">
         <Setter Property="Foreground" Value="#831313" />
     </Style>
     <Style Selector="Button.Danger:pointerover /template/ ContentPresenter">
@@ -319,6 +367,10 @@
     <Style Selector="Button.Primary /template/ ContentPresenter">
 
         <Setter Property="BoxShadow" Value="{DynamicResource SukiLowShadow}" />
+    </Style>
+    
+    <Style Selector="Button /template/ ContentPresenter[FontWeight=DemiBold]">
+        <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Medium.ttf#Roboto" />
     </Style>
 
     <Style Selector="Button.Card">

@@ -23,11 +23,8 @@
     </Style>
 
     <Style Selector="TextBlock[FontWeight=DemiBold]">
-
         <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Medium.ttf#Roboto" />
     </Style>
-
-
 
     <Style Selector="TextBox">
         <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Regular.ttf#Roboto" />

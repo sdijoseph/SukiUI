@@ -606,10 +606,12 @@
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Users" Icon="UserSearchOutline">
                         <suki:SideMenuItem.PageContent>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                Text="Users Page"
-                                VerticalAlignment="Center" />
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button Classes="Primary">
+                                    <TextBlock Text="Content" />
+                                </Button>
+                                <Button Classes="Primary" Content="Content" /> 
+                            </StackPanel>
                         </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
             
