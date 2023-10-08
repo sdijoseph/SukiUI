@@ -28,7 +28,7 @@ public partial class InteractiveContainer : UserControl
     /// <summary>
     /// Fired when the container is closed.
     /// </summary>
-    public static event EventHandler? Closed;
+    public static event EventHandler? DialogClosed;
     
     public static readonly StyledProperty<bool> ShowAtBottomProperty = AvaloniaProperty.Register<InteractiveContainer, bool>(nameof(InteractiveContainer), defaultValue: false);
 
@@ -70,18 +70,16 @@ public partial class InteractiveContainer : UserControl
         set => SetValue(ToastContentProperty, value );
     }
 
-
-
     private static InteractiveContainer GetInteractiveContainerInstance()
     {
         var container = Application.Current?.ApplicationLifetime switch
         {
             ISingleViewApplicationLifetime { MainView: not null } singleViewApplicationLifetime =>
-                singleViewApplicationLifetime.MainView.GetVisualDescendants().OfType<InteractiveContainer>().First(),
+                singleViewApplicationLifetime.MainView.GetVisualDescendants().OfType<InteractiveContainer>().FirstOrDefault(),
             IClassicDesktopStyleApplicationLifetime { MainWindow: not null } desktopStyleApplicationLifetime =>
                 desktopStyleApplicationLifetime.MainWindow.GetVisualDescendants()
                     .OfType<InteractiveContainer>()
-                    .First(),
+                    .FirstOrDefault(),
             _ => null
         };
 
@@ -90,7 +88,6 @@ public partial class InteractiveContainer : UserControl
 
         return container;
     }
-
     
     public static void ShowToast(Control Message, int seconds)
     {
@@ -112,7 +109,7 @@ public partial class InteractiveContainer : UserControl
 
     public static void CloseDialog()
     {
-        Closed?.Invoke(null, null);
+        DialogClosed?.Invoke(null, EventArgs.Empty);
         GetInteractiveContainerInstance().IsDialogOpen = false;
     }
 
@@ -149,8 +146,8 @@ public partial class InteractiveContainer : UserControl
         var result = new TaskCompletionSource<Unit>();
 
         Observable.FromEventPattern(
-                x => Closed += x,
-                x => Closed -= x)
+                x => DialogClosed += x,
+                x => DialogClosed -= x)
             .Take(1)
             .Subscribe(_ =>
             {
