@@ -24,6 +24,7 @@
     <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
+    <StyleInclude Source="avares://SukiUI/Theme/TreeDataGridStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ComboBoxItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />

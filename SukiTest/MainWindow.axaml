@@ -601,10 +601,7 @@
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Library" Icon="BookmarkMultipleOutline">
                         <suki:SideMenuItem.PageContent>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                Text="Library Page"
-                                VerticalAlignment="Center" />
+                            <TreeDataGrid Name="LibraryTreeDataGrid" />
                         </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Users" Icon="UserSearchOutline">

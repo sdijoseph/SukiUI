@@ -16,6 +16,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.VisualTree;
 using System.Linq;
 using System.Threading;
+using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Primitives;
 using Avalonia.Threading;
 using SukiUI.Controls.TouchInput.TouchNumericPad;
@@ -69,12 +70,30 @@ namespace SukiTest
 
         private WindowNotificationManager notificationManager;
    
+        private ObservableCollection<Person> _people = new()
+        {
+            new Person { Name = "Eleanor", Age = 32 },
+            new Person { Name = "Jeremy", Age = 74 },
+            new Person { Name = "Lailah ", Age = 16 },
+            new Person { Name = "Jazmine", Age = 52 },
+        };
+        
+        public FlatTreeDataGridSource<Person> Source { get; }
+
 
         public MainWindow()
         {
             InitializeComponent();
             try
             {
+                this.FindControl<TreeDataGrid>("LibraryTreeDataGrid").Source = new FlatTreeDataGridSource<Person>(_people)
+                {
+                    Columns =
+                    {
+                        new TextColumn<Person, string>("Name", x => x.Name),
+                        new TextColumn<Person, int>("Age", x => x.Age),
+                    },
+                };
                 this.FindControl<DataGrid>("myDG").ItemsSource = liste;
                 this.FindControl<DataGrid>("GridBilling").ItemsSource = liste;
 
@@ -86,10 +105,10 @@ namespace SukiTest
                  this.FindControl<PropertyGrid>("propertyGrid").Item = new Person() { Adult = true, Age = 20,Name = "Billy", Partner = new Person() };
 
                  this.FindControl<ListBox>("listTest").ItemsSource = new ObservableCollection<string>() { "one", "two", "thre", "four", "five" };
-                 
+
             }
             catch { }
-
+            
            
 
 #if DEBUG
