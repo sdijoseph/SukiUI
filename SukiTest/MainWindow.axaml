@@ -23,7 +23,7 @@
             ShowBottomBorder="False"
             Title="Suki UI Testing - New Project">
             
-            <suki:SideMenu MenuItemChanged="SideMenu_OnMenuItemChanged" CanHeaderContentOverlapToggleSidebarButton="True">
+            <suki:SideMenu Name="SideMenu" MenuItemChanged="SideMenu_OnMenuItemChanged" CanHeaderContentOverlapToggleSidebarButton="True">
                 <suki:SideMenu.HeaderContent>
                     <StackPanel Margin="0,4,0,0">
                         <Button
@@ -64,7 +64,7 @@
                 </suki:SideMenu.HeaderContent>
             
                 <suki:SideMenu.MenuItems>
-                    <suki:SideMenuItem Header="DashBoard" Icon="CircleOutline">
+                    <suki:SideMenuItem Name="DashBoard" Header="DashBoard" Icon="CircleOutline">
                         <suki:SideMenuItem.PageContent>
                             <ScrollViewer VerticalScrollBarVisibility="Hidden">
             
@@ -835,7 +835,10 @@
                     </suki:SideMenuItem>
                 </suki:SideMenu.FooterMenuItems>
                 <suki:SideMenu.CurrentPage>
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Welcome in SukiUI !</TextBlock>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock>Welcome in SukiUI !</TextBlock>
+                        <Button Click="SelectMenuItem">Select Menu Item</Button>
+                    </StackPanel>
                 </suki:SideMenu.CurrentPage>
             </suki:SideMenu>
 

@@ -257,5 +257,11 @@ namespace SukiTest
                 });
             });
         }
+
+        private void SelectMenuItem(object? sender, RoutedEventArgs e)
+        {
+            var sideMenu =this.FindControl<SideMenu>("SideMenu");
+            sideMenu.CurrentMenuItem = this.FindControl<SideMenuItem>("DashBoard");
+        }
     }
 }

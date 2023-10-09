@@ -19,6 +19,8 @@ namespace SukiUI.Controls;
 [TemplatePart("PART_MenuItemsBox", typeof(ListBox))]
 public class SideMenu : TemplatedControl
 {
+    private IDisposable? _currentMenuItemChanged;
+    
     private ListBox? _footerMenuItemBox;
     private ListBox? _menuItemBox;
 
@@ -96,6 +98,17 @@ public class SideMenu : TemplatedControl
         get => _menuItems;
         set => SetAndRaise(MenuItemsProperty, ref _menuItems, value);
     }
+
+    private SideMenuItem? _currentMenuItem;
+
+    public static readonly DirectProperty<SideMenu, SideMenuItem?> CurrentMenuItemProperty = AvaloniaProperty.RegisterDirect<SideMenu, SideMenuItem?>(
+        nameof(CurrentMenuItem), o => o.CurrentMenuItem, (o, v) => o.CurrentMenuItem = v);
+
+    public SideMenuItem? CurrentMenuItem
+    {
+        get => _currentMenuItem;
+        set => SetAndRaise(CurrentMenuItemProperty, ref _currentMenuItem, value);
+    }
     
     public delegate void MenuItemChangedEventHandler(object sender, string header);
     public event MenuItemChangedEventHandler? MenuItemChanged;
@@ -124,7 +137,21 @@ public class SideMenu : TemplatedControl
         if (e.AddedItems.Count == 0 || e.AddedItems[0] is not SideMenuItem sideMenuItem)
             return;
 
+        CurrentMenuItem = sideMenuItem;
         CurrentPage = sideMenuItem.PageContent;
+    }
+
+    protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
+    {
+        _currentMenuItemChanged = CurrentMenuItemProperty.Changed.Subscribe(change =>
+        {
+            if (change.OldValue.Value is { } oldMenuItem)
+                oldMenuItem.IsSelected = false;
+            if (change.NewValue.Value is { } newMenuItem)
+                newMenuItem.IsSelected = true;
+        });
+        
+        base.OnAttachedToLogicalTree(e);
     }
 
     protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
@@ -132,6 +159,7 @@ public class SideMenu : TemplatedControl
         EnsureTemplateParts();
         _footerMenuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
         _menuItemBox.SelectionChanged -= SideMenuItemSelectionChanged;
+        _currentMenuItemChanged?.Dispose();
         base.OnDetachedFromLogicalTree(e);
     }
 
