@@ -507,6 +507,10 @@
         <Setter Property="BoxShadow" Value="0 0 0 0 White" />
     </Style>
 
+    <Style Selector="TextBox.ThinBottomBar /template/ Border#border">
+        <Setter Property="BorderThickness" Value="0 0 0 2" />
+        <Setter Property="BoxShadow" Value="0 0 0 2 White" />
+    </Style>
 
     <Style Selector="TextBox:pointerover /template/ Border#borderbottom">
         <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
