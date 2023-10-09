@@ -1,17 +1,16 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:suki="using:SukiUI.Controls"
-        xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+<ResourceDictionary  xmlns="https://github.com/avaloniaui"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:suki="using:SukiUI.Controls"
+                     xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
     <Design.PreviewWith>
         <suki:SideMenu />
     </Design.PreviewWith>
     
-    <Style Selector="material|MaterialIcon">
-        <Setter Property="Foreground" Value="#444444" />
-    </Style>
-    
-    <Style Selector="suki|SideMenu">
+    <ControlTheme x:Key="{x:Type suki:SideMenu}" TargetType="suki:SideMenu">
         <!-- Set Defaults -->
+        <Style Selector="^ /template/ material|MaterialIcon">
+            <Setter Property="Foreground" Value="#444444" />
+        </Style>
         <Setter Property="Template">
             <ControlTemplate>
                 <SplitView
@@ -118,5 +117,5 @@
                 </SplitView>
             </ControlTemplate>
         </Setter>
-    </Style>
-</Styles>
+    </ControlTheme>
+</ResourceDictionary>

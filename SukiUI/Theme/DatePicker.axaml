@@ -35,9 +35,7 @@
     <Thickness x:Key="DatePickerHostPadding">0,3,0,6</Thickness>
     <Thickness x:Key="DatePickerHostMonthPadding">9,3,0,6</Thickness>
     <x:Double x:Key="DatePickerSpacerThemeWidth">1</x:Double>
-
-
-
+    
     <ControlTheme TargetType="DatePicker" x:Key="{x:Type DatePicker}">
         <Setter Property="FontSize" Value="{DynamicResource FontSizeNormal}" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
@@ -299,9 +297,6 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-
-
     </ControlTheme>
-
-
+    
 </ResourceDictionary>

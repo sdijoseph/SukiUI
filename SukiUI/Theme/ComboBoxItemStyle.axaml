@@ -1,7 +1,6 @@
-﻿<Styles
-    xmlns="https://github.com/avaloniaui"
-    xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Padding="20">
             <StackPanel Spacing="10">
@@ -21,7 +20,7 @@
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="ComboBoxItem">
+    <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -56,63 +55,60 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
+        
+        <Style Selector="^ /template/ avalonia|MaterialIcon#CheckSelected">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
 
-    <Style Selector="ComboBoxItem /template/ avalonia|MaterialIcon#CheckSelected">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
+        <Style Selector="^:selected /template/ avalonia|MaterialIcon#CheckSelected">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
 
-    <Style Selector="ComboBoxItem:selected /template/ avalonia|MaterialIcon#CheckSelected">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-
-    <Style Selector="ComboBoxItem &gt; TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:focus /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:pointerover /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:focus:pointerover /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
 
+        <Style Selector="^ > TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
+        </Style>
+
+        <Style Selector="^:selected /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^:selected:focus /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^:selected:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^:selected:focus:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^:pointerover /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="{DynamicResource SukiLightBackground}" />
+        </Style>
+
+        <Style Selector="^:selected /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
+        </Style>
+
+        <Style Selector="^:selected:focus /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
+        </Style>
+
+        <Style Selector="^:selected:pointerover /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
+        </Style>
+
+        <Style Selector="^:selected:focus:pointerover /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
+        </Style>
+    </ControlTheme>
 
 
-    <Style Selector="ComboBoxItem:pointerover /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBackground}" />
-    </Style>
-
-
-
-    <Style Selector="ComboBoxItem:selected /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:focus /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:pointerover /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
-    </Style>
-
-    <Style Selector="ComboBoxItem:selected:focus:pointerover /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
-    </Style>
-</Styles>
+</ResourceDictionary>

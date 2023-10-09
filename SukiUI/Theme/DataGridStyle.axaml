@@ -1,4 +1,4 @@
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary  xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Padding="20">
             <DataGrid>
@@ -18,7 +18,8 @@
             </DataGrid>
         </Border>
     </Design.PreviewWith>
-    <Style Selector="DataGridCell">
+    
+    <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -46,16 +47,12 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
-    </Style>
-
-
-
-    <Style Selector="DataGridColumnHeader">
+    </ControlTheme>
+    
+    <ControlTheme x:Key="{x:Type DataGridColumnHeader}" TargetType="DataGridColumnHeader">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FontWeight" Value="DemiBold" />
-
-
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="SeparatorBrush" Value="{DynamicResource ThemeControlLowColor}" />
         <Setter Property="Padding" Value="12" />
@@ -98,35 +95,35 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
+        
+        <Style Selector="^:dragIndicator">
+            <Setter Property="Opacity" Value="0.5" />
+        </Style>
 
-    <Style Selector="DataGridColumnHeader:dragIndicator">
-        <Setter Property="Opacity" Value="0.5" />
-    </Style>
+        <Style Selector="^ /template/ Path#SortIcon">
+            <Setter Property="IsVisible" Value="False" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-    <Style Selector="DataGridColumnHeader /template/ Path#SortIcon">
-        <Setter Property="IsVisible" Value="False" />
-        <Setter Property="RenderTransform">
-            <Setter.Value>
-                <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
-            </Setter.Value>
-        </Setter>
-    </Style>
+        <Style Selector="^:sortascending /template/ Path#SortIcon">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
 
-    <Style Selector="DataGridColumnHeader:sortascending /template/ Path#SortIcon">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
+        <Style Selector="^:sortdescending /template/ Path#SortIcon">
+            <Setter Property="IsVisible" Value="True" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="0.9" ScaleY="-0.9" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ControlTheme>
 
-    <Style Selector="DataGridColumnHeader:sortdescending /template/ Path#SortIcon">
-        <Setter Property="IsVisible" Value="True" />
-        <Setter Property="RenderTransform">
-            <Setter.Value>
-                <ScaleTransform ScaleX="0.9" ScaleY="-0.9" />
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style Selector="DataGridRow">
+    <ControlTheme x:Key="{x:Type DataGridRow}" TargetType="DataGridRow">
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="30" />
         <Setter Property="Template">
@@ -168,34 +165,34 @@
                 </DataGridFrozenGrid>
             </ControlTemplate>
         </Setter>
-    </Style>
+        
+        <Style Selector="^:nth-child(even) /template/ Border#BackgroundRectangle">
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-    <Style Selector="DataGridRow:nth-child(even) /template/ Border#BackgroundRectangle">
-        <Setter Property="Opacity" Value="1" />
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+        <Style Selector="^ /template/ Border#BackgroundRectangle">
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#BackgroundRectangle">
 
-    <Style Selector="DataGridRow /template/ Border#BackgroundRectangle">
-        <Setter Property="Opacity" Value="1" />
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-    <Style Selector="DataGridRow:pointerover /template/ Border#BackgroundRectangle">
+            <Setter Property="Opacity" Value="0.1" />
+            <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
 
-        <Setter Property="Opacity" Value="0.1" />
-        <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
-    </Style>
+        <Style Selector="^:selected /template/ Border#BackgroundRectangle">
 
-    <Style Selector="DataGridRow:selected /template/ Border#BackgroundRectangle">
+            <Setter Property="Opacity" Value="0.15" />
+            <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
 
-        <Setter Property="Opacity" Value="0.15" />
-        <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
-    </Style>
+        <Style Selector="^:selected">
+            <Setter Property="Foreground" Value="{DynamicResource SukiBackground}" />
+        </Style>
+    </ControlTheme>
 
-    <Style Selector="DataGridRow:selected">
-        <Setter Property="Foreground" Value="{DynamicResource SukiBackground}" />
-    </Style>
-
-    <Style Selector="DataGridRowHeader">
+    <ControlTheme x:Key="{x:Type DataGridRowHeader}" TargetType="DataGridRowHeader">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -232,9 +229,9 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="DataGridRowGroupHeader">
+    <ControlTheme x:Key="{x:Type DataGridRowGroupHeader}" TargetType="DataGridRowGroupHeader">
         <Setter Property="Background" Value="{DynamicResource ThemeControlMidHighBrush}" />
         <Setter Property="Height" Value="20" />
         <Setter Property="Template">
@@ -280,38 +277,36 @@
                 </DataGridFrozenGrid>
             </ControlTemplate>
         </Setter>
-    </Style>
-
-    <Style Selector="DataGridRowGroupHeader /template/ ToggleButton#ExpanderButton">
-        <Setter Property="Template">
-            <ControlTemplate>
-                <Border
-                    Background="Transparent"
-                    Grid.Column="0"
-                    Height="20"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Width="20">
-                    <Path
-                        Data="M 0 2 L 4 6 L 0 10 Z"
-                        Fill="Transparent"
+        <Style Selector="^ /template/ ToggleButton#ExpanderButton">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border
+                        Background="Transparent"
+                        Grid.Column="0"
+                        Height="20"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center" />
-                </Border>
-            </ControlTemplate>
-        </Setter>
-    </Style>
+                        VerticalAlignment="Center"
+                        Width="20">
+                        <Path
+                            Data="M 0 2 L 4 6 L 0 10 Z"
+                            Fill="Transparent"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
 
-    <Style Selector="DataGridRowGroupHeader /template/ ToggleButton#ExpanderButton:checked /template/ Path">
-        <Setter Property="RenderTransform">
-            <RotateTransform Angle="90" />
-        </Setter>
-    </Style>
+        <Style Selector="^ /template/ ToggleButton#ExpanderButton:checked /template/ Path">
+            <Setter Property="RenderTransform">
+                <RotateTransform Angle="90" />
+            </Setter>
+        </Style>
+    </ControlTheme>
 
-    <Style Selector="DataGrid">
+    <ControlTheme x:Key="{x:Type DataGrid}" TargetType="DataGrid">
 
         <Setter Property="RowBackground" Value="Transparent" />
-
         <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
         <Setter Property="HeadersVisibility" Value="Column" />
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
@@ -373,5 +368,5 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
-</Styles>
+    </ControlTheme>
+</ResourceDictionary>
