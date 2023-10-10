@@ -14,9 +14,7 @@
             <Button Classes="Primary">
                 <TextBlock>Primary</TextBlock>
             </Button>
-
-
-
+            
             <Button Classes="Accent">
                 <TextBlock>Accent</TextBlock>
             </Button>
@@ -69,13 +67,13 @@
             </Transitions>
         </Setter>
         
-        <Style Selector="^ > TextBlock">
-            <Setter Property="Transitions">
-                <Transitions>
-                    <BrushTransition Duration="0:0:0.3" Property="Foreground" />
-                </Transitions>
-            </Setter>
-        </Style>
+        <!-- <Style Selector="^ > TextBlock"> -->
+        <!--     <Setter Property="Transitions"> -->
+        <!--         <Transitions> -->
+        <!--             <BrushTransition Duration="0:0:0.3" Property="Foreground" /> -->
+        <!--         </Transitions> -->
+        <!--     </Setter> -->
+        <!-- </Style> -->
         
         <Style Selector="^ /template/ ContentPresenter">
             <Setter Property="Transitions">
@@ -85,17 +83,17 @@
             </Setter>
         </Style>
 
-        <Style Selector="^:pointerover > TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-        </Style>
+        <!-- <Style Selector="^:pointerover > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!-- </Style> -->
         
         <Style Selector="^:pointerover /template/ ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
         </Style>
 
-        <Style Selector="^:pressed > TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-        </Style>
+        <!-- <Style Selector="^:pressed > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!-- </Style> -->
         
         <Style Selector="^:pressed /template/ ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
@@ -127,16 +125,16 @@
             <Setter Property="Background" Value="Transparent" />
         </Style>
         
-        <Style Selector="^.Accent > TextBlock">
-            <Setter Property="Foreground">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
-                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
-                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <!-- <Style Selector="^.Accent > TextBlock"> -->
+        <!--     <Setter Property="Foreground"> -->
+        <!--         <Setter.Value> -->
+        <!--             <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%"> -->
+        <!--                 <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" /> -->
+        <!--                 <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" /> -->
+        <!--             </LinearGradientBrush> -->
+        <!--         </Setter.Value> -->
+        <!--     </Setter> -->
+        <!-- </Style> -->
         
         <Style Selector="^.Accent /template/ ContentPresenter">
             <Setter Property="Foreground">
@@ -166,9 +164,9 @@
             <Setter Property="Background" Value="Transparent" />
         </Style>
 
-        <Style Selector="^ > TextBlock">
-            <Setter Property="FontWeight" Value="DemiBold" />
-        </Style>
+        <!-- <Style Selector="^ > TextBlock"> -->
+        <!--     <Setter Property="FontWeight" Value="DemiBold" /> -->
+        <!-- </Style> -->
         
         <Style Selector="^ /template/ ContentPresenter">
             <Setter Property="FontWeight" Value="DemiBold" />
@@ -204,9 +202,9 @@
             </Setter>
         </Style>
 
-        <Style Selector="^.Primary > TextBlock">
-            <Setter Property="Foreground" Value="White" />
-        </Style>
+        <!-- <Style Selector="^.Primary > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="White" /> -->
+        <!-- </Style> -->
         
         <Style Selector="^.Primary /template/ ContentPresenter">
             <Setter Property="Foreground" Value="White" />
@@ -234,15 +232,15 @@
             </Setter>
         </Style>
 
-        <Style Selector="^.Outlined > TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-            <Setter Property="Transitions">
-                <Transitions>
-                    <BrushTransition Duration="0:0:0.3" Property="Foreground" />
-
-                </Transitions>
-            </Setter>
-        </Style>
+        <!-- <Style Selector="^.Outlined > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!--     <Setter Property="Transitions"> -->
+        <!--         <Transitions> -->
+        <!--             <BrushTransition Duration="0:0:0.3" Property="Foreground" /> -->
+        <!-- -->
+        <!--         </Transitions> -->
+        <!--     </Setter> -->
+        <!-- </Style> -->
         
         <Style Selector="^.Outlined /template/ ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
@@ -254,9 +252,9 @@
             </Setter>
         </Style>
 
-        <Style Selector="^.Outlined:pointerover > TextBlock">
-            <Setter Property="Foreground" Value="White" />
-        </Style>
+        <!-- <Style Selector="^.Outlined:pointerover > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="White" /> -->
+        <!-- </Style> -->
 
         <Style Selector="^.Outlined:pointerover /template/ ContentPresenter">
             <Setter Property="Foreground" Value="White" />
@@ -293,9 +291,9 @@
             <Setter Property="Background" Value="#cdf2ca" />
             <Setter Property="BorderBrush" Value="#b2e1ae" />
         </Style>
-        <Style Selector="^.Success > TextBlock">
-            <Setter Property="Foreground" Value="#13831c" />
-        </Style>
+        <!-- <Style Selector="^.Success > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="#13831c" /> -->
+        <!-- </Style> -->
         <Style Selector="^.Success /template/ ContentPresenter">
             <Setter Property="Foreground" Value="#13831c" />
         </Style>
@@ -310,9 +308,9 @@
             <Setter Property="Background" Value="#f2caca" />
             <Setter Property="BorderBrush" Value="#e4b5b5" />
         </Style>
-        <Style Selector="^.Danger > TextBlock">
-            <Setter Property="Foreground" Value="#831313" />
-        </Style>
+        <!-- <Style Selector="^.Danger > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="#831313" /> -->
+        <!-- </Style> -->
         <Style Selector="^.Danger /template/ ContentPresenter">
             <Setter Property="Foreground" Value="#831313" />
         </Style>

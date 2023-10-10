@@ -6,13 +6,13 @@
         <suki:SideMenu />
     </Design.PreviewWith>
     
-    <ControlTheme x:Key="{x:Type suki:SideMenu}" TargetType="suki:SideMenu">
+    <ControlTheme x:Key="SukiSideMenu" TargetType="suki:SideMenu">
         <!-- Set Defaults -->
-        <Style Selector="^ /template/ material|MaterialIcon">
-            <Setter Property="Foreground" Value="#444444" />
-        </Style>
+        <!-- <Style Selector="^ /template/ material|MaterialIcon"> -->
+        <!--     <Setter Property="Foreground" Value="#444444" /> -->
+        <!-- </Style> -->
         <Setter Property="Template">
-            <ControlTemplate>
+            <ControlTemplate TargetType="suki:SideMenu">
                 <SplitView
                     DisplayMode="CompactInline"
                     IsPaneOpen="{TemplateBinding IsMenuVisible}"
@@ -118,4 +118,7 @@
             </ControlTemplate>
         </Setter>
     </ControlTheme>
+    
+    <ControlTheme x:Key="{x:Type suki:SideMenu}" TargetType="suki:SideMenu"
+                  BasedOn="{StaticResource SukiSideMenu}" />
 </ResourceDictionary>

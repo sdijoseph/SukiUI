@@ -10,20 +10,20 @@
     </Design.PreviewWith>
     
     <ControlTheme x:Key="{x:Type Border}" TargetType="Border">
-        <Style Selector="Border.Card">
+        <Style Selector="^.Card">
             <Setter Property="Padding" Value="20" />
             <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Suki^Brush}" />
             <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
             <Setter Property="Margin" Value="7" />
         </Style>
     
-        <Style Selector="Border.GradientCard">
+        <Style Selector="^.GradientCard">
             <Setter Property="Padding" Value="20" />
             <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Suki^Brush}" />
             <Setter Property="Background" >
                 <RadialGradientBrush Center="120%,-220%" GradientOrigin="120%,-220%" Radius="3"> 
                     <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.4" />
@@ -33,17 +33,17 @@
             <Setter Property="Margin" Value="7" />
         </Style>
 
-        <Style Selector="Border.ElevatedCard">
+        <Style Selector="^.ElevatedCard">
             <Setter Property="Padding" Value="20" />
             <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Suki^Brush}" />
             <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
             <Setter Property="Margin" Value="7" />
             <Setter Property="BoxShadow" Value="{DynamicResource SukiPopupShadow}" />
         </Style>
     
-        <Style Selector="Border.Hoverable:pointerover">
+        <Style Selector="^.Hoverable:pointerover">
             <Setter Property="BoxShadow" Value="0 0 7 0 LightGray" />
         </Style>
     </ControlTheme>

@@ -1,18 +1,64 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:SukiUI.Theme"
-        x:Class="SukiUI.Theme.SukiTheme">
+        x:Class="SukiUI.Theme.SukiTheme"
+        x:CompileBindings="True">
     <Design.PreviewWith>
         <controls:SukiTheme />
     </Design.PreviewWith>
     
     <Styles.Resources>
-        <StyleInclude x:Key="LightTheme" Source="avares://SukiUI/ColorTheme/Light.axaml" />
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://SukiUI/Theme/Index.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/Index.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SukiPrimaryColor">#2f54eb</Color>
+                    <Color x:Key="SukiPrimaryColorGradient">#597ef7</Color>
+                    <Color x:Key="SukiBackground">#fafafa</Color>
+                    <Color x:Key="SukiLightBackground">#f9f9f9</Color>
+                    <Color x:Key="SukiLightColoredBackground">#E7EFFF</Color>
+                    <Color x:Key="SukiStrongBackground">#eaeaea</Color>
+                    <Color x:Key="SukiText">#222222</Color>
+                    <Color x:Key="SukiLowText">#555555</Color>
+                    <Color x:Key="SukiBorderBrush">#ebebeb</Color>
+                    <Color x:Key="SukiControlBorderBrush">#dedede</Color>
+                    <Color x:Key="SukiControlTouchBackground">#FFFFFF</Color>
+                    <Color x:Key="SukiMediumBorderBrush">#e2e2e2</Color>
+                    <Color x:Key="SukiIntBorderBrush">#EEEEF9</Color>
+                    <Color x:Key="SukiLightBorderBrush">#f4f4f4</Color>
+                    <Color x:Key="SukiDialogBackground">Gray</Color>
+                    <BoxShadows x:Key="SukiLowShadow">0 0 3 0 #eaeaea</BoxShadows>
+                    <BoxShadows x:Key="SukiSwitchShadow">0 1 3 0 #c1c1c1</BoxShadows>
+                    <BoxShadows x:Key="SukiPopupShadow">1 1 5 0 LightGray</BoxShadows>
+                    <BoxShadows x:Key="SukiBigPopupShadow">1 1 15 0 #dedede</BoxShadows>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SukiPrimaryColorGradient">#2f54eb</Color>
+                    <Color x:Key="SukiPrimaryColor">#597ef7</Color>
+                    <Color x:Key="SukiBackground">#252525</Color>
+                    <Color x:Key="SukiLightBackground">#303030</Color>
+                    <Color x:Key="SukiLightColoredBackground">#303030</Color>
+                    <Color x:Key="SukiStrongBackground">#353535</Color>
+                    <Color x:Key="SukiControlTouchBackground">#505050</Color>
+                    <Color x:Key="SukiText">#dbdbdb</Color>
+                    <Color x:Key="SukiLowText">#b5b5b5</Color>
+                    <Color x:Key="SukiBorderBrush">#353535</Color>
+                    <Color x:Key="SukiControlBorderBrush">#606060</Color>
+                    <Color x:Key="SukiMediumBorderBrush">#555555</Color>
+                    <Color x:Key="SukiIntBorderBrush">#55515171</Color>
+                    <Color x:Key="SukiLightBorderBrush">#454545</Color>
+                    <Color x:Key="SukiDialogBackground">#505050</Color>
+                    <BoxShadows x:Key="SukiLowShadow">0 0 3 0 #353535</BoxShadows>
+                    <BoxShadows x:Key="SukiSwitchShadow">0 1 5 0 #555555</BoxShadows>
+                    <BoxShadows x:Key="SukiPopupShadow">1 1 5 0 #404040</BoxShadows>
+                    <BoxShadows x:Key="SukiBigPopupShadow">1 1 15 0 #606060</BoxShadows>  
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
     
+    <StyleInclude Source="avares://SukiUI/Theme/SukiUIControls.axaml" />
+
 </Styles>
