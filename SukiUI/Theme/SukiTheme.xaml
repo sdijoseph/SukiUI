@@ -1,0 +1,18 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SukiUI.Theme"
+        x:Class="SukiUI.Theme.SukiTheme">
+    <Design.PreviewWith>
+        <controls:SukiTheme />
+    </Design.PreviewWith>
+    
+    <Styles.Resources>
+        <StyleInclude x:Key="LightTheme" Source="avares://SukiUI/ColorTheme/Light.axaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://SukiUI/Theme/Index.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+    
+</Styles>

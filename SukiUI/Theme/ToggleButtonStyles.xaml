@@ -1,4 +1,4 @@
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <StackPanel
             Background="{DynamicResource SukiBackground}"
@@ -10,15 +10,16 @@
         </StackPanel>
     </Design.PreviewWith>
 
-    <Style Selector="ToggleButton.Switch">
-        <Setter Property="Foreground">
-            <Setter.Value>
-                <LinearGradientBrush EndPoint="0%,100%" StartPoint="80%,-50%">
-                    <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
-                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
+    <ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton">
+        <Style Selector="^.Switch">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0%,100%" StartPoint="80%,-50%">
+                        <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         <Setter Property="RenderTransform">
             <ScaleTransform ScaleX="1.1" ScaleY="1.1"></ScaleTransform>
         </Setter>
@@ -130,9 +131,9 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
-    </Style>
+        </Style>
 
-    <Style Selector="ToggleButton.Switch:unchecked /template/ Border#SwitchKnob">
+        <Style Selector="^.Switch:unchecked /template/ Border#SwitchKnob">
         <Style.Animations>
             <Animation Duration="0:0:0.35" FillMode="Both" >
                 <Animation.Easing>
@@ -162,10 +163,10 @@
             </Animation>
         </Style.Animations>
 
-    </Style>
+        </Style>
 
-    <Style Selector="ToggleButton.Switch:checked /template/ Border#SwitchKnob">
-        
+        <Style Selector="^.Switch:checked /template/ Border#SwitchKnob">
+
         <Setter Property="BoxShadow" Value="0 0 0 0 White" />
         <Style.Animations>
             <Animation Duration="0:0:0.35" FillMode="Both">
@@ -191,46 +192,9 @@
             </Animation>
         </Style.Animations>
 
-    </Style>
+        </Style>
 
-
-    <!--  <Style Selector="ToggleButton.Switch:pressed[IsChecked=False] /template/ Border#SwitchKnob">
-        <Style.Animations>
-            <Animation Duration="0:0:0.2">
-                <KeyFrame Cue="0%">
-                    <Setter Property="Width" Value="16" />
-                </KeyFrame>
-
-                <KeyFrame Cue="100%">
-                    <Setter Property="Width" Value="20" />
-                </KeyFrame>
-
-            </Animation>
-        </Style.Animations>
-
-    </Style>
-
-    <Style Selector="ToggleButton.Switch:pressed[IsChecked=True] /template/ Border#SwitchKnob">
-        <Style.Animations>
-            <Animation Duration="0:0:0.2">
-                <KeyFrame Cue="0%">
-                    <Setter Property="Width" Value="16" />
-                    <Setter Property="Canvas.Left" Value="22" />
-                </KeyFrame>
-
-                <KeyFrame Cue="100%">
-                    <Setter Property="Width" Value="20" />
-                    <Setter Property="Canvas.Left" Value="18" />
-                </KeyFrame>
-
-            </Animation>
-        </Style.Animations>
-        <Setter Property="Width" Value="20" />
-
-    </Style>-->
-
-
-    <Style Selector="ToggleButton.Switch:checked /template/ Border#SwitchBackground">
+        <Style Selector="^.Switch:checked /template/ Border#SwitchBackground">
         <Setter Property="Background">
 
             <Setter.Value>
@@ -241,39 +205,88 @@
                 </RadialGradientBrush>
             </Setter.Value>
         </Setter>
-    </Style>
+        </Style>
 
-
-    <Style Selector="ToggleButton /template/ ContentPresenter">
+        <Style Selector="^ /template/ ContentPresenter">
         <Setter Property="CornerRadius" Value="5" />
-    </Style>
-    <Style Selector="ToggleButton:pointerover">
+        </Style>
+        <Style Selector="^:pointerover">
         <Setter Property="Background" Value="{DynamicResource SukiLightBackground}" />
         <Setter Property="BorderThickness" Value="0" />
-    </Style>
-    <Style Selector="ToggleButton:pressed /template/ ContentPresenter">
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
-    </Style>
-    <Style Selector="ToggleButton:checked /template/ ContentPresenter">
+        </Style>
+        <Style Selector="^:checked /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
-    </Style>
+        </Style>
 
-    <Style Selector="ToggleButton.Primary">
+        <Style Selector="^.Primary">
         <Setter Property="Background" Value="{DynamicResource ThemeBorderHighBrush}" />
-    </Style>
-    <Style Selector="ToggleButton.Primary &gt; TextBlock">
+        </Style>
+        <Style Selector="^.Primary &gt; TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
-    </Style>
-    <Style Selector="ToggleButton.Primary /template/ ContentPresenter">
+        </Style>
+        <Style Selector="^.Primary /template/ ContentPresenter">
         <Setter Property="CornerRadius" Value="5" />
-    </Style>
-    <Style Selector="ToggleButton.Primary:pointerover">
+        </Style>
+        <Style Selector="^.Primary:pointerover">
         <Setter Property="Background" Value="{DynamicResource ThemeBorderHighBrush}" />
-    </Style>
-    <Style Selector="ToggleButton.Primary:pressed /template/ ContentPresenter">
+        </Style>
+        <Style Selector="^.Primary:pressed /template/ ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
-    </Style>
-    <Style Selector="ToggleButton.Primary:checked /template/ ContentPresenter">
+        </Style>
+        <Style Selector="^.Primary:checked /template/ ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
-    </Style>
-</Styles>
+        </Style>
+        
+        <Style Selector="^.Accent">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Padding" Value="11,8" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Margin" Value="5 5" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        
+        <Style Selector="^.Accent > TextBlock">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style Selector="^.Accent /template/ ContentPresenter">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
+        </Style>
+
+        <Style Selector="^.Accent:pointerover">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^.Accent:pointerover /template/ ContentPresenter">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.03" ScaleY="1.03" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style Selector="^.Accent:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+    </ControlTheme>
+   
+</ResourceDictionary>

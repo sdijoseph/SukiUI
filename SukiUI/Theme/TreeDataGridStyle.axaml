@@ -1,4 +1,4 @@
-﻿<Styles
+﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:conv="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls.TreeDataGrid">
@@ -8,7 +8,8 @@
             <TreeDataGridColumnHeader Header="123" />
         </StackPanel>
     </Design.PreviewWith>
-    <Style Selector="TreeDataGrid">
+    
+    <ControlTheme x:Key="{x:Type TreeDataGrid}" TargetType="TreeDataGrid">
         <Setter Property="Template">
             <ControlTemplate TargetType="TreeDataGrid">
                 <Border
@@ -46,9 +47,35 @@
             <Setter Property="BorderThickness" Value="0 0 0 1" />
             <Setter Property="BorderBrush" Value="{DynamicResource TreeDataGridGridLinesBrush}" />
         </Style>
-    </Style>
+        <Style Selector="ToggleButton">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Height" Value="8" />
+            <Setter Property="Foreground" Value="{DynamicResource TreeDataGridColumnHeaderForeground}" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="Transparent">
+                        <PathIcon
+                            x:Name="ChevronPath"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="{DynamicResource TreeDataGridItemCollapsedChevronPathData}"
+                            Foreground="{TemplateBinding Foreground}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Style Selector="^:checked /template/ PathIcon#ChevronPath">
+                <Setter Property="PathIcon.RenderTransform" Value="rotate(90deg)" />
+            </Style>
+        </Style>
+    </ControlTheme>
 
-    <Style Selector="TreeDataGridColumnHeader">
+    <ControlTheme x:Key="{x:Type TreeDataGridColumnHeader}" TargetType="TreeDataGridColumnHeader">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="MinHeight" Value="32" />
         <Setter Property="Padding" Value="8 2 0 2" />
@@ -137,9 +164,9 @@
             <Setter Property="Data" Value="{DynamicResource TreeDataGridSortIconDescendingPath}" />
         </Style>
 
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="TreeDataGridRow">
+    <ControlTheme x:Key="{x:Type TreeDataGridRow}" TargetType="TreeDataGridRow">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="MinHeight" Value="32" />
@@ -167,9 +194,9 @@
         <Style Selector="^:selected /template/ Border#RowBorder">
             <Setter Property="Background" Value="{DynamicResource TreeDataGridCellSelectedBackground}" />
         </Style>
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="TreeDataGridCheckBoxCell">
+    <ControlTheme x:Key="{x:Type TreeDataGridCheckBoxCell}" TargetType="TreeDataGridCheckBoxCell">
         <Setter Property="Padding" Value="4 2" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -191,36 +218,9 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="ToggleButton">
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="Width" Value="8" />
-        <Setter Property="Height" Value="8" />
-        <Setter Property="Foreground" Value="{DynamicResource TreeDataGridColumnHeaderForeground}" />
-        <Setter Property="Template">
-            <ControlTemplate>
-                <Border
-                    Width="{TemplateBinding Width}"
-                    Height="{TemplateBinding Height}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Background="Transparent">
-                    <PathIcon
-                        x:Name="ChevronPath"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Data="{DynamicResource TreeDataGridItemCollapsedChevronPathData}"
-                        Foreground="{TemplateBinding Foreground}" />
-                </Border>
-            </ControlTemplate>
-        </Setter>
-        <Style Selector="^:checked /template/ PathIcon#ChevronPath">
-            <Setter Property="PathIcon.RenderTransform" Value="rotate(90deg)" />
-        </Style>
-    </Style>
-
-    <Style Selector="TreeDataGridExpanderCell">
+    <ControlTheme x:Key="{x:Type TreeDataGridExpanderCell}" TargetType="TreeDataGridExpanderCell">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
@@ -249,9 +249,9 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="TreeDataGridTextCell">
+    <ControlTheme x:Key="{x:Type TreeDataGridTextCell}" TargetType="TreeDataGridTextCell">
         <Setter Property="Padding" Value="8 4" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -305,9 +305,9 @@
             <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
         </Style>
 
-    </Style>
+    </ControlTheme>
 
-    <Style Selector="TreeDataGridTemplateCell">
+    <ControlTheme x:Key="{x:Type TreeDataGridTemplateCell}" TargetType="TreeDataGridTemplateCell">
         <Setter Property="Template">
             <ControlTemplate>
                 <ContentPresenter
@@ -338,5 +338,5 @@
                 </ControlTemplate>
             </Setter>
         </Style>
-    </Style>
-</Styles>
+    </ControlTheme>
+</ResourceDictionary>

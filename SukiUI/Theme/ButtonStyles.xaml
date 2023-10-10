@@ -34,7 +34,7 @@
             </Button>
         </WrapPanel>
     </Design.PreviewWith>
-
+    
     <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
         <Setter Property="Height" Value="43" />
         <Setter Property="BorderThickness" Value="1.2" />
@@ -118,7 +118,7 @@
             <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
         </Style>
 
-        <Style Selector=":is(^).Accent">
+        <Style Selector="^.Accent">
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="Padding" Value="11,8" />
@@ -126,12 +126,11 @@
             <Setter Property="Margin" Value="5 5" />
             <Setter Property="Background" Value="Transparent" />
         </Style>
-
-        <Style Selector=":is(^).Accent > TextBlock">
+        
+        <Style Selector="^.Accent > TextBlock">
             <Setter Property="Foreground">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
-
                         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
                         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
                     </LinearGradientBrush>
@@ -139,25 +138,23 @@
             </Setter>
         </Style>
         
-        <Style Selector=":is(^).Accent /template/ ContentPresenter">
+        <Style Selector="^.Accent /template/ ContentPresenter">
             <Setter Property="Foreground">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
-
                         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
                         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+            <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
         </Style>
 
-        <Style Selector=":is(^).Accent:pointerover">
+        <Style Selector="^.Accent:pointerover">
             <Setter Property="Background" Value="Transparent" />
-
         </Style>
 
-        <Style Selector=":is(^).Accent:pointerover /template/ ContentPresenter">
-
+        <Style Selector="^.Accent:pointerover /template/ ContentPresenter">
             <Setter Property="RenderTransform">
                 <Setter.Value>
                     <ScaleTransform ScaleX="1.03" ScaleY="1.03" />
@@ -165,16 +162,9 @@
             </Setter>
         </Style>
 
-
-        <Style Selector=":is(^).Accent:pressed /template/ ContentPresenter">
+        <Style Selector="^.Accent:pressed /template/ ContentPresenter">
             <Setter Property="Background" Value="Transparent" />
         </Style>
-
-        <!-- <Style Selector="^:pointerover /template/ ContentPresenter">
-
-            <Setter Property="Background" Value="#fafafa" />
-
-        </Style>-->
 
         <Style Selector="^ > TextBlock">
             <Setter Property="FontWeight" Value="DemiBold" />
@@ -336,10 +326,6 @@
         <Style Selector="^.Rounded">
             <Setter Property="CornerRadius" Value="100" />
             <Setter Property="Padding" Value="25,10,25,8" />
-        </Style>
-
-        <Style Selector=":is(^).Accent /template/ ContentPresenter">
-            <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
         </Style>
 
         <Style Selector="^.Primary /template/ ContentPresenter">
