@@ -6,10 +6,10 @@
         <suki:SideMenuItem />
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="{x:Type suki:SideMenuItem}" TargetType="suki:SideMenuItem">
+    <ControlTheme x:Key="SukiSideMenuItem" TargetType="suki:SideMenuItem">
         <!-- Set Defaults -->
         <Setter Property="Template">
-            <ControlTemplate>
+            <ControlTemplate TargetType="suki:SideMenuItem">
                 <RadioButton
                     x:Name="PART_RadioButton"
                     Classes="MenuItem"
@@ -59,4 +59,7 @@
             </ControlTemplate>
         </Setter>
     </ControlTheme>
+    
+    <ControlTheme x:Key="{x:Type suki:SideMenuItem}" TargetType="suki:SideMenuItem"
+                  BasedOn="{StaticResource SukiSideMenuItem}" />
 </ResourceDictionary>

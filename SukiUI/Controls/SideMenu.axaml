@@ -8,9 +8,9 @@
     
     <ControlTheme x:Key="SukiSideMenu" TargetType="suki:SideMenu">
         <!-- Set Defaults -->
-        <!-- <Style Selector="^ /template/ material|MaterialIcon"> -->
-        <!--     <Setter Property="Foreground" Value="#444444" /> -->
-        <!-- </Style> -->
+        <Style Selector="^ /template/ material|MaterialIcon">
+            <Setter Property="Foreground" Value="#444444" />
+        </Style>
         <Setter Property="Template">
             <ControlTemplate TargetType="suki:SideMenu">
                 <SplitView

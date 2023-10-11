@@ -36,9 +36,9 @@
             <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
         </Style>
 
-        <Style Selector="^:selected &gt; TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
-        </Style>
+        <!-- <Style Selector="^:selected > TextBlock"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" /> -->
+        <!-- </Style> -->
         <Style Selector="^ /template/ ToggleButton#expander">
             <Setter Property="Template">
                 <ControlTemplate>

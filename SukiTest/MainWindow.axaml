@@ -14,21 +14,23 @@
     xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System.ObjectModel"
     xmlns:circleProgressBarsTestMvvm="clr-namespace:SukiTest.CircleProgressBarsTestMVVM">
 
-    <suki:InteractiveContainer>
-        <suki:DesktopPage
-            LogoColor="#2f54eb"
-            LogoKind="Xaml"
-            MenuVisibility="False"
-            Name="myPage"
-            ShowBottomBorder="False"
-            Title="Suki UI Testing - New Project">
-            
-            <suki:SideMenu Name="SideMenu" MenuItemChanged="SideMenu_OnMenuItemChanged" CanHeaderContentOverlapToggleSidebarButton="True">
+    <!-- <suki:InteractiveContainer> -->
+    <!--     <suki:DesktopPage -->
+    <!--         LogoColor="#2f54eb" -->
+    <!--         LogoKind="Xaml" -->
+    <!--         MenuVisibility="False" -->
+    <!--         Name="myPage" -->
+    <!--         ShowBottomBorder="False" -->
+    <!--         Title="Suki UI Testing - New Project"> -->
+            <StackPanel>
+                <Button Classes="Primary">Button</Button>
+
+                <suki:SideMenu IsMenuVisible="True" Name="SideMenu" MenuItemChanged="SideMenu_OnMenuItemChanged" CanHeaderContentOverlapToggleSidebarButton="True">
                 <suki:SideMenu.HeaderContent>
                     <StackPanel Margin="0,4,0,0">
                         <Button
                             Classes="Accent"
-                            
+                        
                             HorizontalAlignment="Left"
                             Margin="0,0,0,0">
                             <material:MaterialIcon Foreground="{DynamicResource SukiText}" Kind="LightbulbOutline" />
@@ -841,7 +843,8 @@
                     </StackPanel>
                 </suki:SideMenu.CurrentPage>
             </suki:SideMenu>
+            </StackPanel>
 
-        </suki:DesktopPage>
-    </suki:InteractiveContainer>
+    <!--     </suki:DesktopPage> -->
+    <!-- </suki:InteractiveContainer> -->
 </Window>
