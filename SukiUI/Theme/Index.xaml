@@ -7,7 +7,6 @@
     <StyleInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/Colors.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/RichTextBoxStyles.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/BorderStyles.xaml" />
@@ -49,6 +48,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>
