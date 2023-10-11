@@ -8,22 +8,22 @@
     <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/Colors.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/BorderStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/TabControlStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ProgressBarStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ListBoxStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/TreeViewStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/Colors.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/TextBlockStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/TextBoxStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/BorderStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/TabControlStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ProgressBarStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ListBoxStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/TreeViewStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/MenuStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/SliderStyles.axaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/TreeDataGridStyle.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
@@ -36,7 +36,7 @@
         <MergeResourceInclude Source="avares://SukiUI/Theme/WindowStyles.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/CheckBox.axaml" />
         <MergeResourceInclude Source="avares://SukiUI/Theme/ScrollBarStyle.axaml" />
-        <MergeResourceInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" />
+        <MergeResourceInclude Source="avares://SukiUI/Theme/ExpanderStyles.axaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

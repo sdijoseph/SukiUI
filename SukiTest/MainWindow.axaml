@@ -23,7 +23,7 @@
     <!--         ShowBottomBorder="False" -->
     <!--         Title="Suki UI Testing - New Project"> -->
             <StackPanel>
-                <Button Classes="Primary">Button</Button>
+                <Button MaxWidth="200" Classes="Primary">Button</Button>
 
                 <suki:SideMenu IsMenuVisible="True" Name="SideMenu" MenuItemChanged="SideMenu_OnMenuItemChanged" CanHeaderContentOverlapToggleSidebarButton="True">
                 <suki:SideMenu.HeaderContent>
