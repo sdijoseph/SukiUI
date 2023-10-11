@@ -18,7 +18,6 @@
 
     <StyleInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
@@ -49,6 +48,8 @@
                 <ResourceInclude Source="avares://SukiUI/Controls/SideMenu.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
+
 
 
             </ResourceDictionary.MergedDictionaries>
