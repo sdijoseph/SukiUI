@@ -36,8 +36,6 @@
     <StyleInclude Source="avares://SukiUI/Theme/ScrollBarStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" />
     
-    <StyleInclude Source="avares://SukiUI/Controls/SideMenu.axaml" />
-    <StyleInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
     
     <avalonia:MaterialIconStyles />
     
@@ -48,6 +46,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
+                <ResourceInclude Source="avares://SukiUI/Controls/SideMenu.axaml" />
+                <ResourceInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
 
 
