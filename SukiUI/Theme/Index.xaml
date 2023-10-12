@@ -34,8 +34,6 @@
     <StyleInclude Source="avares://SukiUI/Theme/CheckBox.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ScrollBarStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" />
-    
-    
     <avalonia:MaterialIconStyles />
     
     <Styles.Resources>
