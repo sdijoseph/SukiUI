@@ -3,7 +3,6 @@
 
     <SimpleTheme />
 
-    <StyleInclude Source="avares://SukiUI/ColorTheme/Light.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/Colors.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
@@ -36,21 +35,4 @@
     <StyleInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" />
     <avalonia:MaterialIconStyles />
     
-    <Styles.Resources>
-        <ResourceDictionary>
-            <CornerRadius x:Key="SmallCornerRadius">6</CornerRadius>
-            <CornerRadius x:Key="MediumCornerRadius">13</CornerRadius>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
-                <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
-                <ResourceInclude Source="avares://SukiUI/Controls/SideMenu.axaml" />
-                <ResourceInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
-                <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
-                <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
-
-
-
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Styles.Resources>
 </Styles>
