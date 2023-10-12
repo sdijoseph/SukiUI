@@ -315,9 +315,7 @@
             </Style>
 
             <Style Selector="^.Accent /template/ ContentPresenter">
-
                 <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
-
             </Style>
 
             <Style Selector="^.Primary /template/ ContentPresenter">

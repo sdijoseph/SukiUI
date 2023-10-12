@@ -276,4 +276,44 @@
     <Style Selector="ToggleButton.Primary:checked /template/ ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
     </Style>
+    
+    <Style Selector="ToggleButton.Accent">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Padding" Value="11,8" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Margin" Value="5 5" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    
+    <Style Selector="ToggleButton.Accent /template/ ContentPresenter">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
+                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style Selector="ToggleButton.Accent:pointerover">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="ToggleButton.Accent:pointerover /template/ ContentPresenter">
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1.03" ScaleY="1.03" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style Selector="ToggleButton.Accent /template/ ContentPresenter">
+        <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
+    </Style>
+    
+    <Style Selector="ToggleButton.Accent:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
 </Styles>
