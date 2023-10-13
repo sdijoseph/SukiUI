@@ -24,6 +24,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/BorderStyles.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>
