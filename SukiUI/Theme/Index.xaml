@@ -3,7 +3,6 @@
 
     <SimpleTheme />
 
-    <StyleInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/Colors.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />

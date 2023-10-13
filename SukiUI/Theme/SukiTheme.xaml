@@ -18,6 +18,7 @@
                 <ResourceInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceInclude x:Key="Light" Source="avares://SukiUI/Theme/Variants/Light.axaml" />
