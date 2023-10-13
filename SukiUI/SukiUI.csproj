@@ -61,7 +61,6 @@
       <AvaloniaResource Include="LICENSE" />
       <AvaloniaResource Include="Roboto-Regular.ttf" />
       <AvaloniaResource Include="Theme\CheckBox.axaml" />
-      <AvaloniaResource Include="Theme\RichTextBoxStyles.axaml" />
       <AvaloniaResource Include="Theme\WindowStyles.axaml" />
     </ItemGroup>
 
