@@ -40,7 +40,8 @@
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
     </LinearGradientBrush>
 
-    <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+    <!-- Based on SimpleTheme -->
+    <ControlTheme x:Key="{x:Type Button}" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Height" Value="43" />
         <Setter Property="BorderThickness" Value="1.2" />
         <Setter Property="BorderBrush" Value="{DynamicResource SukiMediumBorderBrush}" />
