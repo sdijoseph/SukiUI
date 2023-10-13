@@ -17,6 +17,7 @@
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Controls/SideMenu.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Controls/SideMenuItem.axaml" />
+                <ResourceInclude Source="avares://SukiUI/Theme/MaterialIconStyles.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/Colors.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />

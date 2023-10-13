@@ -119,7 +119,8 @@
             x:Name="TextBoxContextMenuPasteItem" />
     </ContextMenu>
 
-    <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
+    <!-- Based on SimpleTheme TextBox -->
+    <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Regular.ttf#Roboto" />
         <Setter Property="FontSize" Value="15" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -242,7 +243,7 @@
         <Style Selector="^:pointerover /template/ Border#border">
             <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
         </Style>
-        <Style Selector="^.Flat^ /template/ Border#border">
+        <Style Selector="^.FlatTextBox /template/ Border#border">
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="BoxShadow" Value="0 0 0 0 White" />
         </Style>
@@ -298,7 +299,7 @@
                 </Template>
             </Setter>
         </Style>
-        <Style Selector="^.Flat^">
+        <Style Selector="^.FlatTextBox">
             <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
             <Setter Property="BorderBrush" Value="{DynamicResource SukiLightBorderBrush}" />
         </Style>
