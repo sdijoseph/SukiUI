@@ -176,16 +176,16 @@
                                             Height="80"
                                             Margin="15"
                                             Width="300">
-                                            <Panel>
+                                            <StackPanel Spacing="16">
                                                 <ComboBox>
                                                     <ComboBoxItem Content="Item 1" />
                                                     <ComboBoxItem Content="Item 2" />
                                                     <ComboBoxItem Content="Item 3" />
                                                     <ComboBoxItem Content="Item 4" />
                                                     <ComboBoxItem Content="Item 5" />
-
                                                 </ComboBox>
-                                            </Panel>
+                                                <CheckBox>Check</CheckBox>
+                                            </StackPanel>
                                         </Border>
             
                                         <Border

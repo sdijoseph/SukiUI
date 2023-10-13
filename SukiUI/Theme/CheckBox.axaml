@@ -1,4 +1,4 @@
-﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Background="White" Padding="20">
             <StackPanel>
@@ -8,8 +8,12 @@
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="CheckBox">
-
+    <LinearGradientBrush x:Key="CheckBoxCheckedLinearGradientBrush" EndPoint="0%,100%" StartPoint="80%,-50%">
+        <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
+        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
+    </LinearGradientBrush>
+    
+    <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}" >
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
         <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}" />
@@ -63,42 +67,33 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
-    </Style>
-    <Style Selector="CheckBox:pointerover /template/ Border#border">
-        <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+        <Style Selector="^:pointerover /template/ Border#border">
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+        </Style>
 
-    </Style>
+        <Style Selector="^ /template/ Border#border">
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
+        </Style>
 
-    <Style Selector="CheckBox /template/ Border#border">
-        <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
+        <Style Selector="^:checked /template/ Border#border">
+            <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedLinearGradientBrush}"/>
+        </Style>
 
-    </Style>
+        <Style Selector="^ /template/ Path#checkMark">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^ /template/ Rectangle#indeterminateMark">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^:checked /template/ Path#checkMark">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:indeterminate /template/ Rectangle#indeterminateMark">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:disabled /template/ Border#border">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+    </ControlTheme>
 
-    <Style Selector="CheckBox:checked /template/ Border#border">
-        <Setter Property="Background">
-            <Setter.Value>
-                <LinearGradientBrush EndPoint="0%,100%" StartPoint="80%,-50%">
-                    <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
-                    <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
-
-    </Style>
-
-    <Style Selector="CheckBox /template/ Path#checkMark">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
-    <Style Selector="CheckBox /template/ Rectangle#indeterminateMark">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
-    <Style Selector="CheckBox:checked /template/ Path#checkMark">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
-    <Style Selector="CheckBox:indeterminate /template/ Rectangle#indeterminateMark">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
-    <Style Selector="CheckBox:disabled /template/ Border#border">
-        <Setter Property="Opacity" Value="1" />
-    </Style>
-</Styles>
+</ResourceDictionary>
