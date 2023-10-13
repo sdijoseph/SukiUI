@@ -11,6 +11,7 @@
         <ResourceDictionary>
             <CornerRadius x:Key="SmallCornerRadius">6</CornerRadius>
             <CornerRadius x:Key="MediumCornerRadius">13</CornerRadius>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
@@ -20,6 +21,9 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ButtonStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/TextBlockStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceInclude x:Key="Light" Source="avares://SukiUI/Theme/Variants/Light.axaml" />

@@ -1,7 +1,5 @@
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
-    xmlns:material="using:Material.Icons.Avalonia"
-    xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Design.PreviewWith>
@@ -34,6 +32,8 @@
             </Button>
         </WrapPanel>
     </Design.PreviewWith>
+    
+    <StreamGeometry x:Key="TextBoxClearButtonData">M 11.416016,10 20,1.4160156 18.583984,0 10,8.5839846 1.4160156,0 0,1.4160156 8.5839844,10 0,18.583985 1.4160156,20 10,11.416015 18.583984,20 20,18.583985 Z</StreamGeometry>
     
     <LinearGradientBrush x:Key="PrimaryGradientBrush" EndPoint="50%,100%" StartPoint="48%,0%">
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
@@ -159,15 +159,7 @@
             <Style Selector="^.Accent:pressed /template/ ContentPresenter">
                 <Setter Property="Background" Value="Transparent" />
             </Style>
-
-            <!-- <Style Selector="^:pointerover /template/ ContentPresenter">
-
-                <Setter Property="Background" Value="#fafafa" />
-
-            </Style>-->
-
-
-            
+        
             <Style Selector="^ /template/ ContentPresenter">
                 <Setter Property="FontWeight" Value="DemiBold" />
             </Style>
@@ -180,9 +172,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-
-            <!--    -->
-
+        
             <Style Selector="^.Primary">
                 <Setter Property="Padding" Value="18,10,18,8" />
                 <Setter Property="BorderThickness" Value="0" />
@@ -208,15 +198,7 @@
             <Style Selector="^.Primary:pressed /template/ ContentPresenter">
                 <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
             </Style>
-
-
-            <!--    -->
-
-
-
-
-            <!--    -->
-
+        
             <Style Selector="^.Outlined">
                 <Setter Property="BorderThickness" Value="1" />
                 <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
@@ -229,9 +211,7 @@
                     </Transitions>
                 </Setter>
             </Style>
-
-
-            
+        
             <Style Selector="^.Outlined /template/ ContentPresenter">
                 <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
                 <Setter Property="Transitions">
@@ -241,9 +221,7 @@
                     </Transitions>
                 </Setter>
             </Style>
-
-
-
+        
             <Style Selector="^.Outlined:pointerover /template/ ContentPresenter">
                 <Setter Property="Foreground" Value="White" />
             </Style>
@@ -274,11 +252,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-
-
-            <!--    -->
-
-
+        
             <Style Selector="^.Success">
                 <Setter Property="Background" Value="#cdf2ca" />
                 <Setter Property="BorderBrush" Value="#b2e1ae" />
@@ -353,6 +327,30 @@
                     </ControlTemplate>
                 </Setter>
             </Style>
+        <Style Selector="^.textBoxClearButton">
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Background="Transparent"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            x:Name="PART_ButtonLayoutBorder">
+                            <Path
+                                Data="{StaticResource TextBoxClearButtonData}"
+                                Fill="{DynamicResource ThemeForegroundColor}"
+                                Height="10"
+                                HorizontalAlignment="Center"
+                                Stretch="Uniform"
+                                VerticalAlignment="Center"
+                                Width="10"
+                                x:Name="PART_GlyphElement" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </ControlTheme>
     
     <!-- <Style Selector="Button.Primary > TextBlock"> -->

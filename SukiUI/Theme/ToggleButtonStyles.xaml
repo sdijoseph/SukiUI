@@ -316,4 +316,51 @@
     <Style Selector="ToggleButton.Accent:pressed /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
     </Style>
+    
+    <Style Selector="ToggleButton.passwordBoxRevealButton">
+        <Setter Property="Cursor" Value="Arrow" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border
+                        Background="Transparent"
+                        Width="12"
+                        x:Name="PART_ButtonLayoutBorder">
+                        <Panel>
+                            <Path
+                                Data="{DynamicResource PasswordBoxRevealButtonData}"
+                                Fill="{DynamicResource ThemeForegroundColor}"
+                                Height="8"
+                                HorizontalAlignment="Center"
+                                Stretch="Uniform"
+                                VerticalAlignment="Center"
+                                Width="12"
+                                x:Name="PART_GlyphElement_Reveal" />
+                            <Path
+                                Data="{DynamicResource PasswordBoxHideButtonData}"
+                                Fill="{DynamicResource ThemeForegroundColor}"
+                                Height="12"
+                                HorizontalAlignment="Center"
+                                Stretch="Uniform"
+                                VerticalAlignment="Center"
+                                Width="12"
+                                x:Name="PART_GlyphElement_Hide" />
+                        </Panel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style Selector="ToggleButton.passwordBoxRevealButton:not(ToggleButton:checked) /template/ Path#PART_GlyphElement_Hide">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="ToggleButton.passwordBoxRevealButton:checked /template/ Path#PART_GlyphElement_Reveal">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="ToggleButton.passwordBoxRevealButton">
+        <Setter Property="Focusable" Value="False" />
+    </Style>
 </Styles>
