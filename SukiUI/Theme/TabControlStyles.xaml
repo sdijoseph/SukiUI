@@ -142,10 +142,10 @@
         
         <!-- These styles are probably un-needed, just keeping for reference. -->
         
-        <!-- <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter &gt; WrapPanel"> -->
+        <!-- <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel"> -->
         <!--     <Setter Property="Orientation" Value="Vertical" /> -->
         <!-- </Style> -->
-        <!-- <Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter &gt; WrapPanel"> -->
+        <!-- <Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel"> -->
         <!--     <Setter Property="Orientation" Value="Vertical" /> -->
         <!-- </Style> -->
     </ControlTheme>

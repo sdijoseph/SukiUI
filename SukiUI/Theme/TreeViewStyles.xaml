@@ -46,7 +46,7 @@
         <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
     </Style>
 
-    <Style Selector="TreeViewItem:selected &gt; TextBlock">
+    <Style Selector="TreeViewItem:selected > TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
     </Style>
     <Style Selector="TreeViewItem /template/ ToggleButton#expander">

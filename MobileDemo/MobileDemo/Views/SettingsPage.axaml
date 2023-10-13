@@ -550,7 +550,7 @@
                         HorizontalAlignment="Right"
                         Margin="20"
                         VerticalAlignment="Top">
-                        <TextBlock Text="Test Login Page -&gt;" />
+                        <TextBlock Text="Test Login Page ->" />
                     </Button>
 
                     <Grid Height="10" />

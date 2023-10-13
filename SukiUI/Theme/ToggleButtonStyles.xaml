@@ -261,7 +261,7 @@
     <Style Selector="ToggleButton.Primary">
         <Setter Property="Background" Value="{DynamicResource ThemeBorderHighBrush}" />
     </Style>
-    <Style Selector="ToggleButton.Primary &gt; TextBlock">
+    <Style Selector="ToggleButton.Primary > TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
     </Style>
     <Style Selector="ToggleButton.Primary /template/ ContentPresenter">

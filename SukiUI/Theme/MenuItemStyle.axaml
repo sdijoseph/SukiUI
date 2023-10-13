@@ -143,7 +143,7 @@
         </Setter>
     </Style>
 
-    <Style Selector="Menu &gt; MenuItem">
+    <Style Selector="Menu > MenuItem">
         <Setter Property="Padding" Value="6 0" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -213,7 +213,7 @@
         </Setter>
     </Style>
 
-    <Style Selector="Menu &gt; MenuItem:pointerover">
+    <Style Selector="Menu > MenuItem:pointerover">
         <Setter Property="Background" Value="{DynamicResource SukiLightBorderBrush}" />
     </Style>
 
