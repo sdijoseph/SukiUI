@@ -15,7 +15,6 @@
     <StyleInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
     <!-- <StyleInclude Source="avares://SukiUI/Theme/TreeDataGridStyle.axaml" /> -->
     <StyleInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/ComboBoxItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/TabItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NotificationStyle.axaml" />
