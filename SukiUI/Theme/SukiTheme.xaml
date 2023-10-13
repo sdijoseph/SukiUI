@@ -28,6 +28,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ComboBoxItemStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/CheckBox.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/TabControlStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/ProgressBarStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>

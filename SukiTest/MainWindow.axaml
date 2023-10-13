@@ -611,15 +611,15 @@
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Statistics" Icon="ChartLine">
                         <suki:SideMenuItem.PageContent>
-                            <!-- <circleProgressBarsTestMvvm:CircleProgresstestView /> -->
-                            <TabControl TabStripPlacement="Left">
-                                <TabItem Header="Tab 1">
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tab 1 Content" />
-                                </TabItem>
-                                <TabItem Header="Tab 2">
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tab 2 Content" />
-                                </TabItem>
-                            </TabControl>
+                            <circleProgressBarsTestMvvm:CircleProgresstestView />
+                            <!-- <TabControl TabStripPlacement="Left"> -->
+                            <!--     <TabItem Header="Tab 1"> -->
+                            <!--         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tab 1 Content" /> -->
+                            <!--     </TabItem> -->
+                            <!--     <TabItem Header="Tab 2"> -->
+                            <!--         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tab 2 Content" /> -->
+                            <!--     </TabItem> -->
+                            <!-- </TabControl> -->
                         </suki:SideMenuItem.PageContent>
                     </suki:SideMenuItem>
                     <suki:SideMenuItem Header="Library" Icon="BookmarkMultipleOutline">
