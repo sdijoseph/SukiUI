@@ -42,6 +42,8 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/TabItemStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/NotificationStyle.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/NotificationCardStyle.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/PanelStyles.axaml" />
 
 
             </ResourceDictionary.MergedDictionaries>
