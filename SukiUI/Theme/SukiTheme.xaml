@@ -39,6 +39,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />
 
 
             </ResourceDictionary.MergedDictionaries>
