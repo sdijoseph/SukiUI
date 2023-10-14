@@ -1,5 +1,5 @@
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style Selector="Menu">
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
@@ -16,5 +16,5 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
-</Styles>
+    </ControlTheme>
+</ResourceDictionary>

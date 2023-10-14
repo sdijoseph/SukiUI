@@ -2,10 +2,7 @@
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
 
 
-    <StyleInclude Source="avares://SukiUI/Theme/ListBoxStyles.xaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/TreeViewStyles.xaml" />
 
-    <StyleInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
