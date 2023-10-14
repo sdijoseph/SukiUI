@@ -40,6 +40,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/TabItemStyle.axaml" />
 
 
             </ResourceDictionary.MergedDictionaries>

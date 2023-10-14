@@ -4,7 +4,6 @@
 
 
     <!-- <StyleInclude Source="avares://SukiUI/Theme/TreeDataGridStyle.axaml" /> -->
-    <StyleInclude Source="avares://SukiUI/Theme/TabItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NotificationStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NotificationCardStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ContextMenuStyle.axaml" />
