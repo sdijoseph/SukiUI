@@ -3,7 +3,6 @@
 
 
 
-    <StyleInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
