@@ -3,7 +3,6 @@
 
 
 
-    <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
     <!-- <StyleInclude Source="avares://SukiUI/Theme/TreeDataGridStyle.axaml" /> -->

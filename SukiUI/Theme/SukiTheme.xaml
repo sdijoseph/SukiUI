@@ -34,6 +34,8 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/RepeatButtonStyles.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>
