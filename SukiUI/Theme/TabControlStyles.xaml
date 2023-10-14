@@ -39,8 +39,8 @@
     </Design.PreviewWith>
 
     <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
-    
-    <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl" BasedOn="{StaticResource {x:Type TabControl}}" >
+
+    <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl" BasedOn="{StaticResource {x:Type TabControl}}">
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="{DynamicResource TabItemMargin}" />
         <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
@@ -89,7 +89,8 @@
                         HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                         VerticalAlignment="{TemplateBinding VerticalAlignment}">
                         <DockPanel>
-                            <ItemsPresenter DockPanel.Dock="{TemplateBinding TabStripPlacement}" Name="PART_ItemsPresenter">
+                            <ItemsPresenter DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                                            Name="PART_ItemsPresenter">
                                 <ItemsPresenter.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <UniformGrid Columns="{Binding Items}" Rows="1" />
@@ -139,9 +140,9 @@
                 </ControlTemplate>
             </Setter>
         </Style>
-        
+
         <!-- These styles are probably un-needed, just keeping for reference. -->
-        
+
         <!-- <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel"> -->
         <!--     <Setter Property="Orientation" Value="Vertical" /> -->
         <!-- </Style> -->

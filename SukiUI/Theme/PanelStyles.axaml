@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    <ControlTheme x:Key="{x:Type Panel}" TargetType="Panel" >
+
+    <ControlTheme x:Key="{x:Type Panel}" TargetType="Panel">
         <Style Selector="^.TextBold /template/ TextBlock">
-            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold" />
         </Style>
     </ControlTheme>
 

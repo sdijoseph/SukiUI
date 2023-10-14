@@ -15,14 +15,14 @@
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="{x:Type TextBlock}" TargetType="TextBlock" >
+    <ControlTheme x:Key="{x:Type TextBlock}" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
         <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Regular.ttf#Roboto" />
         <Setter Property="FontSize" Value="14" />
         <Style Selector="^[FontWeight=DemiBold]">
             <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Medium.ttf#Roboto" />
         </Style>
-    
+
         <Style Selector="^.h4">
             <Setter Property="Margin" Value="0 7 0 10" />
             <Setter Property="FontSize" Value="20" />
@@ -49,5 +49,5 @@
             <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

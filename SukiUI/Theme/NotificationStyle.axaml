@@ -5,7 +5,8 @@
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme  x:Key="{x:Type WindowNotificationManager}" TargetType="WindowNotificationManager" BasedOn="{StaticResource {x:Type WindowNotificationManager}}" >
+    <ControlTheme x:Key="{x:Type WindowNotificationManager}" TargetType="WindowNotificationManager"
+                  BasedOn="{StaticResource {x:Type WindowNotificationManager}}">
         <Setter Property="Margin" Value="0 0" />
         <Setter Property="Background" Value="Red" />
         <Setter Property="Template">
@@ -61,5 +62,5 @@
             <Setter Property="HorizontalAlignment" Value="Right" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
+    <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton"
+                  BasedOn="{StaticResource {x:Type RepeatButton}}">
         <Style Selector="^.Decrease">
             <Setter Property="IsTabStop" Value="false" />
             <Setter Property="Focusable" Value="false" />

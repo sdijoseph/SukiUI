@@ -1,14 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
     <Design.PreviewWith>
         <WrapPanel
             Background="{DynamicResource SukiBackground}"
             HorizontalAlignment="Center"
             Orientation="Horizontal">
-            <Border Height="100" Width="100" Classes="Card"></Border>
+            <Border Height="100" Width="100" Classes="Card" />
         </WrapPanel>
     </Design.PreviewWith>
-    
+
     <ControlTheme x:Key="{x:Type Border}" TargetType="Border">
         <Style Selector="^.Card">
             <Setter Property="Padding" Value="20" />
@@ -18,7 +18,7 @@
             <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
             <Setter Property="Margin" Value="7" />
         </Style>
-        
+
         <Style Selector="^.ExpanderToggle">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
@@ -28,14 +28,14 @@
             <Setter Property="Background" Value="{DynamicResource SukiLightBackground}" />
             <Setter Property="BorderThickness" Value="0" />
         </Style>
-    
+
         <Style Selector="^.GradientCard">
             <Setter Property="Padding" Value="20" />
             <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
-            <Setter Property="Background" >
-                <RadialGradientBrush Center="120%,-220%" GradientOrigin="120%,-220%" Radius="3"> 
+            <Setter Property="Background">
+                <RadialGradientBrush Center="120%,-220%" GradientOrigin="120%,-220%" Radius="3">
                     <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.4" />
                     <GradientStop Color="Transparent" Offset="1" />
                 </RadialGradientBrush>
@@ -52,22 +52,22 @@
             <Setter Property="Margin" Value="7" />
             <Setter Property="BoxShadow" Value="{DynamicResource SukiPopupShadow}" />
         </Style>
-    
+
         <Style Selector="^.Hoverable:pointerover">
             <Setter Property="BoxShadow" Value="0 0 7 0 LightGray" />
         </Style>
-        
+
         <Style Selector="^.ThumbB">
             <Setter Property="BoxShadow" Value="0 0 4 0 #999999" />
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}"/>
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
             <Setter Property="Transitions">
                 <Transitions>
                     <BoxShadowsTransition Duration="0:0:0.3" Property="BoxShadow" />
                 </Transitions>
             </Setter>
         </Style>
-    
+
         <Style Selector="^.ThumbBorder">
             <Setter Property="Transitions">
                 <Transitions>
@@ -78,8 +78,8 @@
 
         <Style Selector="^.ThumbBorder:pointerover">
             <Setter Property="BoxShadow" Value="0 0 7 0 #999999" />
-            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="BorderThickness" Value="1.5" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

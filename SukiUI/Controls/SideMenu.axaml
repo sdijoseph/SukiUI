@@ -1,14 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:suki="using:SukiUI.Controls"
-        xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-        xmlns:converters="clr-namespace:SukiUI.Converters">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:suki="using:SukiUI.Controls"
+                    xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+                    xmlns:converters="clr-namespace:SukiUI.Converters">
     <Design.PreviewWith>
         <suki:SideMenu />
     </Design.PreviewWith>
-    
+
     <converters:ToggleButtonIconConverter x:Key="ToggleButtonIconConverter" />
-    
+
     <ControlTheme x:Key="{x:Type suki:SideMenu}" TargetType="suki:SideMenu">
         <!-- Set Defaults -->
         <Setter Property="Template">
@@ -79,7 +79,7 @@
                                     <ScrollViewer>
                                         <ListBox
                                             x:Name="PART_MenuItemsBox"
-                                            ItemsSource="{TemplateBinding MenuItems}" 
+                                            ItemsSource="{TemplateBinding MenuItems}"
                                             Margin="0,15,0,0">
                                             <ListBox.ItemTemplate>
                                                 <DataTemplate>
@@ -97,7 +97,7 @@
                         Background="{DynamicResource SukiBackground}"
                         BorderBrush="{DynamicResource SukiBorderBrush}"
                         BorderThickness="1,0,0,0"
-                        Margin="0,0,0,0" 
+                        Margin="0,0,0,0"
                         Name="ContentBorder">
                         <ContentControl Content="{TemplateBinding CurrentPage}" />
                     </Border>

@@ -3,8 +3,9 @@
                     xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
 
     <!-- Based on Material.Icons.Avalonia -->
-    <ControlTheme x:Key="{x:Type material:MaterialIcon}" TargetType="material:MaterialIcon" BasedOn="{StaticResource {x:Type material:MaterialIcon}}">
+    <ControlTheme x:Key="{x:Type material:MaterialIcon}" TargetType="material:MaterialIcon"
+                  BasedOn="{StaticResource {x:Type material:MaterialIcon}}">
         <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
     </ControlTheme>
-    
+
 </ResourceDictionary>

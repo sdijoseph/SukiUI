@@ -1,7 +1,8 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui" 
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown" BasedOn="{StaticResource {x:Type NumericUpDown}}" >
+
+    <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown"
+                  BasedOn="{StaticResource {x:Type NumericUpDown}}">
         <Setter Property="BorderThickness" Value="1.2" />
         <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
         <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
@@ -13,7 +14,7 @@
                 <ButtonSpinner
                     AllowSpin="{TemplateBinding AllowSpin}"
                     Background="{TemplateBinding Background}"
-                    
+
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
@@ -47,7 +48,7 @@
                 <Setter Property="DockPanel.Dock" Value="Left" />
             </Style>
         </Style>
-  
+
         <Style Selector="^:pointerover /template/ Border#border">
             <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
         </Style>
@@ -60,23 +61,23 @@
         <Style Selector="^ /template/ ButtonSpinner">
             <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
         </Style>
-    <!--       <Style Selector="^ /template/ ButtonSpinner /template/ Border"> -->
-    <!--     <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" /> -->
-    <!-- </Style> -->
-    <Style Selector="^ /template/ Border">
-        <Setter Property="BorderThickness" Value="0" />
+        <!--       <Style Selector="^ /template/ ButtonSpinner /template/ Border"> -->
+        <!--     <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" /> -->
+        <!-- </Style> -->
+        <Style Selector="^ /template/ Border">
+            <Setter Property="BorderThickness" Value="0" />
 
-    </Style>
-    <Style Selector="^:pointerover /template/ TextBox">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
-    </Style>
-    <Style Selector="^:pressed /template/ TextBox">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
-    </Style>
-    
+        </Style>
+        <Style Selector="^:pointerover /template/ TextBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
+        </Style>
+        <Style Selector="^:pressed /template/ TextBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
+        </Style>
+
         <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
@@ -85,56 +86,55 @@
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="Focusable" Value="True" />
             <Setter Property="Template">
-              <ControlTemplate>
-                <DataValidationErrors>
-                  <Border Name="border"
-                          Margin="{TemplateBinding Padding}"
-                          HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                          VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                          Background="{TemplateBinding Background}"
-                          BorderBrush="{TemplateBinding BorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
-                          CornerRadius="{TemplateBinding CornerRadius}">
-                    <DockPanel>
-                      <UniformGrid Name="PART_SpinnerPanel"
-                                   DockPanel.Dock="Right"
-                                   IsVisible="{TemplateBinding ShowButtonSpinner}"
-                                   Rows="2">
-                        <RepeatButton BorderThickness="0" Name="PART_IncreaseButton"
-                                      Theme="{StaticResource SimpleButtonSpinnerRepeatButton}">
-                          <Path Width="8"
-                                Height="4"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Data="M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z"
-                                Fill="{DynamicResource SukiText}"
-                                Stretch="Uniform" />
-                        </RepeatButton>
-                        <RepeatButton BorderThickness="0" Name="PART_DecreaseButton"
-                                      Theme="{StaticResource SimpleButtonSpinnerRepeatButton}">
-                          <Path Width="8"
-                                Height="4"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Data="M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z"
-                                Fill="{DynamicResource SukiText}"
-                                Stretch="Uniform" />
-                        </RepeatButton>
-                      </UniformGrid>
-                      <ContentPresenter Name="PART_ContentPresenter"
-                                        Grid.Column="1"
-                                        Padding="{TemplateBinding Padding}"
-                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                        Content="{TemplateBinding Content}"
-                                        ContentTemplate="{TemplateBinding ContentTemplate}" />
-                    </DockPanel>
-                  </Border>
-                </DataValidationErrors>
-              </ControlTemplate>
+                <ControlTemplate>
+                    <DataValidationErrors>
+                        <Border Name="border"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding CornerRadius}">
+                            <DockPanel>
+                                <UniformGrid Name="PART_SpinnerPanel"
+                                             DockPanel.Dock="Right"
+                                             IsVisible="{TemplateBinding ShowButtonSpinner}"
+                                             Rows="2">
+                                    <RepeatButton BorderThickness="0" Name="PART_IncreaseButton"
+                                                  Theme="{StaticResource SimpleButtonSpinnerRepeatButton}">
+                                        <Path Width="8"
+                                              Height="4"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Data="M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z"
+                                              Fill="{DynamicResource SukiText}"
+                                              Stretch="Uniform" />
+                                    </RepeatButton>
+                                    <RepeatButton BorderThickness="0" Name="PART_DecreaseButton"
+                                                  Theme="{StaticResource SimpleButtonSpinnerRepeatButton}">
+                                        <Path Width="8"
+                                              Height="4"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Data="M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z"
+                                              Fill="{DynamicResource SukiText}"
+                                              Stretch="Uniform" />
+                                    </RepeatButton>
+                                </UniformGrid>
+                                <ContentPresenter Name="PART_ContentPresenter"
+                                                  Padding="{TemplateBinding Padding}"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </DockPanel>
+                        </Border>
+                    </DataValidationErrors>
+                </ControlTemplate>
             </Setter>
         </Style>
     </ControlTheme>
-  
+
 
 </ResourceDictionary>

@@ -9,6 +9,25 @@ namespace SukiUI.Controls;
 
 public partial class PercentProgressBar : UserControl
 {
+    /// <summary>
+    ///     Defines the <see cref="Value" /> property.
+    /// </summary>
+    public static readonly DirectProperty<PercentProgressBar, int> ValueProperty =
+        AvaloniaProperty.RegisterDirect<PercentProgressBar, int>(
+            nameof(Value),
+            o => o.Value,
+            (o, v) => o.Value = v,
+            defaultBindingMode: BindingMode.TwoWay,
+            enableDataValidation: true);
+
+    private readonly MaterialIcon _icon;
+
+    // Declare private fields for controls
+    private readonly ProgressBar _progressBar;
+    private readonly TextBlock _textBlock;
+
+    private int _value;
+
     public PercentProgressBar()
     {
         InitializeComponent();
@@ -18,20 +37,8 @@ public partial class PercentProgressBar : UserControl
         _icon = this.FindControl<MaterialIcon>("iconPercent");
     }
 
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
-    
-    // Declare private fields for controls
-    private ProgressBar _progressBar;
-    private TextBlock _textBlock;
-    private MaterialIcon _icon;
-    
-    private int _value;
-    
     /// <summary>
-    /// Gets the current value.
+    ///     Gets the current value.
     /// </summary>
     public int Value
     {
@@ -62,15 +69,9 @@ public partial class PercentProgressBar : UserControl
             }
         }
     }
-    
-    /// <summary>
-    /// Defines the <see cref="Value"/> property.
-    /// </summary>
-    public static readonly DirectProperty<PercentProgressBar, int> ValueProperty =
-        AvaloniaProperty.RegisterDirect<PercentProgressBar, int>(
-            nameof(Value),
-            o => o.Value,
-            (o, v) => o.Value = v,
-            defaultBindingMode: BindingMode.TwoWay,
-            enableDataValidation: true);
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
 }

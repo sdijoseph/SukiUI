@@ -12,12 +12,12 @@
                 ColumnDefinitions="*,*,*,*,*,*,*,*,*,*"
                 Height="60"
                 Margin="20,100,20,0">
-                <Button Height="55" Padding="6,4,0,0" Margin="0" 
-                    Click="AddChar" 
-                    Grid.Column="0"
-                    Grid.Row="0">
-                    <TextBlock 
-                        FontSize="20"  
+                <Button Height="55" Padding="6,4,0,0" Margin="0"
+                        Click="AddChar"
+                        Grid.Column="0"
+                        Grid.Row="0">
+                    <TextBlock
+                        FontSize="20"
                         FontWeight="DemiBold"
                         Text="q" />
                 </Button>

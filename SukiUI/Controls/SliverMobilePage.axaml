@@ -18,7 +18,6 @@
                             <suki:OffsetToHeightConverter x:Key="HeightConverter" />
                             <suki:OffsetToFontSizeConverter x:Key="FontSizeConverter" />
                             <suki:OffsetToMarginConverter x:Key="MarginConverter" />
-                            <suki:OffsetToMarginScrollConverter x:Key="MarginScrollConverter" />
                         </Grid.Resources>
                         <Border
                             Background="Transparent"
@@ -38,7 +37,7 @@
                                     VerticalAlignment="Center" />
                             </Grid>
                         </Border>
-                        <ScrollViewer 
+                        <ScrollViewer
                             IsScrollInertiaEnabled="True"
                             Margin="0,100,0,0"
                             Name="scrollView"

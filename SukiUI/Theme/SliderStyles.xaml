@@ -1,11 +1,11 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui" 
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Background="White" Padding="20">
             <Slider Value="50" Width="100" />
         </Border>
     </Design.PreviewWith>
-    
+
     <ControlTheme x:Key="{x:Type Slider}" TargetType="Slider" BasedOn="{StaticResource {x:Type Slider}}">
         <Style Selector="^:horizontal">
             <Setter Property="MinWidth" Value="40" />
@@ -45,7 +45,8 @@
 
 
                                         <LinearGradientBrush EndPoint="0%,100%" StartPoint="80%,-50%">
-                                            <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
+                                            <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}"
+                                                          Offset="0.1" />
                                             <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
                                         </LinearGradientBrush>
 
@@ -55,27 +56,25 @@
                             <Track.IncreaseButton>
                                 <RepeatButton Classes="repeattrack" Name="PART_IncreaseButton" />
                             </Track.IncreaseButton>
-                            <Thumb Name="thumb" >
+                            <Thumb Name="thumb">
                                 <Thumb.Template>
                                     <ControlTemplate>
                                         <Grid Height="32" Width="32">
                                             <Border
-                                                Background="White" 
+                                                Background="White"
                                                 BorderThickness="0"
                                                 Classes="ThumbBorder ThumbB"
                                                 CornerRadius="{DynamicResource MediumCornerRadius}"
                                                 Height="20"
                                                 Margin="0,-1,0,0"
-                                                Width="20" >
-                                              
-                                            </Border>
+                                                Width="20" />
                                         </Grid>
                                     </ControlTemplate>
                                 </Thumb.Template>
                             </Thumb>
                         </Track>
 
-                        
+
                     </Grid>
                 </ControlTemplate>
             </Setter>
@@ -156,5 +155,5 @@
         </Style>
     </ControlTheme>
 
-   
+
 </ResourceDictionary>

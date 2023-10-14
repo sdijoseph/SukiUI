@@ -24,68 +24,67 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AvaloniaResource Include="**\*.xaml" />
-        <None Remove="Roboto-Medium.ttf" />
-        <AvaloniaResource Include="Roboto-Medium.ttf" />
-        <AvaloniaXaml Remove="ColorTheme\Dark.axaml" />
-        <AvaloniaXaml Remove="ColorTheme\Light.axaml" />
+        <AvaloniaResource Include="**\*.xaml"/>
+        <None Remove="Roboto-Medium.ttf"/>
+        <AvaloniaResource Include="Roboto-Medium.ttf"/>
+        <AvaloniaXaml Remove="ColorTheme\Dark.axaml"/>
+        <AvaloniaXaml Remove="ColorTheme\Light.axaml"/>
     </ItemGroup>
 
     <ItemGroup>
-      <AvaloniaXaml Remove="Theme\CheckBox.axaml" />
-      <AvaloniaXaml Remove="Theme\DialogHostStyle.axaml" />
-      <AvaloniaXaml Remove="Theme\RichTextBoxStyles.axaml" />
-      <AvaloniaXaml Remove="Theme\WindowStyles.axaml" />
+        <AvaloniaXaml Remove="Theme\CheckBox.axaml"/>
+        <AvaloniaXaml Remove="Theme\DialogHostStyle.axaml"/>
+        <AvaloniaXaml Remove="Theme\RichTextBoxStyles.axaml"/>
+        <AvaloniaXaml Remove="Theme\WindowStyles.axaml"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="LICENSE" />
-      <None Remove="Roboto-Regular.ttf" />
+        <None Remove="LICENSE"/>
+        <None Remove="Roboto-Regular.ttf"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.1" />
-        <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="Material.Icons.Avalonia" Version="2.0.1" />
-        <PackageReference Include="ReactiveUI" Version="19.2.1" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.1"/>
+        <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Material.Icons.Avalonia" Version="2.0.1"/>
+        <PackageReference Include="ReactiveUI" Version="19.2.1"/>
     </ItemGroup>
 
- 
 
     <ItemGroup>
-      <AvaloniaResource Include="LICENSE" />
-      <AvaloniaResource Include="Roboto-Regular.ttf" />
-      <AvaloniaResource Include="Theme\CheckBox.axaml" />
-      <AvaloniaResource Include="Theme\WindowStyles.axaml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="suki_photo.ico" />
+        <AvaloniaResource Include="LICENSE"/>
+        <AvaloniaResource Include="Roboto-Regular.ttf"/>
+        <AvaloniaResource Include="Theme\CheckBox.axaml"/>
+        <AvaloniaResource Include="Theme\WindowStyles.axaml"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\.editorconfig" Link=".editorconfig" />
+        <Content Include="suki_photo.ico"/>
     </ItemGroup>
 
     <ItemGroup>
-      <AvaloniaXaml Update="Theme\ListBoxItemStyle.axaml">
-        <Generator>MSBuild:Compile</Generator>
-      </AvaloniaXaml>
+        <None Include="..\.editorconfig" Link=".editorconfig"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Controls\MobileStack.axaml.cs">
-        <DependentUpon>MobileStack.axaml</DependentUpon>
-      </Compile>
-      <Compile Update="Controls\WaveProgress\WaveProgress.axaml.cs">
-        <DependentUpon>WaveProgress.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
+        <AvaloniaXaml Update="Theme\ListBoxItemStyle.axaml">
+            <Generator>MSBuild:Compile</Generator>
+        </AvaloniaXaml>
     </ItemGroup>
-    
+
+    <ItemGroup>
+        <Compile Update="Controls\MobileStack.axaml.cs">
+            <DependentUpon>MobileStack.axaml</DependentUpon>
+        </Compile>
+        <Compile Update="Controls\WaveProgress\WaveProgress.axaml.cs">
+            <DependentUpon>WaveProgress.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+    </ItemGroup>
+
 </Project>

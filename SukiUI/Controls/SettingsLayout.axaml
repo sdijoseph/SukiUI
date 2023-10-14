@@ -44,7 +44,6 @@
                                 <ContentPresenter
                                     Content="{TemplateBinding Content}"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
-                                    Grid.Column="1"
                                     Name="PART_ContentPresenter"
                                     RecognizesAccessKey="True"
                                     VerticalAlignment="Center" />

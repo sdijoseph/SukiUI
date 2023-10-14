@@ -1,29 +1,27 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
 
-namespace SukiUI.Controls
+namespace SukiUI.Controls;
+
+public partial class ClassicMobilePage : UserControl
 {
-    public partial class ClassicMobilePage : UserControl
+    public static readonly StyledProperty<string> HeaderProperty =
+        AvaloniaProperty.Register<CircleProgressBar, string>(nameof(Header), "Header");
+
+    public ClassicMobilePage()
     {
-        public ClassicMobilePage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+    public string Header
+    {
+        get => GetValue(HeaderProperty);
+        set => SetValue(HeaderProperty, value);
+    }
 
-        public static readonly StyledProperty<string> HeaderProperty =
-            AvaloniaProperty.Register<CircleProgressBar, string>(nameof(Header), defaultValue: "Header");
-
-        public string Header
-        {
-            get => GetValue(HeaderProperty);
-            set => SetValue(HeaderProperty, value );
-        }
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
     }
 }

@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
@@ -8,175 +9,172 @@ using Avalonia.Media;
 using Avalonia.VisualTree;
 using Material.Icons;
 using Material.Icons.Avalonia;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading;
-using Avalonia.Threading;
 
-namespace SukiUI.Controls
+namespace SukiUI.Controls;
+
+public partial class DesktopPage : UserControl
 {
-  
-    public partial class DesktopPage : UserControl
+    public static readonly StyledProperty<HorizontalAlignment> TitleHorizontalAlignmentProperty =
+        AvaloniaProperty.Register<DesktopPage, HorizontalAlignment>(nameof(TitleHorizontalAlignment),
+            HorizontalAlignment.Left);
+
+    public static readonly StyledProperty<double> TitleFontSizeProperty =
+        AvaloniaProperty.Register<DesktopPage, double>(nameof(TitleFontSize), 14);
+
+
+    public static readonly StyledProperty<FontWeight> TitleFontWeightProperty =
+        AvaloniaProperty.Register<DesktopPage, FontWeight>(nameof(TitleFontWeight), FontWeight.Medium);
+
+    public static readonly StyledProperty<IBrush> LogoColorProperty =
+        AvaloniaProperty.Register<DesktopPage, IBrush>(nameof(LogoColor), Brushes.DarkSlateBlue);
+
+    public static readonly StyledProperty<MaterialIconKind> LogoKindProperty =
+        AvaloniaProperty.Register<DesktopPage, MaterialIconKind>(nameof(LogoKind), MaterialIconKind.DotNet);
+
+    public static readonly StyledProperty<List<MenuItem>> MenuItemsProperty =
+        AvaloniaProperty.Register<DesktopPage, List<MenuItem>>(nameof(MenuItems), new List<MenuItem>());
+
+    public static readonly StyledProperty<string> TitleProperty =
+        AvaloniaProperty.Register<DesktopPage, string>(nameof(Title), "Avalonia UI");
+
+    public static readonly StyledProperty<bool> ShowBottomBorderProperty =
+        AvaloniaProperty.Register<DesktopPage, bool>(nameof(ShowBottomBorder), true);
+
+    public static readonly StyledProperty<bool> MenuVisibilityProperty =
+        AvaloniaProperty.Register<DesktopPage, bool>(nameof(MenuVisibility), false);
+
+
+    public static readonly StyledProperty<bool> IsMinimizeButtonEnabledProperty =
+        AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMinimizeButtonEnabled), true);
+
+    public static readonly StyledProperty<bool> IsMaximizeButtonEnabledProperty =
+        AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMaximizeButtonEnabled), true);
+
+    public DesktopPage()
     {
-        public DesktopPage()
+        InitializeComponent();
+
+
+        //   DataContext = ViewModel;
+    }
+
+    public HorizontalAlignment TitleHorizontalAlignment
+    {
+        get => GetValue(TitleHorizontalAlignmentProperty);
+        set => SetValue(TitleHorizontalAlignmentProperty, value);
+    }
+
+    public double TitleFontSize
+    {
+        get => GetValue(TitleFontSizeProperty);
+        set => SetValue(TitleFontSizeProperty, value);
+    }
+
+    public FontWeight TitleFontWeight
+    {
+        get => GetValue(TitleFontWeightProperty);
+        set => SetValue(TitleFontWeightProperty, value);
+    }
+
+    public IBrush LogoColor
+    {
+        get => GetValue(LogoColorProperty);
+        set => SetValue(LogoColorProperty, value);
+    }
+
+    public MaterialIconKind LogoKind
+    {
+        get => GetValue(LogoKindProperty);
+        set => SetValue(LogoKindProperty, value);
+    }
+
+    public List<MenuItem> MenuItems
+    {
+        get => GetValue(MenuItemsProperty);
+        set => SetValue(MenuItemsProperty, value);
+    }
+
+    public string Title
+    {
+        get => GetValue(TitleProperty);
+        set => SetValue(TitleProperty, value);
+    }
+
+    public bool ShowBottomBorder
+    {
+        get => GetValue(ShowBottomBorderProperty);
+        set => SetValue(ShowBottomBorderProperty, value);
+    }
+
+    public bool MenuVisibility
+    {
+        get => GetValue(MenuVisibilityProperty);
+        set => SetValue(MenuVisibilityProperty, value);
+    }
+
+    public bool IsMinimizeButtonEnabled
+    {
+        get => GetValue(IsMinimizeButtonEnabledProperty);
+        set => SetValue(IsMinimizeButtonEnabledProperty, value);
+    }
+
+    public bool IsMaximizeButtonEnabled
+    {
+        get => GetValue(IsMaximizeButtonEnabledProperty);
+        set => SetValue(IsMaximizeButtonEnabledProperty, value);
+    }
+
+    // private DesktopPageViewModel ViewModel = new DesktopPageViewModel();
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+
+    /// <summary>
+    ///     Minimizes Avalonia window
+    /// </summary>
+    private void MinimizeHandler(object sender, RoutedEventArgs e)
+    {
+        var hostWindow = (Window)VisualRoot;
+        hostWindow.WindowState = WindowState.Minimized;
+    }
+
+    /// <summary>
+    ///     Maximizes Avalonia window or sets its size to original depending on window state
+    /// </summary>
+    private void MaximizeHandler(object sender, RoutedEventArgs e)
+    {
+        var hostWindow = (Window)VisualRoot;
+        var icon = this.GetVisualDescendants().OfType<MaterialIcon>()
+            .FirstOrDefault(x => (x.Name ?? "").Equals("MaximizeMaterialIcon"));
+
+        if (hostWindow.WindowState != WindowState.Maximized)
         {
-            InitializeComponent();
-
-            
-
-         //   DataContext = ViewModel;
+            hostWindow.WindowState = WindowState.Maximized;
+            icon?.Classes.Remove("WindowMaximize");
+            icon?.Classes.Add("WindowRestore");
         }
-
-        // private DesktopPageViewModel ViewModel = new DesktopPageViewModel();
-
-        private void InitializeComponent()
+        else
         {
-            AvaloniaXamlLoader.Load(this);
+            hostWindow.WindowState = WindowState.Normal;
+            icon?.Classes.Remove("WindowRestore");
+            icon?.Classes.Add("WindowMaximize");
         }
+    }
 
-        public static readonly StyledProperty<HorizontalAlignment> TitleHorizontalAlignmentProperty = AvaloniaProperty.Register<DesktopPage, HorizontalAlignment>(nameof(TitleHorizontalAlignment), defaultValue: HorizontalAlignment.Left);
-
-        public HorizontalAlignment TitleHorizontalAlignment
-        {
-            get => GetValue(TitleHorizontalAlignmentProperty);
-            set => SetValue(TitleHorizontalAlignmentProperty, value);
-        }
-
-        public static readonly StyledProperty<double> TitleFontSizeProperty = AvaloniaProperty.Register<DesktopPage, double>(nameof(TitleFontSize), defaultValue: 14);
-
-        public double TitleFontSize
-        {
-            get => GetValue(TitleFontSizeProperty);
-            set => SetValue(TitleFontSizeProperty, value);
-        }
+    /// <summary>
+    ///     Closes Avalonia window
+    /// </summary>
+    private void CloseHandler(object sender, RoutedEventArgs e)
+    {
+        var hostWindow = (Window)VisualRoot;
+        hostWindow.Close();
+    }
 
 
-        public static readonly StyledProperty<FontWeight> TitleFontWeightProperty = AvaloniaProperty.Register<DesktopPage, FontWeight>(nameof(TitleFontWeight), defaultValue: FontWeight.Medium);
-
-        public FontWeight TitleFontWeight
-        {
-            get => GetValue(TitleFontWeightProperty);
-            set => SetValue(TitleFontWeightProperty, value);
-        }
-
-        public static readonly StyledProperty<IBrush> LogoColorProperty = AvaloniaProperty.Register<DesktopPage, IBrush>(nameof(LogoColor), defaultValue: Brushes.DarkSlateBlue);
-
-        public IBrush LogoColor
-        {
-            get => GetValue(LogoColorProperty);
-            set => SetValue(LogoColorProperty, value);
-        }
-
-        public static readonly StyledProperty<MaterialIconKind> LogoKindProperty = AvaloniaProperty.Register<DesktopPage, MaterialIconKind>(nameof(LogoKind), defaultValue: MaterialIconKind.DotNet);
-
-        public MaterialIconKind LogoKind
-        {
-            get => GetValue(LogoKindProperty);
-            set => SetValue(LogoKindProperty, value);
-        }
-
-        public static readonly StyledProperty<List<MenuItem>> MenuItemsProperty = 
-            AvaloniaProperty.Register<DesktopPage, List<MenuItem>>(nameof(MenuItems), defaultValue: new List<MenuItem>());
-
-        public List<MenuItem> MenuItems
-        {
-            get => GetValue(MenuItemsProperty);
-            set => SetValue(MenuItemsProperty, value);
-        }
-        
-        public static readonly StyledProperty<string> TitleProperty = AvaloniaProperty.Register<DesktopPage, string>(nameof(Title), defaultValue: "Avalonia UI");
-
-        public string Title
-        {
-            get => GetValue(TitleProperty);
-            set => SetValue(TitleProperty, value);
-        }
-        
-        public static readonly StyledProperty<bool> ShowBottomBorderProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(ShowBottomBorder), defaultValue: true);
-
-        public bool ShowBottomBorder
-        {
-            get => GetValue(ShowBottomBorderProperty);
-            set => SetValue(ShowBottomBorderProperty, value);
-        }
-        
-        public static readonly StyledProperty<bool> MenuVisibilityProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(MenuVisibility), defaultValue: false);
-
-        public bool MenuVisibility
-        {
-            get => GetValue(MenuVisibilityProperty);
-            set => SetValue(MenuVisibilityProperty, value);
-        }
-        
-
-        public static readonly StyledProperty<bool> IsMinimizeButtonEnabledProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMinimizeButtonEnabled), defaultValue: true);
-
-        public bool IsMinimizeButtonEnabled
-        {
-            get => GetValue(IsMinimizeButtonEnabledProperty);
-            set => SetValue(IsMinimizeButtonEnabledProperty, value);
-        }
-
-        public static readonly StyledProperty<bool> IsMaximizeButtonEnabledProperty = AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMaximizeButtonEnabled), defaultValue: true);
-
-        public bool IsMaximizeButtonEnabled
-        {
-            get => GetValue(IsMaximizeButtonEnabledProperty);
-            set => SetValue(IsMaximizeButtonEnabledProperty, value);
-        }
-
-        /// <summary>
-        /// Minimizes Avalonia window
-        /// </summary>
-        private void MinimizeHandler(object sender, RoutedEventArgs e)
-        {
-            Window hostWindow = (Window)this.VisualRoot;
-            hostWindow.WindowState = WindowState.Minimized;
-        }
-
-        /// <summary>
-        /// Maximizes Avalonia window or sets its size to original depending on window state
-        /// </summary>
-        private void MaximizeHandler(object sender, RoutedEventArgs e)
-        {
-            Window hostWindow = (Window)this.VisualRoot;
-            var icon = this.GetVisualDescendants().OfType<MaterialIcon>().FirstOrDefault(x => (x.Name ?? "").Equals("MaximizeMaterialIcon"));
-            
-            if (hostWindow.WindowState != WindowState.Maximized)
-            {
-                hostWindow.WindowState = WindowState.Maximized;
-                icon?.Classes.Remove("WindowMaximize");
-                icon?.Classes.Add("WindowRestore");
-            }
-            else
-            {
-                hostWindow.WindowState = WindowState.Normal;
-                icon?.Classes.Remove("WindowRestore");
-                icon?.Classes.Add("WindowMaximize");
-            }
-        }
-
-        /// <summary>
-        /// Closes Avalonia window
-        /// </summary>
-
-        private void CloseHandler(object sender, RoutedEventArgs e)
-        {
-            Window hostWindow = (Window)this.VisualRoot;
-            hostWindow.Close();
-        }
-
-
-
-        public void SetPage(Control page)
-        {
-           
-                Content = page;
-            
-        }
-
-      
-
+    public void SetPage(Control page)
+    {
+        Content = page;
     }
 }

@@ -26,7 +26,7 @@
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.1" />
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.6" />
     </RadialGradientBrush>
-    
+
     <!-- Based on SimpleTheme -->
     <ControlTheme x:Key="{x:Type RadioButton}" TargetType="RadioButton" BasedOn="{StaticResource {x:Type RadioButton}}">
         <Setter Property="Background" Value="Transparent" />
@@ -162,25 +162,27 @@
                             Padding="0">
                             <Border.Transitions>
                                 <Transitions>
-                                    <ThicknessTransition Duration="00:00:0.2" Property="BorderThickness"></ThicknessTransition>
-                                    <BrushTransition Duration="00:00:0.2" Property="Background"></BrushTransition>
-                                    <BrushTransition Duration="00:00:0.2" Property="BorderBrush"></BrushTransition>
+                                    <ThicknessTransition Duration="00:00:0.2" Property="BorderThickness" />
+                                    <BrushTransition Duration="00:00:0.2" Property="Background" />
+                                    <BrushTransition Duration="00:00:0.2" Property="BorderBrush" />
                                 </Transitions>
                             </Border.Transitions>
-                            
+
 
                             <ContentPresenter
-                                    Content="{TemplateBinding Content}"
-                                    ContentTemplate="{TemplateBinding ContentTemplate}"
-                                    Name="PART_ContentPresenter"
-                                    RecognizesAccessKey="True"/>
-                                
-                          
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Name="PART_ContentPresenter"
+                                RecognizesAccessKey="True" />
+
+
                         </Border>
-                        <material:MaterialIcon Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Kind="CheckCircle" Foreground="{DynamicResource SukiPrimaryColor}">
+                        <material:MaterialIcon Height="20" Width="20" HorizontalAlignment="Right"
+                                               VerticalAlignment="Top" Margin="10" Kind="CheckCircle"
+                                               Foreground="{DynamicResource SukiPrimaryColor}">
                             <material:MaterialIcon.Transitions>
                                 <Transitions>
-                                    <DoubleTransition Property="Opacity" Duration="00:00:0.2"></DoubleTransition>
+                                    <DoubleTransition Property="Opacity" Duration="00:00:0.2" />
                                 </Transitions>
                             </material:MaterialIcon.Transitions>
                         </material:MaterialIcon>
@@ -194,15 +196,15 @@
             <Setter Property="Background" Value="{DynamicResource SukiLightColoredBackground}" />
             <Setter Property="BorderThickness" Value="2" />
         </Style>
-        
+
         <Style Selector="^.GigaChips /template/ material|MaterialIcon">
-            <Setter Property="Opacity" Value="0"></Setter>
+            <Setter Property="Opacity" Value="0" />
         </Style>
-        
+
         <Style Selector="^.GigaChips:checked /template/ material|MaterialIcon">
-            <Setter Property="Opacity" Value="1"></Setter>
+            <Setter Property="Opacity" Value="1" />
         </Style>
-        
+
         <Style Selector="^.MenuItemMobile:checked /template/ Border">
             <Setter Property="CornerRadius" Value="0,50,50,0" />
 
@@ -215,7 +217,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
 
 
         <Style Selector="^.MenuItemMobile">
@@ -287,11 +288,11 @@
                 </ControlTemplate>
             </Setter>
         </Style>
-        
+
         <Style Selector="^.MenuItem:checked">
             <Setter Property="TextBlock.FontWeight" Value="DemiBold" />
             <Setter Property="BorderThickness" Value="0,0,0,0" />
-            <Setter Property="BorderBrush" Value="{StaticResource MenuItemCheckedBrushGradient}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource MenuItemCheckedBrushGradient}" />
         </Style>
 
         <Style Selector="^.MenuItem:pointerover /template/ Border">
@@ -328,11 +329,11 @@
             </Setter>
             <Setter Property="Margin" Value="-40,2,0,0" />
         </Style>
-        
+
         <Style Selector="^:pointerover /template/ Ellipse#border">
             <Setter Property="Stroke" Value="{DynamicResource SukiBorderBrush}" />
         </Style>
-        
+
         <Style Selector="^ /template/ Ellipse#checkMark">
             <Setter Property="Fill" Value="{DynamicResource SukiBackground}" />
             <Setter Property="Width" Value="12" />
@@ -357,14 +358,14 @@
         <Style Selector="^:indeterminate /template/ Ellipse#indeterminateMark">
             <Setter Property="IsVisible" Value="True" />
         </Style>
-        
+
         <Style Selector="^:disabled /template/ Ellipse#border">
             <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
         </Style>
-        
+
         <Style Selector="^.MenuItem:disabled">
             <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

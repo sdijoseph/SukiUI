@@ -27,9 +27,10 @@
         <GradientStop Color="#597ef7" Offset="0.1" />
         <GradientStop Color="#2f54eb" Offset="0.9" />
     </LinearGradientBrush>
-    
-    <ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch" BasedOn="{StaticResource {x:Type ToggleSwitch}}">
-        <Setter Property="Foreground" Value="{StaticResource ToggleSwitchForegroundBrush}"/>
+
+    <ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch"
+                  BasedOn="{StaticResource {x:Type ToggleSwitch}}">
+        <Setter Property="Foreground" Value="{StaticResource ToggleSwitchForegroundBrush}" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -162,7 +163,7 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
-           <!--  NormalState  -->
+        <!--  NormalState  -->
         <Style Selector="^ /template/ Grid#SwitchAreaGrid">
             <Setter Property="Background" Value="Transparent" />
         </Style>
@@ -219,7 +220,7 @@
             </Setter>
 
         </Style>
-        
+
         <Style Selector="^:pointerover /template/ Border#PART_SwitchKnobBounds">
             <Setter Property="Background" Value="{StaticResource PointerOverBrush}" />
             <Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitchStrokeOnPointerOver}" />
@@ -339,5 +340,5 @@
             <Setter Property="Margin" Value="0" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

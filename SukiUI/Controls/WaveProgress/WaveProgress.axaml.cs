@@ -7,17 +7,24 @@ namespace SukiUI.Controls;
 
 public partial class WaveProgress : UserControl
 {
+    public static readonly DirectProperty<WaveProgress, int> ValueProperty =
+        AvaloniaProperty.RegisterDirect<WaveProgress, int>(
+            nameof(Value),
+            o => o.Value,
+            (o, v) => o.Value = v,
+            defaultBindingMode: BindingMode.TwoWay,
+            enableDataValidation: true);
+
+    public static readonly StyledProperty<bool> IsTextVisibleProperty =
+        AvaloniaProperty.Register<WaveProgress, bool>(nameof(IsTextVisible), true);
+
+    private int _value = 50;
+
     public WaveProgress()
     {
         InitializeComponent();
     }
 
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
-    
-    private int _value = 50;
     public int Value
     {
         get => _value;
@@ -30,19 +37,14 @@ public partial class WaveProgress : UserControl
         }
     }
 
-    public static readonly DirectProperty<WaveProgress, int> ValueProperty =
-        AvaloniaProperty.RegisterDirect<WaveProgress, int>(
-            nameof(Value),
-            o => o.Value,
-            (o, v) => o.Value = v,
-            defaultBindingMode: BindingMode.TwoWay,
-            enableDataValidation: true);
-    
-    public static readonly StyledProperty<bool> IsTextVisibleProperty = AvaloniaProperty.Register<WaveProgress, bool>(nameof(IsTextVisible), defaultValue: true);
-
     public bool IsTextVisible
     {
         get => GetValue(IsTextVisibleProperty);
-        set => SetValue(IsTextVisibleProperty, value );
+        set => SetValue(IsTextVisibleProperty, value);
+    }
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
     }
 }

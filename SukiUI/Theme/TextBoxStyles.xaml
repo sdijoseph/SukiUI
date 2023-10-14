@@ -165,8 +165,6 @@
                             <DockPanel>
 
 
-
-
                                 <DockPanel
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     Margin="{TemplateBinding Padding}"
@@ -178,7 +176,8 @@
                                         Text="{TemplateBinding Watermark}">
                                         <TextBlock.IsVisible>
                                             <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                                <Binding Path="UseFloatingWatermark" RelativeSource="{RelativeSource TemplatedParent}" />
+                                                <Binding Path="UseFloatingWatermark"
+                                                         RelativeSource="{RelativeSource TemplatedParent}" />
                                                 <Binding
                                                     Converter="{x:Static StringConverters.IsNotNullOrEmpty}"
                                                     Path="Text"
@@ -192,11 +191,9 @@
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerLeftContent}"
-                                                Grid.Column="0"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="0" />
                                             <ScrollViewer
                                                 Grid.Column="1"
-                                                Grid.ColumnSpan="1"
                                                 HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                                 VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                                                 <Panel>
@@ -228,8 +225,7 @@
                                             </ScrollViewer>
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerRightContent}"
-                                                Grid.Column="2"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="2" />
                                         </Grid>
                                     </DataValidationErrors>
                                 </DockPanel>
@@ -350,7 +346,6 @@
                                 </Border>
 
 
-
                                 <DockPanel
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     Margin="{TemplateBinding Padding}"
@@ -363,7 +358,8 @@
                                         Text="{TemplateBinding Watermark}">
                                         <TextBlock.IsVisible>
                                             <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                                <Binding Path="UseFloatingWatermark" RelativeSource="{RelativeSource TemplatedParent}" />
+                                                <Binding Path="UseFloatingWatermark"
+                                                         RelativeSource="{RelativeSource TemplatedParent}" />
                                                 <Binding
                                                     Converter="{x:Static StringConverters.IsNotNullOrEmpty}"
                                                     Path="Text"
@@ -377,11 +373,9 @@
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerLeftContent}"
-                                                Grid.Column="0"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="0" />
                                             <ScrollViewer
                                                 Grid.Column="1"
-                                                Grid.ColumnSpan="1"
                                                 HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                                 VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                                                 <Panel>
@@ -411,8 +405,7 @@
                                             </ScrollViewer>
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerRightContent}"
-                                                Grid.Column="2"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="2" />
                                         </Grid>
                                     </DataValidationErrors>
                                 </DockPanel>
@@ -473,7 +466,6 @@
                                 </Border>
 
 
-
                                 <DockPanel
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     Margin="{TemplateBinding Padding}"
@@ -486,7 +478,8 @@
                                         Text="{TemplateBinding Watermark}">
                                         <TextBlock.IsVisible>
                                             <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                                <Binding Path="UseFloatingWatermark" RelativeSource="{RelativeSource TemplatedParent}" />
+                                                <Binding Path="UseFloatingWatermark"
+                                                         RelativeSource="{RelativeSource TemplatedParent}" />
                                                 <Binding
                                                     Converter="{x:Static StringConverters.IsNotNullOrEmpty}"
                                                     Path="Text"
@@ -500,11 +493,9 @@
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerLeftContent}"
-                                                Grid.Column="0"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="0" />
                                             <ScrollViewer
                                                 Grid.Column="1"
-                                                Grid.ColumnSpan="1"
                                                 HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                                 VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                                                 <Panel>
@@ -537,8 +528,7 @@
                                             </ScrollViewer>
                                             <ContentPresenter
                                                 Content="{TemplateBinding InnerRightContent}"
-                                                Grid.Column="2"
-                                                Grid.ColumnSpan="1" />
+                                                Grid.Column="2" />
                                         </Grid>
 
                                     </DataValidationErrors>
@@ -550,5 +540,5 @@
             </Setter>
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

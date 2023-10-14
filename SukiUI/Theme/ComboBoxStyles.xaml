@@ -60,7 +60,8 @@
 
                                             </KeyFrame>
                                             <KeyFrame Cue="100%">
-                                                <Setter Property="Width" Value="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                <Setter Property="Width"
+                                                        Value="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}" />
 
                                             </KeyFrame>
                                         </Animation>
@@ -75,7 +76,8 @@
                                             Easing="CircularEaseOut"
                                             FillMode="Forward">
                                             <KeyFrame Cue="0%">
-                                                <Setter Property="Width" Value="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                <Setter Property="Width"
+                                                        Value="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}" />
 
                                             </KeyFrame>
                                             <KeyFrame Cue="100%">
@@ -139,7 +141,9 @@
                                         BoxShadow="{DynamicResource SukiPopupShadow}"
                                         CornerRadius="{DynamicResource SmallCornerRadius}"
                                         Margin="10,-10,0,0">
-                                        <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                                        <ScrollViewer
+                                            HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                            VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
                                             <ItemsPresenter
                                                 ItemsPanel="{TemplateBinding ItemsPanel}"
                                                 Margin="0,3,0,0"
@@ -160,5 +164,5 @@
             <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
         </Style>
     </ControlTheme>
-    
+
 </ResourceDictionary>

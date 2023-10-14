@@ -7,12 +7,12 @@
     <Design.PreviewWith>
         <controls:SukiTheme />
     </Design.PreviewWith>
-    
+
     <Styles.Resources>
         <ResourceDictionary>
             <CornerRadius x:Key="SmallCornerRadius">6</CornerRadius>
             <CornerRadius x:Key="MediumCornerRadius">13</CornerRadius>
-            
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
@@ -61,15 +61,15 @@
     </Styles.Resources>
 
     <Style Selector=":is(TreeDataGridCell)">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MinHeight" Value="25" />
     </Style>
 
     <Style Selector=":is(TreeDataGridCell):selected">
-        <Setter Property="Background" Value="{DynamicResource TreeDataGridSelectedCellBackgroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource TreeDataGridSelectedCellBackgroundBrush}" />
     </Style>
 
     <avalonia:MaterialIconStyles />
     <SimpleTheme />
-    
+
 </Styles>

@@ -1,15 +1,20 @@
-﻿using System.Collections.ObjectModel;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using ReactiveUI;
 
 namespace SukiUI.Controls.MobileNumberPicker;
 
 public partial class MobileNumberPickerPopup : UserControl
 {
+    public MobileNumberPicker _MobileNumberPicker;
+
+    public int CurrentValue;
+
+    private bool isScrolling;
+    private Point StartingPosition;
+
     public MobileNumberPickerPopup()
     {
         InitializeComponent();
@@ -22,17 +27,11 @@ public partial class MobileNumberPickerPopup : UserControl
         SetTextValues(_mobile.Value);
         CurrentValue = _mobile.Value;
     }
+
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
     }
-
-    public MobileNumberPicker _MobileNumberPicker = null;
-    
-    public int CurrentValue = 0;
-
-    private bool isScrolling = false;
-    private Point StartingPosition;
 
     private void PointerPressed(object sender, PointerPressedEventArgs e)
     {
@@ -43,22 +42,23 @@ public partial class MobileNumberPickerPopup : UserControl
     private void PointerReleased(object sender, PointerReleasedEventArgs e)
     {
         isScrolling = false;
-        var difference = (StartingPosition.Y - e.GetPosition(this.FindControl<TextBlock>("CurrentValueText")).Y ) /5;
-       
-         _MobileNumberPicker.Value = ((int)(CurrentValue + difference));
-       CurrentValue = ((int)(CurrentValue + difference));
+        var difference = (StartingPosition.Y - e.GetPosition(this.FindControl<TextBlock>("CurrentValueText")).Y) / 5;
+
+        _MobileNumberPicker.Value = (int)(CurrentValue + difference);
+        CurrentValue = (int)(CurrentValue + difference);
     }
 
     private void PointerMoved(object sender, PointerEventArgs e)
     {
         if (isScrolling)
         {
-            var difference = (StartingPosition.Y - e.GetPosition(this.FindControl<TextBlock>("CurrentValueText")).Y ) /5;
+            var difference = (StartingPosition.Y - e.GetPosition(this.FindControl<TextBlock>("CurrentValueText")).Y) /
+                             5;
             var temporaryValue = (int)(CurrentValue + difference);
 
             if (temporaryValue > _MobileNumberPicker.Maximum)
             {
-                StartingPosition = e.GetPosition(this.FindControl<TextBlock>("CurrentValueText")); 
+                StartingPosition = e.GetPosition(this.FindControl<TextBlock>("CurrentValueText"));
                 temporaryValue = _MobileNumberPicker.Maximum;
                 CurrentValue = temporaryValue;
             }
@@ -70,44 +70,39 @@ public partial class MobileNumberPickerPopup : UserControl
                 StartingPosition = e.GetPosition(this.FindControl<TextBlock>("CurrentValueText"));
                 CurrentValue = temporaryValue;
             }
-                
 
-            
-            
+
             SetTextValues(temporaryValue);
         }
     }
 
     private void SetTextValues(int temporaryValue)
     {
-      
-        
         this.FindControl<TextBlock>("CurrentValueText").Text = temporaryValue.ToString();
-        
-        if(temporaryValue -1 < _MobileNumberPicker.Minimum)
+
+        if (temporaryValue - 1 < _MobileNumberPicker.Minimum)
             this.FindControl<TextBlock>("CurrentValueTextMinus1").Text = "";
         else
-            this.FindControl<TextBlock>("CurrentValueTextMinus1").Text = (temporaryValue -1).ToString();
-        
-        if(temporaryValue + 1 > _MobileNumberPicker.Maximum)
+            this.FindControl<TextBlock>("CurrentValueTextMinus1").Text = (temporaryValue - 1).ToString();
+
+        if (temporaryValue + 1 > _MobileNumberPicker.Maximum)
             this.FindControl<TextBlock>("CurrentValueTextPlus1").Text = "";
         else
-            this.FindControl<TextBlock>("CurrentValueTextPlus1").Text = (temporaryValue +1).ToString();
-        
-        if(temporaryValue +2 > _MobileNumberPicker.Maximum)
+            this.FindControl<TextBlock>("CurrentValueTextPlus1").Text = (temporaryValue + 1).ToString();
+
+        if (temporaryValue + 2 > _MobileNumberPicker.Maximum)
             this.FindControl<TextBlock>("CurrentValueTextPlus2").Text = "";
         else
-            this.FindControl<TextBlock>("CurrentValueTextPlus2").Text = (temporaryValue +2).ToString();
-        
-        if(temporaryValue -2 < _MobileNumberPicker.Minimum)
+            this.FindControl<TextBlock>("CurrentValueTextPlus2").Text = (temporaryValue + 2).ToString();
+
+        if (temporaryValue - 2 < _MobileNumberPicker.Minimum)
             this.FindControl<TextBlock>("CurrentValueTextMinus2").Text = "";
         else
-            this.FindControl<TextBlock>("CurrentValueTextMinus2").Text = (temporaryValue -2).ToString();
+            this.FindControl<TextBlock>("CurrentValueTextMinus2").Text = (temporaryValue - 2).ToString();
     }
 
     private void DoneClick(object sender, RoutedEventArgs e)
     {
         InteractiveContainer.CloseDialog();
-       
     }
 }

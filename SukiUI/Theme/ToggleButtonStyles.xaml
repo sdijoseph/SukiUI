@@ -14,23 +14,24 @@
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
     </LinearGradientBrush>
-    
+
     <RadialGradientBrush x:Key="SwitchCheckedBrush" Center="80%,-40%" GradientOrigin="80%,-40%" Radius="1">
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0" />
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.3" />
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
     </RadialGradientBrush>
-    
+
     <LinearGradientBrush x:Key="AccentForegroundBrush" EndPoint="50%,100%" StartPoint="48%,0%">
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
     </LinearGradientBrush>
-    
-    <ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+
+    <ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton"
+                  BasedOn="{StaticResource {x:Type ToggleButton}}">
         <Style Selector="^.Switch">
             <Setter Property="Foreground" Value="{DynamicResource SwitchBrush}" />
             <Setter Property="RenderTransform">
-                <ScaleTransform ScaleX="1.1" ScaleY="1.1"></ScaleTransform>
+                <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
             </Setter>
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -115,9 +116,6 @@
                                 x:Name="PART_SwitchKnob">
 
 
-
-
-
                                 <Border
                                     Background="{DynamicResource SukiBackground}"
                                     BoxShadow="{DynamicResource SukiSwitchShadow}"
@@ -144,29 +142,29 @@
 
         <Style Selector="^.Switch:unchecked /template/ Border#SwitchKnob">
             <Style.Animations>
-                <Animation Duration="0:0:0.35" FillMode="Both" >
+                <Animation Duration="0:0:0.35" FillMode="Both">
                     <Animation.Easing>
-                        <SineEaseIn></SineEaseIn>
+                        <SineEaseIn />
                     </Animation.Easing>
 
 
                     <KeyFrame Cue="0%">
                         <Setter Property="Width" Value="16" />
                         <Setter Property="Canvas.Left" Value="22" />
-                 
+
                     </KeyFrame>
 
                     <KeyFrame Cue="30%">
                         <Setter Property="Width" Value="20" />
                         <Setter Property="Canvas.Left" Value="16" />
-                      
+
                     </KeyFrame>
-                 
+
 
                     <KeyFrame Cue="100%">
                         <Setter Property="Width" Value="16" />
                         <Setter Property="Canvas.Left" Value="2" />
-                     
+
                     </KeyFrame>
 
                 </Animation>
@@ -175,12 +173,12 @@
         </Style>
 
         <Style Selector="^.Switch:checked /template/ Border#SwitchKnob">
-            
+
             <Setter Property="BoxShadow" Value="0 0 0 0 White" />
             <Style.Animations>
                 <Animation Duration="0:0:0.35" FillMode="Both">
                     <Animation.Easing>
-                        <SineEaseIn></SineEaseIn>
+                        <SineEaseIn />
                     </Animation.Easing>
                     <KeyFrame Cue="0%">
                         <Setter Property="Width" Value="16" />
@@ -275,7 +273,7 @@
         <Style Selector="^.Primary:checked /template/ ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}" />
         </Style>
-        
+
         <Style Selector="^.Accent">
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="BorderBrush" Value="Transparent" />
@@ -284,7 +282,7 @@
             <Setter Property="Margin" Value="5 5" />
             <Setter Property="Background" Value="Transparent" />
         </Style>
-        
+
         <Style Selector="^.Accent /template/ ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource AccentForegroundBrush}" />
         </Style>
@@ -304,11 +302,11 @@
         <Style Selector="^.Accent /template/ ContentPresenter">
             <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
         </Style>
-        
+
         <Style Selector="^.Accent:pressed /template/ ContentPresenter">
             <Setter Property="Background" Value="Transparent" />
         </Style>
-        
+
         <Style Selector="^.passwordBoxRevealButton">
             <Setter Property="Cursor" Value="Arrow" />
             <Setter Property="Template">
@@ -343,7 +341,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style Selector="^.passwordBoxRevealButton:not(ToggleButton:checked) /template/ Path#PART_GlyphElement_Hide">
             <Setter Property="IsVisible" Value="False" />
         </Style>
@@ -356,9 +354,9 @@
             <Setter Property="Focusable" Value="False" />
         </Style>
     </ControlTheme>
-    
+
     <!-- <Style Selector="^.Primary > TextBlock"> -->
     <!--     <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" /> -->
     <!-- </Style> -->
-    
+
 </ResourceDictionary>

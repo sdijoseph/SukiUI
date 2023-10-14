@@ -5,7 +5,7 @@
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu" BasedOn="{StaticResource {x:Type ContextMenu}}" >
+    <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu" BasedOn="{StaticResource {x:Type ContextMenu}}">
         <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource SukiControlBorderBrush}" />
@@ -23,7 +23,7 @@
                     Padding="{TemplateBinding Padding}">
                     <ScrollViewer Theme="{StaticResource SimpleMenuScrollViewer}">
                         <ItemsPresenter
-                            
+
                             HorizontalAlignment="Left"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             KeyboardNavigation.TabNavigation="Continue"

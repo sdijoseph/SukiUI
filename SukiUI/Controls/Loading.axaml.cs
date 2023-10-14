@@ -1,21 +1,17 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 
-namespace SukiUI.Controls
+namespace SukiUI.Controls;
+
+public partial class Loading : UserControl
 {
-    public partial class Loading : UserControl
+    public Loading()
     {
-        public Loading()
-        {
-            InitializeComponent();
-           
-        }
+        InitializeComponent();
+    }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
     }
 }

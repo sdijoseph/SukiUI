@@ -12,8 +12,8 @@
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="0.1" />
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.6" />
     </LinearGradientBrush>
-    
-    <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}" >
+
+    <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
         <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}" />
@@ -76,7 +76,7 @@
         </Style>
 
         <Style Selector="^:checked /template/ Border#border">
-            <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedLinearGradientBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedLinearGradientBrush}" />
         </Style>
 
         <Style Selector="^ /template/ Path#checkMark">

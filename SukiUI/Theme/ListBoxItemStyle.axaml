@@ -14,7 +14,7 @@
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}" >
+    <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Padding" Value="4,2" />
         <Setter Property="Template">
@@ -26,10 +26,10 @@
                     Padding="8,4">
                     <DockPanel>
                         <material:MaterialIcon Margin="0,0,0,0"
-                            DockPanel.Dock="Right"
-                            Foreground="{DynamicResource SukiPrimaryColor}"
-                            Kind="CheckCircle" Height="20" Width="20"
-                            Name="CheckSelected" />
+                                               DockPanel.Dock="Right"
+                                               Foreground="{DynamicResource SukiPrimaryColor}"
+                                               Kind="CheckCircle" Height="20" Width="20"
+                                               Name="CheckSelected" />
                         <ContentPresenter
                             Background="Transparent"
                             BorderBrush="Transparent"
@@ -49,86 +49,86 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="TextBlock.Foreground" Value="{DynamicResource SukiPrimaryColor}" />
         </Style>
-         <Style Selector="^:selected /template/ material|MaterialIcon#CheckSelected">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
+        <Style Selector="^:selected /template/ material|MaterialIcon#CheckSelected">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
 
-    <Style Selector="^ /template/ material|MaterialIcon#CheckSelected">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
+        <Style Selector="^ /template/ material|MaterialIcon#CheckSelected">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
 
-    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-    <Style Selector="^:selected /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="#f5f5ff" />
-    </Style>
-    <Style Selector="^:pointerover /template/ Border#BorderBasicStyle">
-        <Setter Property="Background" Value="#f8f8ff" />
-    </Style>
+        <Style Selector="^:selected /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="#f5f5ff" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#BorderBasicStyle">
+            <Setter Property="Background" Value="#f8f8ff" />
+        </Style>
 
-    <Style Selector="^.WithCheck">
-        <Setter Property="Background" Value="Transparent" />
+        <Style Selector="^.WithCheck">
+            <Setter Property="Background" Value="Transparent" />
 
-        <Setter Property="Template">
-            <ControlTemplate>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox IsEnabled="False" Margin="2">
-                        <CheckBox.RenderTransform>
-                            <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-                        </CheckBox.RenderTransform>
-                    </CheckBox>
-                    <ContentPresenter
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        Content="{TemplateBinding Content}"
-                        ContentTemplate="{TemplateBinding ContentTemplate}"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        Margin="-8,0,0,0"
-                        Name="PART_ContentPresenter"
-                        Padding="{TemplateBinding Padding}"
-                        VerticalAlignment="Center"
-                        VerticalContentAlignment="Center" />
-                </StackPanel>
-            </ControlTemplate>
-
-
-        </Setter>
-    </Style>
-
-    <Style Selector="^.WithCheck:selected /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-    <Style Selector="^.WithCheck:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsEnabled="False" Margin="2">
+                            <CheckBox.RenderTransform>
+                                <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
+                        <ContentPresenter
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Margin="-8,0,0,0"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center" />
+                    </StackPanel>
+                </ControlTemplate>
 
 
-    <Style Selector="^.WithCheck:selected /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+            </Setter>
+        </Style>
 
-    <Style Selector="^.WithCheck">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="10 0 0 0" />
-        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundBrush}" />
-        <Setter Property="Padding" Value="10 0" />
-        <Setter Property="Margin" Value="0 5" />
-    </Style>
+        <Style Selector="^.WithCheck:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-    <Style Selector="^.WithCheck:selected /template/ CheckBox">
+        <Style Selector="^.WithCheck:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-        <Setter Property="IsChecked" Value="True" />
-    </Style>
 
-    <Style Selector="^.WithCheck /template/ CheckBox">
+        <Style Selector="^.WithCheck:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-        <Setter Property="IsChecked" Value="False" />
-    </Style>
+        <Style Selector="^.WithCheck">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="10 0 0 0" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundBrush}" />
+            <Setter Property="Padding" Value="10 0" />
+            <Setter Property="Margin" Value="0 5" />
+        </Style>
+
+        <Style Selector="^.WithCheck:selected /template/ CheckBox">
+
+            <Setter Property="IsChecked" Value="True" />
+        </Style>
+
+        <Style Selector="^.WithCheck /template/ CheckBox">
+
+            <Setter Property="IsChecked" Value="False" />
+        </Style>
     </ControlTheme>
 
 
@@ -137,7 +137,5 @@
     <!--     <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" /> -->
     <!-- </Style> -->
 
-
-   
 
 </ResourceDictionary>

@@ -37,7 +37,6 @@
     <x:Double x:Key="DatePickerSpacerThemeWidth">1</x:Double>
 
 
-
     <ControlTheme TargetType="DatePicker" x:Key="{x:Type DatePicker}">
         <Setter Property="FontSize" Value="{DynamicResource FontSizeNormal}" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />

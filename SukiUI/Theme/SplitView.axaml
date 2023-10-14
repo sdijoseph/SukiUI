@@ -38,7 +38,8 @@
                 <ControlTemplate TargetType="SplitView">
                     <Grid Background="{TemplateBinding Background}" Name="Container">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
+                            <ColumnDefinition
+                                Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -74,7 +75,8 @@
 
         <!--  Overlay  -->
         <Style Selector="^:overlay:left /template/ Panel#PART_PaneRoot">
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
             <!--  ColumnSpan should be 2  -->
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="0" />
@@ -88,7 +90,8 @@
         <Style Selector="^:compactinline:left /template/ Panel#PART_PaneRoot">
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="0" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:compactinline:left /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="1" />
@@ -100,7 +103,8 @@
             <!--  ColumnSpan should be 2  -->
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="0" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:compactoverlay:left /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="1" />
@@ -111,7 +115,8 @@
         <Style Selector="^:inline:left /template/ Panel#PART_PaneRoot">
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="0" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:inline:left /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="1" />
@@ -125,7 +130,8 @@
                     <Grid Background="{TemplateBinding Background}" Name="Container">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
+                            <ColumnDefinition
+                                Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
                         </Grid.ColumnDefinitions>
 
                         <Panel
@@ -160,7 +166,8 @@
 
         <!--  Overlay  -->
         <Style Selector="^:overlay:right /template/ Panel#PART_PaneRoot">
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
             <Setter Property="Grid.ColumnSpan" Value="2" />
             <Setter Property="Grid.Column" Value="1" />
         </Style>
@@ -173,7 +180,8 @@
         <Style Selector="^:compactinline:right /template/ Panel#PART_PaneRoot">
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="1" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:compactinline:right /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="0" />
@@ -184,7 +192,8 @@
         <Style Selector="^:compactoverlay:right /template/ Panel#PART_PaneRoot">
             <Setter Property="Grid.ColumnSpan" Value="2" />
             <Setter Property="Grid.Column" Value="1" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:compactoverlay:right /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="0" />
@@ -195,7 +204,8 @@
         <Style Selector="^:inline:right /template/ Panel#PART_PaneRoot">
             <Setter Property="Grid.ColumnSpan" Value="1" />
             <Setter Property="Grid.Column" Value="1" />
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:inline:right /template/ Panel#ContentRoot">
             <Setter Property="Grid.Column" Value="0" />
@@ -212,7 +222,8 @@
                         Property="Width" />
                 </Transitions>
             </Setter>
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=OpenPaneLength}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=OpenPaneLength}" />
         </Style>
         <Style Selector="^:open /template/ Rectangle#LightDismissLayer">
             <Setter Property="Transitions">
@@ -235,7 +246,8 @@
                         Property="Width" />
                 </Transitions>
             </Setter>
-            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+            <Setter Property="Width"
+                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
         </Style>
         <Style Selector="^:closed /template/ Rectangle#LightDismissLayer">
             <Setter Property="Transitions">

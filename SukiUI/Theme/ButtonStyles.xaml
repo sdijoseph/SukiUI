@@ -14,7 +14,6 @@
             </Button>
 
 
-
             <Button Classes="Accent">
                 <TextBlock>Accent</TextBlock>
             </Button>
@@ -32,9 +31,9 @@
             </Button>
         </WrapPanel>
     </Design.PreviewWith>
-    
+
     <StreamGeometry x:Key="TextBoxClearButtonData">M 11.416016,10 20,1.4160156 18.583984,0 10,8.5839846 1.4160156,0 0,1.4160156 8.5839844,10 0,18.583985 1.4160156,20 10,11.416015 18.583984,20 20,18.583985 Z</StreamGeometry>
-    
+
     <LinearGradientBrush x:Key="PrimaryGradientBrush" EndPoint="50%,100%" StartPoint="48%,0%">
         <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
         <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
@@ -74,260 +73,252 @@
                 <BrushTransition Duration="0:0:0.35" Property="Background" />
             </Transitions>
         </Setter>
-        
-
-            
-            <Style Selector="^ /template/ ContentPresenter">
-                <Setter Property="Transitions">
-                    <Transitions>
-                        <BrushTransition Duration="0:0:0.3" Property="Foreground" />
-                    </Transitions>
-                </Setter>
-            </Style>
 
 
-            
-            <Style Selector="^:pointerover /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
+        <Style Selector="^ /template/ ContentPresenter">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Duration="0:0:0.3" Property="Foreground" />
+                </Transitions>
+            </Setter>
+        </Style>
 
 
-            
-            <Style Selector="^:pressed /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
-
-            <Style Selector="^ /template/ ContentPresenter">
-                <Setter Property="Transitions">
-                    <Transitions>
-                        <BrushTransition Duration="0:0:0.3" Property="BorderBrush" />
-                    </Transitions>
-                </Setter>
-            </Style>
-
-            <Style Selector="^:pointerover /template/ ContentPresenter">
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColorGradient}" />
-            </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
 
 
+        <Style Selector="^:pressed /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
+
+        <Style Selector="^ /template/ ContentPresenter">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Duration="0:0:0.3" Property="BorderBrush" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:pointerover /template/ ContentPresenter">
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColorGradient}" />
+        </Style>
 
 
+        <Style Selector="^:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
+
+        <Style Selector="^.Accent">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Padding" Value="11,8" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Margin" Value="5 5" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
 
-            <Style Selector="^:pressed /template/ ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
+        <Style Selector="^.Accent /template/ ContentPresenter">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
 
-            <Style Selector="^.Accent">
-                <Setter Property="BorderThickness" Value="0" />
-                <Setter Property="BorderBrush" Value="Transparent" />
-                <Setter Property="Padding" Value="11,8" />
-                <Setter Property="CornerRadius" Value="5" />
-                <Setter Property="Margin" Value="5 5" />
-                <Setter Property="Background" Value="Transparent" />
-            </Style>
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
+        <Style Selector="^.Accent:pointerover">
+            <Setter Property="Background" Value="Transparent" />
 
-            
-            <Style Selector="^.Accent /template/ ContentPresenter">
-                <Setter Property="Foreground">
-                    <Setter.Value>
-                        <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+        </Style>
 
-                            <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
-                            <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
-                        </LinearGradientBrush>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+        <Style Selector="^.Accent:pointerover /template/ ContentPresenter">
 
-            <Style Selector="^.Accent:pointerover">
-                <Setter Property="Background" Value="Transparent" />
-
-            </Style>
-
-            <Style Selector="^.Accent:pointerover /template/ ContentPresenter">
-
-                <Setter Property="RenderTransform">
-                    <Setter.Value>
-                        <ScaleTransform ScaleX="1.03" ScaleY="1.03" />
-                    </Setter.Value>
-                </Setter>
-            </Style>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.03" ScaleY="1.03" />
+                </Setter.Value>
+            </Setter>
+        </Style>
 
 
-            <Style Selector="^.Accent:pressed /template/ ContentPresenter">
-                <Setter Property="Background" Value="Transparent" />
-            </Style>
-        
-            <Style Selector="^ /template/ ContentPresenter">
-                <Setter Property="FontWeight" Value="DemiBold" />
-            </Style>
+        <Style Selector="^.Accent:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
 
-            <Style Selector="^:pressed /template/ ContentPresenter">
+        <Style Selector="^ /template/ ContentPresenter">
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
 
-                <Setter Property="RenderTransform">
-                    <Setter.Value>
-                        <ScaleTransform ScaleX="0.97" ScaleY="0.97" />
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        
-            <Style Selector="^.Primary">
-                <Setter Property="Padding" Value="18,10,18,8" />
-                <Setter Property="BorderThickness" Value="0" />
-                <Setter Property="Background" Value="{DynamicResource PrimaryGradientBrush}"/>
-                <Setter Property="BorderBrush" Value="#2948c5" />
+        <Style Selector="^:pressed /template/ ContentPresenter">
 
-                <Setter Property="Transitions">
-                    <Transitions>
-                        <BrushTransition Duration="0:0:0.2" Property="Background" />
-                    </Transitions>
-                </Setter>
-            </Style>
-        
-            <Style Selector="^.Primary /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="White" />
-            </Style>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="0.97" ScaleY="0.97" />
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-            <Style Selector="^.Primary:pointerover">
-                <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
+        <Style Selector="^.Primary">
+            <Setter Property="Padding" Value="18,10,18,8" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{DynamicResource PrimaryGradientBrush}" />
+            <Setter Property="BorderBrush" Value="#2948c5" />
 
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Duration="0:0:0.2" Property="Background" />
+                </Transitions>
+            </Setter>
+        </Style>
 
-            <Style Selector="^.Primary:pressed /template/ ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
-        
-            <Style Selector="^.Outlined">
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
-                <Setter Property="Background" Value="Transparent" />
+        <Style Selector="^.Primary /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
 
-                <Setter Property="Transitions">
-                    <Transitions>
-                        <BrushTransition Duration="0:0:0.3" Property="Background" />
-                        <BrushTransition Duration="0:0:0.3" Property="BorderBrush" />
-                    </Transitions>
-                </Setter>
-            </Style>
-        
-            <Style Selector="^.Outlined /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-                <Setter Property="Transitions">
-                    <Transitions>
-                        <BrushTransition Duration="0:0:0.3" Property="Foreground" />
-
-                    </Transitions>
-                </Setter>
-            </Style>
-        
-            <Style Selector="^.Outlined:pointerover /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="White" />
-            </Style>
-
-            <Style Selector="^.Outlined:pointerover">
-                <Setter Property="BorderBrush" Value="Transparent" />
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
-
-                            <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
-                            <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
-                        </LinearGradientBrush>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+        <Style Selector="^.Primary:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
 
 
-            <Style Selector="^.Outlined:pressed /template/ ContentPresenter">
-                <Setter Property="BorderBrush" Value="Transparent" />
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+        <Style Selector="^.Primary:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor}" />
+        </Style>
 
-                            <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
-                            <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
-                        </LinearGradientBrush>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        
-            <Style Selector="^.Success">
-                <Setter Property="Background" Value="#cdf2ca" />
-                <Setter Property="BorderBrush" Value="#b2e1ae" />
-            </Style>
+        <Style Selector="^.Outlined">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+            <Setter Property="Background" Value="Transparent" />
 
-            <Style Selector="^.Success /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="#13831c" />
-            </Style>
-            <Style Selector="^.Success:pointerover /template/ ContentPresenter">
-                <Setter Property="Background" Value="#d7f5db" />
-            </Style>
-            <Style Selector="^.Success:pressed /template/ ContentPresenter">
-                <Setter Property="Background" Value="#d7f5db" />
-            </Style>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Duration="0:0:0.3" Property="Background" />
+                    <BrushTransition Duration="0:0:0.3" Property="BorderBrush" />
+                </Transitions>
+            </Setter>
+        </Style>
 
-            <Style Selector="^.Danger">
-                <Setter Property="Background" Value="#f2caca" />
-                <Setter Property="BorderBrush" Value="#e4b5b5" />
-            </Style>
+        <Style Selector="^.Outlined /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Duration="0:0:0.3" Property="Foreground" />
 
-            <Style Selector="^.Danger /template/ ContentPresenter">
-                <Setter Property="Foreground" Value="#831313" />
-            </Style>
-            <Style Selector="^.Danger:pointerover /template/ ContentPresenter">
-                <Setter Property="Background" Value="#f5d7d7" />
-            </Style>
-            <Style Selector="^.Danger:pressed /template/ ContentPresenter">
-                <Setter Property="Background" Value="#f5d7d7" />
-            </Style>
+                </Transitions>
+            </Setter>
+        </Style>
 
-            <Style Selector="^.Rounded">
-                <Setter Property="CornerRadius" Value="100" />
-                <Setter Property="Padding" Value="25,10,25,8" />
-            </Style>
+        <Style Selector="^.Outlined:pointerover /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
 
-            <Style Selector="^.Accent /template/ ContentPresenter">
-                <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
-            </Style>
+        <Style Selector="^.Outlined:pointerover">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
 
-            <Style Selector="^.Primary /template/ ContentPresenter">
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-                <Setter Property="BoxShadow" Value="{DynamicResource SukiLowShadow}" />
-            </Style>
-            
-            <Style Selector="^ /template/ ContentPresenter[FontWeight=DemiBold]">
-                <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Medium.ttf#Roboto" />
-            </Style>
 
-            <Style Selector="^.Card">
-                <Setter Property="Padding" Value="20" />
-                <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
-                <Setter Property="BorderThickness" Value="1.5" />
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiLightBorderBrush}" />
-                <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
-                <Setter Property="Margin" Value="7" />
-                <Setter Property="Template">
-                    <ControlTemplate>
-                        <ContentPresenter
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            Margin="7"
-                            Name="PART_ContentPresenter"
-                            Padding="{TemplateBinding Padding}"
-                            RecognizesAccessKey="True"
-                            TextElement.Foreground="{TemplateBinding Foreground}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </ControlTemplate>
-                </Setter>
-            </Style>
+        <Style Selector="^.Outlined:pressed /template/ ContentPresenter">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
+
+                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.5" />
+                        <GradientStop Color="{DynamicResource SukiPrimaryColorGradient}" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style Selector="^.Success">
+            <Setter Property="Background" Value="#cdf2ca" />
+            <Setter Property="BorderBrush" Value="#b2e1ae" />
+        </Style>
+
+        <Style Selector="^.Success /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="#13831c" />
+        </Style>
+        <Style Selector="^.Success:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#d7f5db" />
+        </Style>
+        <Style Selector="^.Success:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#d7f5db" />
+        </Style>
+
+        <Style Selector="^.Danger">
+            <Setter Property="Background" Value="#f2caca" />
+            <Setter Property="BorderBrush" Value="#e4b5b5" />
+        </Style>
+
+        <Style Selector="^.Danger /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="#831313" />
+        </Style>
+        <Style Selector="^.Danger:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#f5d7d7" />
+        </Style>
+        <Style Selector="^.Danger:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#f5d7d7" />
+        </Style>
+
+        <Style Selector="^.Rounded">
+            <Setter Property="CornerRadius" Value="100" />
+            <Setter Property="Padding" Value="25,10,25,8" />
+        </Style>
+
+        <Style Selector="^.Accent /template/ ContentPresenter">
+            <Setter Property="BoxShadow" Value="0 0 0 0 Transparent" />
+        </Style>
+
+        <Style Selector="^.Primary /template/ ContentPresenter">
+
+            <Setter Property="BoxShadow" Value="{DynamicResource SukiLowShadow}" />
+        </Style>
+
+        <Style Selector="^ /template/ ContentPresenter[FontWeight=DemiBold]">
+            <Setter Property="FontFamily" Value="avares://SukiUI/Roboto-Medium.ttf#Roboto" />
+        </Style>
+
+        <Style Selector="^.Card">
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="CornerRadius" Value="{DynamicResource MediumCornerRadius}" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiLightBorderBrush}" />
+            <Setter Property="Background" Value="{DynamicResource SukiBackground}" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <ContentPresenter
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Margin="7"
+                        Name="PART_ContentPresenter"
+                        Padding="{TemplateBinding Padding}"
+                        RecognizesAccessKey="True"
+                        TextElement.Foreground="{TemplateBinding Foreground}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </ControlTemplate>
+            </Setter>
+        </Style>
         <Style Selector="^.textBoxClearButton">
             <Setter Property="Focusable" Value="False" />
             <Setter Property="Cursor" Value="Arrow" />
@@ -353,7 +344,7 @@
             </Setter>
         </Style>
     </ControlTheme>
-    
+
     <!-- <Style Selector="Button.Primary > TextBlock"> -->
     <!--     <Setter Property="Foreground" Value="White" /> -->
     <!-- </Style> -->

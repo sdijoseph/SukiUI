@@ -18,8 +18,8 @@
             </DataGrid>
         </Border>
     </Design.PreviewWith>
-    
-    <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell" >
+
+    <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -50,8 +50,7 @@
     </ControlTheme>
 
 
-
-    <ControlTheme x:Key="{x:Type DataGridColumnHeader}" TargetType="DataGridColumnHeader" >
+    <ControlTheme x:Key="{x:Type DataGridColumnHeader}" TargetType="DataGridColumnHeader">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FontWeight" Value="DemiBold" />
@@ -92,7 +91,6 @@
                         </Grid>
 
 
-
                     </Grid>
                 </Border>
             </ControlTemplate>
@@ -123,8 +121,8 @@
             </Setter>
         </Style>
     </ControlTheme>
-    
-    <ControlTheme x:Key="{x:Type DataGridRow}" TargetType="DataGridRow" >
+
+    <ControlTheme x:Key="{x:Type DataGridRow}" TargetType="DataGridRow">
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="30" />
         <Setter Property="Template">
@@ -192,9 +190,8 @@
         </Style>
     </ControlTheme>
 
-   
 
-    <ControlTheme x:Key="{x:Type DataGridRowHeader}" TargetType="DataGridRowHeader" >
+    <ControlTheme x:Key="{x:Type DataGridRowHeader}" TargetType="DataGridRowHeader">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -233,7 +230,7 @@
         </Setter>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type DataGridRowGroupHeader}" TargetType="DataGridRowGroupHeader" >
+    <ControlTheme x:Key="{x:Type DataGridRowGroupHeader}" TargetType="DataGridRowGroupHeader">
         <Setter Property="Background" Value="{DynamicResource ThemeControlMidHighBrush}" />
         <Setter Property="Height" Value="20" />
         <Setter Property="Template">
@@ -279,13 +276,12 @@
                 </DataGridFrozenGrid>
             </ControlTemplate>
         </Setter>
-        
+
         <Style Selector="^ /template/ ToggleButton#ExpanderButton">
             <Setter Property="Template">
                 <ControlTemplate>
                     <Border
                         Background="Transparent"
-                        Grid.Column="0"
                         Height="20"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
@@ -299,7 +295,7 @@
                 </ControlTemplate>
             </Setter>
         </Style>
-        
+
         <Style Selector="^ /template/ ToggleButton#ExpanderButton:checked">
             <Setter Property="RenderTransform">
                 <RotateTransform Angle="90" />
@@ -307,7 +303,7 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type DataGrid}" TargetType="DataGrid" >
+    <ControlTheme x:Key="{x:Type DataGrid}" TargetType="DataGrid">
 
         <Setter Property="RowBackground" Value="Transparent" />
 
