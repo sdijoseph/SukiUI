@@ -16,5 +16,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
+        </Style>
     </ControlTheme>
 </ResourceDictionary>
