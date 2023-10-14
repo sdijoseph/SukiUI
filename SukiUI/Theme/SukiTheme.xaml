@@ -47,6 +47,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ContextMenuStyle.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/WindowStyles.axaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ScrollBarStyle.axaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>

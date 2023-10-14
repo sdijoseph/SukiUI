@@ -1,4 +1,4 @@
-<Styles
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -10,17 +10,7 @@
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="Border.ExpanderToggle">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-    </Style>
-
-    <Style Selector="Border.ExpanderToggle:pointerover">
-        <Setter Property="Background" Value="{DynamicResource SukiLightBackground}" />
-        <Setter Property="BorderThickness" Value="0" />
-    </Style>
-
-    <Style Selector="Expander">
+    <ControlTheme x:Key="{x:Type Expander}" TargetType="Expander" BasedOn="{StaticResource {x:Type Expander}}" >
         <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
         <Setter Property="Background" Value="#fefefe" />
         <Setter Property="BorderThickness" Value="1.5" />
@@ -30,9 +20,9 @@
                 <CrossFade Duration="00:00:00.25" />
             </Setter.Value>
         </Setter>
-    </Style>
-
-    <Style Selector="Expander[ExpandDirection=Down]">
+        
+        
+    <Style Selector="^[ExpandDirection=Down]">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border>
@@ -89,7 +79,7 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Expander[ExpandDirection=Up]">
+    <Style Selector="^[ExpandDirection=Up]">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
@@ -118,7 +108,7 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Expander[ExpandDirection=Right]">
+    <Style Selector="^[ExpandDirection=Right]">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
@@ -147,7 +137,7 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Expander[ExpandDirection=Left]">
+    <Style Selector="^[ExpandDirection=Left]">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
@@ -176,7 +166,7 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Expander /template/ ToggleButton#PART_toggle">
+    <Style Selector="^ /template/ ToggleButton#PART_toggle">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Background="Transparent" BorderThickness="1">
@@ -206,14 +196,14 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="Expander /template/ ToggleButton#PART_toggle:pointerover /template/ Border">
+    <Style Selector="^ /template/ ToggleButton#PART_toggle:pointerover /template/ Border">
         <Setter Property="BorderBrush" Value="Transparent" />
 
     </Style>
-    <Style Selector="Expander /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
+    <Style Selector="^ /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
         <Setter Property="IsVisible" Value="True" />
     </Style>
-    <Style Selector="Expander:expanded /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
+    <Style Selector="^:expanded /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
         <Setter Property="IsVisible" Value="False" />
     </Style>
 
@@ -221,34 +211,36 @@
 
 
 
-    <Style Selector="Expander:down:expanded /template/ ToggleButton#PART_toggle /template/ ContentPresenter">
+    <Style Selector="^:down:expanded /template/ ToggleButton#PART_toggle /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
     </Style>
-    <Style Selector="Expander:down /template/ Grid#GridExp">
+    <Style Selector="^:down /template/ Grid#GridExp">
         <Setter Property="Margin" Value="0,0,0,-400" />
     </Style>
-    <Style Selector="Expander:down:expanded /template/ Grid#GridExp">
+    <Style Selector="^:down:expanded /template/ Grid#GridExp">
         <Setter Property="Margin" Value="0" />
     </Style>
 
-    <Style Selector="Expander:up:expanded /template/ ToggleButton#PART_toggle /template/ Path">
+    <Style Selector="^:up:expanded /template/ ToggleButton#PART_toggle /template/ Path">
         <Setter Property="RenderTransform">
             <RotateTransform Angle="-90" />
         </Setter>
     </Style>
-    <Style Selector="Expander:left:expanded /template/ ToggleButton#PART_toggle /template/ Path">
+    <Style Selector="^:left:expanded /template/ ToggleButton#PART_toggle /template/ Path">
         <Setter Property="RenderTransform">
             <RotateTransform Angle="180" />
         </Setter>
     </Style>
-    <Style Selector="Expander:right /template/ ToggleButton#PART_toggle /template/ Path">
+    <Style Selector="^:right /template/ ToggleButton#PART_toggle /template/ Path">
         <Setter Property="RenderTransform">
             <RotateTransform Angle="180" />
         </Setter>
     </Style>
-    <Style Selector="Expander:right:expanded /template/ ToggleButton#PART_toggle /template/ Path">
+    <Style Selector="^:right:expanded /template/ ToggleButton#PART_toggle /template/ Path">
         <Setter Property="RenderTransform">
             <RotateTransform Angle="0" />
         </Setter>
     </Style>
-</Styles>
+    </ControlTheme>
+
+</ResourceDictionary>
