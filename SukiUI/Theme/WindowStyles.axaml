@@ -1,13 +1,12 @@
-﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Padding="20">
             <!--  Add Controls for Previewer Here  -->
         </Border>
     </Design.PreviewWith>
 
-    
-    
-    <Style Selector="Window.NakedWindow">
+    <ControlTheme x:Key="{x:Type Window}" TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
+         <Style Selector="^.NakedWindow">
         <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
         <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
         <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
@@ -40,7 +39,7 @@
         </Setter>
     </Style>
     
-    <Style Selector="Window.Blurred">
+    <Style Selector="^.Blurred">
         <Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource SukiLightBackground}"></Setter>
         <Setter Property="TransparencyLevelHint" Value="AcrylicBlur"></Setter>
         <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
@@ -74,5 +73,8 @@
             </ControlTemplate>
         </Setter>
     </Style>
+    </ControlTheme>
     
-</Styles>
+   
+    
+</ResourceDictionary>
