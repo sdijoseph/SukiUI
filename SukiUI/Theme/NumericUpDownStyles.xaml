@@ -57,9 +57,12 @@
         <Style Selector="^:error /template/ Border#border">
             <Setter Property="BorderBrush" Value="{DynamicResource SukiBorderBrush}" />
         </Style>
-          <Style Selector="^ /template/ ButtonSpinner /template/ Border">
-        <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
-    </Style>
+        <Style Selector="^ /template/ ButtonSpinner">
+            <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
+        </Style>
+    <!--       <Style Selector="^ /template/ ButtonSpinner /template/ Border"> -->
+    <!--     <Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" /> -->
+    <!-- </Style> -->
     <Style Selector="^ /template/ Border">
         <Setter Property="BorderThickness" Value="0" />
 

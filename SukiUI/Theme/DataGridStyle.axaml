@@ -299,14 +299,13 @@
                 </ControlTemplate>
             </Setter>
         </Style>
-
-        <Style Selector="^ /template/ ToggleButton#ExpanderButton:checked /template/ Path">
+        
+        <Style Selector="^ /template/ ToggleButton#ExpanderButton:checked">
             <Setter Property="RenderTransform">
                 <RotateTransform Angle="90" />
             </Setter>
         </Style>
     </ControlTheme>
-
 
     <ControlTheme x:Key="{x:Type DataGrid}" TargetType="DataGrid" >
 

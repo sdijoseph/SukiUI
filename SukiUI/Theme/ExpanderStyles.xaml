@@ -196,51 +196,51 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <Style Selector="^ /template/ ToggleButton#PART_toggle:pointerover /template/ Border">
-        <Setter Property="BorderBrush" Value="Transparent" />
-
-    </Style>
-    <Style Selector="^ /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
-        <Setter Property="IsVisible" Value="True" />
-    </Style>
-    <Style Selector="^:expanded /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
-
-
-
-
-
-    <Style Selector="^:down:expanded /template/ ToggleButton#PART_toggle /template/ ContentPresenter">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
+    <!-- <Style Selector="^ /template/ ToggleButton#PART_toggle:pointerover /template/ Border"> -->
+    <!--     <Setter Property="BorderBrush" Value="Transparent" /> -->
+    <!-- -->
+    <!-- </Style> -->
+    <!-- <Style Selector="^ /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon"> -->
+    <!--     <Setter Property="IsVisible" Value="True" /> -->
+    <!-- </Style> -->
+    <!-- <Style Selector="^:expanded /template/ ToggleButton#PART_toggle /template/ avalonia|MaterialIcon#PlusIcon"> -->
+    <!--     <Setter Property="IsVisible" Value="False" /> -->
+    <!-- </Style> -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- <Style Selector="^:down:expanded /template/ ToggleButton#PART_toggle /template/ ContentPresenter"> -->
+    <!--     <Setter Property="Background" Value="Transparent" /> -->
+    <!-- </Style> -->
     <Style Selector="^:down /template/ Grid#GridExp">
         <Setter Property="Margin" Value="0,0,0,-400" />
     </Style>
     <Style Selector="^:down:expanded /template/ Grid#GridExp">
         <Setter Property="Margin" Value="0" />
     </Style>
-
-    <Style Selector="^:up:expanded /template/ ToggleButton#PART_toggle /template/ Path">
-        <Setter Property="RenderTransform">
-            <RotateTransform Angle="-90" />
-        </Setter>
-    </Style>
-    <Style Selector="^:left:expanded /template/ ToggleButton#PART_toggle /template/ Path">
-        <Setter Property="RenderTransform">
-            <RotateTransform Angle="180" />
-        </Setter>
-    </Style>
-    <Style Selector="^:right /template/ ToggleButton#PART_toggle /template/ Path">
-        <Setter Property="RenderTransform">
-            <RotateTransform Angle="180" />
-        </Setter>
-    </Style>
-    <Style Selector="^:right:expanded /template/ ToggleButton#PART_toggle /template/ Path">
-        <Setter Property="RenderTransform">
-            <RotateTransform Angle="0" />
-        </Setter>
-    </Style>
+    <!-- -->
+    <!-- <Style Selector="^:up:expanded /template/ ToggleButton#PART_toggle /template/ Path"> -->
+    <!--     <Setter Property="RenderTransform"> -->
+    <!--         <RotateTransform Angle="-90" /> -->
+    <!--     </Setter> -->
+    <!-- </Style> -->
+    <!-- <Style Selector="^:left:expanded /template/ ToggleButton#PART_toggle /template/ Path"> -->
+    <!--     <Setter Property="RenderTransform"> -->
+    <!--         <RotateTransform Angle="180" /> -->
+    <!--     </Setter> -->
+    <!-- </Style> -->
+    <!-- <Style Selector="^:right /template/ ToggleButton#PART_toggle /template/ Path"> -->
+    <!--     <Setter Property="RenderTransform"> -->
+    <!--         <RotateTransform Angle="180" /> -->
+    <!--     </Setter> -->
+    <!-- </Style> -->
+    <!-- <Style Selector="^:right:expanded /template/ ToggleButton#PART_toggle /template/ Path"> -->
+    <!--     <Setter Property="RenderTransform"> -->
+    <!--         <RotateTransform Angle="0" /> -->
+    <!--     </Setter> -->
+    <!-- </Style> -->
     </ControlTheme>
 
 </ResourceDictionary>
