@@ -33,6 +33,7 @@
                 <MergeResourceInclude Source="avares://SukiUI/Theme/TreeViewStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
                 <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
+                <MergeResourceInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>
