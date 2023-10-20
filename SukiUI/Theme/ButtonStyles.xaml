@@ -122,15 +122,7 @@
 
 
         <Style Selector="^.Accent /template/ ContentPresenter">
-            <Setter Property="Foreground">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="50%,100%" StartPoint="48%,0%">
-
-                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="0.8" />
-                        <GradientStop Color="{DynamicResource SukiPrimaryColor}" Offset="1" />
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Foreground" Value="{DynamicResource AccentForegroundBrush}" />
         </Style>
 
         <Style Selector="^.Accent:pointerover">

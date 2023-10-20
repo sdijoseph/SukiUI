@@ -14,7 +14,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IsPackable>true</IsPackable>
         <RootNamespace>SukiUI</RootNamespace>
-        <Version>5.0.5</Version>
+        <Version>6.0.0</Version>
         <FileVersion>2.0.0</FileVersion>
         <AssemblyVersion>2.0.0</AssemblyVersion>
         <LangVersion>latest</LangVersion>
@@ -50,6 +50,7 @@
     <ItemGroup>
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
         <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.1"/>
+        <PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0.3" />
         <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)"/>
         <PackageReference Include="Material.Icons.Avalonia" Version="2.0.1"/>
         <PackageReference Include="ReactiveUI" Version="19.2.1"/>

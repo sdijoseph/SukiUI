@@ -30,12 +30,22 @@
                                     <material:MaterialIcon
                                         Foreground="{TemplateBinding LogoColor}"
                                         Grid.Column="0"
+                                        Grid.Row="0"
                                         Height="25"
                                         HorizontalAlignment="Left"
                                         IsHitTestVisible="False"
+                                        IsVisible="{Binding !#SvgLogo.IsVisible}"
                                         Kind="{TemplateBinding LogoKind}"
                                         Margin="10"
                                         Width="25" />
+                                    <Svg Name="SvgLogo"
+                                         Grid.Column="0" Grid.Row="0" Path="{TemplateBinding SvgLogoPath}"
+                                         IsVisible="{TemplateBinding SvgLogoPath, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                         Margin="10"
+                                         Width="75"
+                                         Height="25"
+                                         HorizontalAlignment="Left"
+                                         IsHitTestVisible="False" />
                                     <TextBlock
                                         FontSize="{TemplateBinding TitleFontSize}"
                                         FontWeight="{TemplateBinding TitleFontWeight}"

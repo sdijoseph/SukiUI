@@ -28,8 +28,8 @@ public partial class DesktopPage : UserControl
     public static readonly StyledProperty<IBrush> LogoColorProperty =
         AvaloniaProperty.Register<DesktopPage, IBrush>(nameof(LogoColor), Brushes.DarkSlateBlue);
 
-    public static readonly StyledProperty<MaterialIconKind> LogoKindProperty =
-        AvaloniaProperty.Register<DesktopPage, MaterialIconKind>(nameof(LogoKind), MaterialIconKind.DotNet);
+    public static readonly StyledProperty<MaterialIconKind?> LogoKindProperty =
+        AvaloniaProperty.Register<DesktopPage, MaterialIconKind?>(nameof(LogoKind));
 
     public static readonly StyledProperty<List<MenuItem>> MenuItemsProperty =
         AvaloniaProperty.Register<DesktopPage, List<MenuItem>>(nameof(MenuItems), new List<MenuItem>());
@@ -42,13 +42,21 @@ public partial class DesktopPage : UserControl
 
     public static readonly StyledProperty<bool> MenuVisibilityProperty =
         AvaloniaProperty.Register<DesktopPage, bool>(nameof(MenuVisibility), false);
-
-
+    
     public static readonly StyledProperty<bool> IsMinimizeButtonEnabledProperty =
         AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMinimizeButtonEnabled), true);
 
     public static readonly StyledProperty<bool> IsMaximizeButtonEnabledProperty =
         AvaloniaProperty.Register<DesktopPage, bool>(nameof(IsMaximizeButtonEnabled), true);
+
+    public static readonly StyledProperty<string?> SvgLogoPathProperty = AvaloniaProperty.Register<DesktopPage, string?>(
+        nameof(SvgLogoPath));
+
+    public string? SvgLogoPath
+    {
+        get => GetValue(SvgLogoPathProperty);
+        set => SetValue(SvgLogoPathProperty, value);
+    }
 
     public DesktopPage()
     {
@@ -82,7 +90,7 @@ public partial class DesktopPage : UserControl
         set => SetValue(LogoColorProperty, value);
     }
 
-    public MaterialIconKind LogoKind
+    public MaterialIconKind? LogoKind
     {
         get => GetValue(LogoKindProperty);
         set => SetValue(LogoKindProperty, value);
